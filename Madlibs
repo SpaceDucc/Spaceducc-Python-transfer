@@ -1,1 +1,15 @@
-noun1 = input("input a noun: ")
+name1 = input("Input a name: ")
+place1 = input("Input a place: ")
+noun1 = input("Input a noun: ")
+verb1 = input("Input a verb: ")
+
+
+
+
+
+
+
+
+
+
+print(name1, "was going to the", place1, "in order to buy", noun1, ". They needed", noun1, "in order to", verb1)
