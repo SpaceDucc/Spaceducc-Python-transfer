@@ -1,39 +1,74 @@
 import random
 
 choice = ["Rock", "Paper", "Scissors"]
-playerchoice = input("Rock, Paper, or Scissors:")
+numberofrounds = int(input("How many rounds would you like? Please chose an odd number of rounds:"))
+playerchoice = 0
 computerchoice = choice[random.randint(0,2)]
-#if remainder = 0 get new number if remainder exists add +0.5
-def rockpaperscissors(a,b) :
-    game = 0
-    while game == 0 :
-        if a == b :
+
+
+def rockpaperscissors(a,b,c) :
+    maxwinorlose = int((float(c)/2) + 0.5)
+    wins = 0 
+    losses = 0
+    rounds = 0
+    a = input("Rock, Paper, or Scissors:").upper()
+    while c != int(c) and (float(c) % 2) != 1:
+        if c != int(c) :
+            print("That is not a number")
+            c = input("How many rounds would you like? Please chose an odd number of rounds:")
+        elif (float(c) % 2) != 1 :
+            print("That number is not odd")
+            c = input("How many rounds would you like? Please chose an odd number of rounds:")
+            maxwinorlose = int((float(c)/2) + 0.5)
+
+    while rounds != c + 1:
+        if a.upper() == b.upper() :
             print("You both chose", b.capitalize() + ". You tied!")
             print("Try Again!")
-            a = input("Rock, Paper, or Scissors:").upper()
-        elif a == "ROCK" :
-            if b == "PAPER" :
-                print("The Computer chose", b.capitalize() + ". You lose!")
-                game = 1
+            b = choice[random.randint(0,2)]
+            rounds = rounds + 1
+        elif a.upper() == "ROCK" :
+            if b.upper() == "PAPER" :
+                losses = (int(losses) + 1)
+                print("The Computer chose", b.capitalize() + ". You have lost", losses, "rounds.")
+                b = choice[random.randint(0,2)]
+                rounds = rounds + 1
             else :
-                print("The Computer chose", b.capitalize() + ". You win!")
-                game = 1
-        elif a == "PAPER" :
-            if b == "SCISSORS" :
-                print("The Computer chose", b.capitalize() + ". You lose!")
-                game = 1
+                wins = (int(wins) + 1)
+                print("The Computer chose", b.capitalize() + ". You have won", wins, "rounds.")
+                b = choice[random.randint(0,2)]
+                rounds = rounds + 1
+        elif a.upper() == "PAPER" :
+            if b.upper() == "SCISSORS" :
+                losses = (int(losses) + 1)
+                print("The Computer chose", b.capitalize() + ". You have lost", losses, "rounds.")
+                b = choice[random.randint(0,2)]
+                rounds = rounds + 1
             else :
-                print("The Computer chose", b.capitalize() + ". You win!")
-                game = 1
-        elif a == "SCISSORS" :
-            if b == "ROCK" :
-                print("The Computer chose", b.capitalize() + ". You lose!")
-                game = 1
+                wins = (int(wins) + 1)
+                print("The Computer chose", b.capitalize() + ". You have won", wins, "rounds.")
+                b = choice[random.randint(0,2)]
+                rounds = rounds + 1
+        elif a.upper() == "SCISSORS" :
+            if b.upper() == "ROCK" :
+                losses = (int(losses) + 1)
+                print("The Computer chose", b.capitalize() + ". You have lost", losses, "rounds.")
+                b = choice[random.randint(0,2)]
+                rounds = rounds + 1
             else :
-                print("The Computer chose", b.capitalize() + ". You win!")
-                game = 1
+                wins = (int(wins) + 1)
+                print("The Computer chose", b.capitalize() + ". You have won", wins, "rounds.")
+                b = choice[random.randint(0,2)]
+                rounds = rounds + 1
         else :
             print("Invalid Choice")
-            a = input("Rock, Paper, or Scissors:").upper()
 
-rockpaperscissors(playerchoice.upper(), computerchoice.upper())
+        if losses == maxwinorlose :
+            print("You have lost in", rounds, "rounds.")
+            rounds = c + 1
+        elif wins == maxwinorlose :
+            print("You have won in", rounds, "rounds.")
+            rounds = c + 1
+        a = input("Rock, Paper, or Scissors:").upper()
+
+rockpaperscissors(playerchoice, computerchoice.upper(), numberofrounds)
