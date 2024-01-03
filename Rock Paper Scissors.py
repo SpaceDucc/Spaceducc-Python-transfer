@@ -3,7 +3,7 @@ import random
 choice = ["Rock", "Paper", "Scissors"]
 playerchoice = input("Rock, Paper, or Scissors:")
 computerchoice = choice[random.randint(0,2)]
-
+#if remainder = 0 get new number if remainder exists add +0.5
 def rockpaperscissors(a,b) :
     game = 0
     while game == 0 :
