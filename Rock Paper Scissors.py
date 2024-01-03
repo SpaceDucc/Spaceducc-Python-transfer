@@ -11,7 +11,7 @@ def rockpaperscissors(a,b,c) :
     wins = 0 
     losses = 0
     rounds = 0
-    a = input("Rock, Paper, or Scissors:").upper()
+    game = 0
     while c != int(c) and (float(c) % 2) != 1:
         if c != int(c) :
             print("That is not a number")
@@ -21,7 +21,10 @@ def rockpaperscissors(a,b,c) :
             c = input("How many rounds would you like? Please chose an odd number of rounds:")
             maxwinorlose = int((float(c)/2) + 0.5)
 
-    while rounds != c + 1:
+    while game == 0 :
+        
+        a = input("Rock, Paper, or Scissors:").upper()
+        
         if a.upper() == b.upper() :
             print("You both chose", b.capitalize() + ". You tied!")
             print("Try Again!")
@@ -65,10 +68,9 @@ def rockpaperscissors(a,b,c) :
 
         if losses == maxwinorlose :
             print("You have lost in", rounds, "rounds.")
-            rounds = c + 1
+            game = 1
         elif wins == maxwinorlose :
             print("You have won in", rounds, "rounds.")
-            rounds = c + 1
-        a = input("Rock, Paper, or Scissors:").upper()
+            game = 1
 
 rockpaperscissors(playerchoice, computerchoice.upper(), numberofrounds)
