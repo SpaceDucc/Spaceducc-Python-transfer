@@ -1,25 +1,36 @@
 import random
 
 choice = ["Rock", "Paper", "Scissors"]
-numberofrounds = int(input("How many rounds would you like? Please chose an odd number of rounds:"))
+numberofrounds = input("How many rounds would you like? Please chose an odd number of rounds:")
 playerchoice = 0
 computerchoice = choice[random.randint(0,2)]
 
 
 def rockpaperscissors(a,b,c) :
-    maxwinorlose = int((float(c)/2) + 0.5)
+    
     wins = 0 
     losses = 0
     rounds = 0
     game = 0
-    while c != int(c) and (float(c) % 2) != 1:
-        if c != int(c) :
-            print("That is not a number")
-            c = input("How many rounds would you like? Please chose an odd number of rounds:")
-        elif (float(c) % 2) != 1 :
+    tempround = 0
+
+    while tempround != c :
+        try :
+            tempround = int(c)
+            c = int(c)
+        except :
+            print("This is not a number")
+            c = input("How many rounds would you like? Please chose an odd number of rounds:")   
+
+    maxwinorlose = int((float(c)/2) + 0.5)
+
+    while (float(c) % 2) != 1 :
+        if (float(c) % 2) != 1 :
             print("That number is not odd")
             c = input("How many rounds would you like? Please chose an odd number of rounds:")
             maxwinorlose = int((float(c)/2) + 0.5)
+        else :
+            continue
 
     while game == 0 :
         
