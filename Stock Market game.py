@@ -11,6 +11,7 @@ stock5price = 30 #medium
 stock6price = 40 #medium
 stock7price = 2 #penny
 stock8price = 3 #penny
+confidence = 50 #1-100 --> 1-25 = low confidence --- 25-75 = average confidence --- 75-100 = high confidence
 goal = 2000
 
 game = 0
