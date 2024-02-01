@@ -35,3 +35,5 @@ while game != 1 :
         print("invalid difficulty")
         input("Please select a difficulty(easy, medium, or hard):")
 
+def buy(a,b) :
+    
