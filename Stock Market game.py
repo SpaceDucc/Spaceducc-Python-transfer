@@ -120,6 +120,16 @@ def cryptopricechange(a) :
     else :
         a = float(a) * 2
 
+def showinfo() :
+    print("Price of Stock 1:", stock1price)
+    print("Price of Stock 1:", stock2price)
+    print("Price of Stock 1:", stock3price)
+    print("Price of Stock 1:", stock4price)
+    print("Price of Stock 1:", stock5price)
+    print("Price of Stock 1:", stock6price)
+    print("Price of Stock 1:", stock7price)
+    print("Price of Stock 1:", stock8price)
+
 def whatcommand() :
     command = 1
     while command.lower() != "buy" or command.lower() != "sell" or command.lower() != "info" or command.lower() != "end" or command.lower() != "help" : #add more?
@@ -129,39 +139,35 @@ def whatcommand() :
             print("invalid command, try using the help command if you don't know what to do.")
             command = input("what do you want to do?(buy,sell,info,end,help)")
 
+
 def easymodegame() :
     print("Welcome to the easy mode of MSMG by SPDC Technologies. In order to win, you have to [FILL IN LATER]. In order to start, run the 'help' command.")
-    while game == 1 :
         
-
-
-
 def mediummodegame() :
-    while game == 1 :
-
-
-
+    print("tet")
 
 def hardmodegame() :
-    while game == 1 :
-        
+    print("tet")
+    
+def startgame() :
+    game = 0
+    while game != 1 :
+        print("Welcome to The Miniture Stock Market Game by SPDC Technologies.")
+        difficulty = input("Please select a difficulty(easy, medium, or hard):")
+        if difficulty.lower() == "easy" :
+            money = 300
+            easymodegame()
+            game = 1
+        elif difficulty.lower() == "medium" :
+            money = 200
+            mediummodegame()
+            game = 1
+        elif difficulty.lower() == "hard" :
+            money = 100
+            hardmodegame()
+            game = 1
+        else :
+            print("invalid difficulty")
+            input("Please select a difficulty(easy, medium, or hard):")
 
-
-while game != 1 :
-    print("Welcome to The Miniture Stock Market Game by SPDC Technologies.")
-    difficulty = input("Please select a difficulty(easy, medium, or hard):")
-    if difficulty.lower() == "easy" :
-        money = 300
-        easymodegame()
-        game = 1
-    elif difficulty.lower() == "medium" :
-        money = 200
-        #medium difficulty gamemode
-        game = 1
-    elif difficulty.lower() == "hard" :
-        money = 100
-        #hard difficulty gamemode
-        game = 1
-    else :
-        print("invalid difficulty")
-        input("Please select a difficulty(easy, medium, or hard):")
+startgame()
