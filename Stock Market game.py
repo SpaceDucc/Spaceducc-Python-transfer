@@ -3,6 +3,14 @@ import random
 day = 1
 hour = 1
 money = 0
+ownedstock1 = 0
+ownedstock2 = 0
+ownedstock3 = 0
+ownedstock4 = 0
+ownedstock5 = 0
+ownedstock6 = 0
+ownedstock7 = 0
+ownedstock8 = 0
 stock1price = 150 #bluechip
 stock2price = 30 #crypto
 stock3price = 15 #medium
@@ -45,7 +53,7 @@ def incrementtime(a,b) :
         a = a + 1
     else :
         b = b + 1
-        a = 1
+        a = a + 1 #if hour is 13 run like 5 price change and then set hour to 1
 
 def lowconpricechange(a,b) : 
     lowconrandom = random.randint(1,100)
@@ -127,7 +135,7 @@ def cryptopricechange(a) :
     elif cryptorandom >= 61 and cryptorandom <= 80 :
         a = float(a) * 1.10
     elif cryptorandom >= 81 and cryptorandom <= 95 :
-        a = float(a) * 1.5
+        a = float(a) * 1.50
     else :
         a = float(a) * 2
 
