@@ -26,27 +26,8 @@ stock8price = 3 #penny
 confidence1 = 50 #1-100 --> 1-25 = low confidence --- 25-75 = average confidence --- 75-100 = high confidence
 fakevar1 = 1 #fake variable for penny stocks
 goal = 2000
-
+command = 1
 game = 0
-
-while game != 1 :
-    print("Welcome to The Miniture Stock Market Game by SPDC Technologies.")
-    difficulty = input("Please select a difficulty(easy, medium, or hard):")
-    if difficulty.lower() == "easy" :
-        money = 300
-        #easy difficulty gamemode
-        game = 1
-    elif difficulty.lower() == "medium" :
-        money = 200
-        #medium difficulty gamemode
-        game = 1
-    elif difficulty.lower() == "hard" :
-        money = 100
-        #hard difficulty gamemode
-        game = 1
-    else :
-        print("invalid difficulty")
-        input("Please select a difficulty(easy, medium, or hard):")
 
 def incrementtime(a,b) :
     if a != 12 :
@@ -139,5 +120,48 @@ def cryptopricechange(a) :
     else :
         a = float(a) * 2
 
-def buy(a,b) : #where a is amount and b is the stock
-    
+def whatcommand() :
+    command = 1
+    while command.lower() != "buy" or command.lower() != "sell" or command.lower() != "info" or command.lower() != "end" or command.lower() != "help" : #add more?
+        if command.lower() != "buy" or command.lower() != "sell" or command.lower() != "info" or command.lower() != "end" or command.lower() != "help" : #if add in above line add here
+            command = input("what do you want to do?(buy,sell,info,end,help)")
+        else :
+            print("invalid command, try using the help command if you don't know what to do.")
+            command = input("what do you want to do?(buy,sell,info,end,help)")
+
+def easymodegame() :
+    print("Welcome to the easy mode of MSMG by SPDC Technologies. In order to win, you have to [FILL IN LATER]. In order to start, run the 'help' command.")
+    while game == 1 :
+        
+
+
+
+def mediummodegame() :
+    while game == 1 :
+
+
+
+
+def hardmodegame() :
+    while game == 1 :
+        
+
+
+while game != 1 :
+    print("Welcome to The Miniture Stock Market Game by SPDC Technologies.")
+    difficulty = input("Please select a difficulty(easy, medium, or hard):")
+    if difficulty.lower() == "easy" :
+        money = 300
+        easymodegame()
+        game = 1
+    elif difficulty.lower() == "medium" :
+        money = 200
+        #medium difficulty gamemode
+        game = 1
+    elif difficulty.lower() == "hard" :
+        money = 100
+        #hard difficulty gamemode
+        game = 1
+    else :
+        print("invalid difficulty")
+        input("Please select a difficulty(easy, medium, or hard):")
