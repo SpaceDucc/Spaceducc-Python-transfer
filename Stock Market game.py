@@ -121,23 +121,40 @@ def cryptopricechange(a) :
         a = float(a) * 2
 
 def showinfo() :
-    print("Price of Stock 1:", stock1price)
-    print("Price of Stock 1:", stock2price)
-    print("Price of Stock 1:", stock3price)
-    print("Price of Stock 1:", stock4price)
-    print("Price of Stock 1:", stock5price)
-    print("Price of Stock 1:", stock6price)
-    print("Price of Stock 1:", stock7price)
-    print("Price of Stock 1:", stock8price)
+    print("Price of (STOCKNAME1):", stock1price)
+    print("Price of (STOCKNAME2):", stock2price)
+    print("Price of (STOCKNAME3):", stock3price)
+    print("Price of (STOCKNAME4):", stock4price)
+    print("Price of (STOCKNAME5):", stock5price)
+    print("Price of (STOCKNAME6):", stock6price)
+    print("Price of (STOCKNAME7):", stock7price)
+    print("Price of (STOCKNAME8):", stock8price)
+    print("Owned stock")
 
 def whatcommand() :
     command = 1
+    command = input("what do you want to do?(buy,sell,info,end,help)")
     while command.lower() != "buy" or command.lower() != "sell" or command.lower() != "info" or command.lower() != "end" or command.lower() != "help" : #add more?
         if command.lower() != "buy" or command.lower() != "sell" or command.lower() != "info" or command.lower() != "end" or command.lower() != "help" : #if add in above line add here
+            print("invalid command")
             command = input("what do you want to do?(buy,sell,info,end,help)")
         else :
-            print("invalid command, try using the help command if you don't know what to do.")
-            command = input("what do you want to do?(buy,sell,info,end,help)")
+            break
+    if command.lower() == "buy" :
+        print("TEST")
+        #replace with buy command
+    elif command.lower() == "sell" :
+        print("TEST")
+        #replace with sell command
+    elif command.lower() == "info" :
+        print("TEST")
+        #replace with info command
+    elif command.lower() == "end" :
+        print("TEST")
+        #replace with end hour command
+    else : #help command
+        print("TEST")
+        #replace with help command
 
 
 def easymodegame() :
@@ -150,7 +167,8 @@ def hardmodegame() :
     print("tet")
     
 def startgame() :
-    game = 0
+    global money
+    global game
     while game != 1 :
         print("Welcome to The Miniture Stock Market Game by SPDC Technologies.")
         difficulty = input("Please select a difficulty(easy, medium, or hard):")
