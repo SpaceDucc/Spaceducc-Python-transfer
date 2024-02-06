@@ -120,7 +120,7 @@ def cryptopricechange(a) :
     else :
         a[0] = float(a[0]) * 2
 
-def showinfo() :
+def showinfo() : #split into price owned and money?
     print("Price of (STOCKNAME1)(stock1):", stock1price[0])
     print("Price of (STOCKNAME2):", stock2price[0])
     print("Price of (STOCKNAME3):", stock3price[0])
@@ -129,7 +129,7 @@ def showinfo() :
     print("Price of (STOCKNAME6):", stock6price[0])
     print("Price of (STOCKNAME7):", stock7price[0])
     print("Price of (STOCKNAME8):", stock8price[0])
-    print("Owned stock", )
+    print("Owned stock of", )
 
 def whatcommand() :
     command = 1
@@ -148,7 +148,7 @@ def whatcommand() :
         #replace with sell command
     elif command.lower() == "info" :
         print("TEST")
-        #replace with info command
+        showinfo()
     elif command.lower() == "end" :
         print("TEST")
         #replace with end hour command
@@ -161,10 +161,10 @@ def easymodegame() :
     print("Welcome to the easy mode of MSMG by SPDC Technologies. In order to win, you have to [FILL IN LATER]. In order to start, run the 'help' command.")
         
 def mediummodegame() :
-    print("tet")
+    print("test")
 
 def hardmodegame() :
-    print("tet")
+    print("test")
     
 def startgame() :
     global money
