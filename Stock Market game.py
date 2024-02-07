@@ -174,8 +174,7 @@ def whatcommand() :
     elif command.lower() == "money" :
         showwallet()
     elif command.lower() == "end" :
-        print("TEST")
-        #replace with end hour command
+        incrementtime()
     else : #help command
         help()
 
