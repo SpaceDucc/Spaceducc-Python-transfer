@@ -3,14 +3,14 @@ import random
 day = [1]
 hour = [1]
 money = 0
-ownedstock1 = 0
-ownedstock2 = 0
-ownedstock3 = 0
-ownedstock4 = 0
-ownedstock5 = 0
-ownedstock6 = 0
-ownedstock7 = 0
-ownedstock8 = 0
+ownedstock1 = [0]
+ownedstock2 = [0]
+ownedstock3 = [0]
+ownedstock4 = [0]
+ownedstock5 = [0]
+ownedstock6 = [0]
+ownedstock7 = [0]
+ownedstock8 = [0]
 stock1price = [150] #bluechip
 stock2price = [30] #crypto
 stock3price = [15] #medium
@@ -120,51 +120,77 @@ def cryptopricechange(a) :
     else :
         a[0] = float(a[0]) * 2
 
-def showinfo() : #split into price owned and money?
-    print("Price of (STOCKNAME1)(stock1):", stock1price[0])
-    print("Price of (STOCKNAME2):", stock2price[0])
-    print("Price of (STOCKNAME3):", stock3price[0])
-    print("Price of (STOCKNAME4):", stock4price[0])
-    print("Price of (STOCKNAME5):", stock5price[0])
-    print("Price of (STOCKNAME6):", stock6price[0])
-    print("Price of (STOCKNAME7):", stock7price[0])
-    print("Price of (STOCKNAME8):", stock8price[0])
-    print("Owned stock of", )
+def showprice() :
+    print("Price of Glogel stock:", stock1price[0])
+    print("Price of Britcoin stock:", stock2price[0])
+    print("Price of Silicon Mountain stock:", stock3price[0])
+    print("Price of Obelisk of the Dark Gods stock:", stock4price[0])
+    print("Price of corka cola stock:", stock5price[0])
+    print("Price of popsi stock:", stock6price[0])
+    print("Price of Super Terrifying Haunted House Emporium stock:", stock7price[0])
+    print("Price of Dolphin Rodeo Inc. stock:", stock8price[0])
+
+def showowned() :
+    print("Owned Glogel stock:", ownedstock1[0])
+    print("Owned Britcoin stock:", ownedstock2[0])
+    print("Owned Silicon Mountain stock:", ownedstock3[0])
+    print("Owned Obelisk of the Dark Gods stock:", ownedstock4[0])
+    print("Owned corka cola stock:", ownedstock5[0])
+    print("Owned popsi stock:", ownedstock6[0])
+    print("Owned Super Terrifying Haunted House Emporium stock:", ownedstock7[0])
+    print("Owned Dolphin Rodeo Inc. stock:", ownedstock8[0])
+
+def showwallet() :
+    global money
+    print("You have $" + money)
+
+def buy() :
+    global money
+    pickstock = 0
+    purchacestock = 0
+    while pickstock == 0 :
+        if 
+def sell() :
+    global money
+
 
 def whatcommand() :
     command = 1
     command = input("what do you want to do?(buy,sell,info,end,help)")
-    while command.lower() != "buy" or command.lower() != "sell" or command.lower() != "info" or command.lower() != "end" or command.lower() != "help" : #add more?
-        if command.lower() != "buy" or command.lower() != "sell" or command.lower() != "info" or command.lower() != "end" or command.lower() != "help" : #if add in above line add here
+    while command.lower() != "buy" or command.lower() != "sell" or command.lower() != "info" or command.lower() != "end" or command.lower() != "help" or command.lower() != "price" : #add more?
+        if command.lower() != "buy" or command.lower() != "sell" or command.lower() != "info" or command.lower() != "end" or command.lower() != "help" or command.lower() != "price" : #if add in above line add here
             print("invalid command")
-            command = input("what do you want to do?(buy,sell,info,end,help)")
+            command = input("what do you want to do?(buy,sell,price,owned,money,end,help)")
         else :
             break
     if command.lower() == "buy" :
-        print("TEST")
-        #replace with buy command
+        buy()
     elif command.lower() == "sell" :
-        print("TEST")
-        #replace with sell command
-    elif command.lower() == "info" :
-        print("TEST")
-        showinfo()
+        sell()
+    elif command.lower() == "price" :
+        showprice()
+    elif command.lower() == "owned" :
+        showowned()
+    elif command.lower() == "money" :
+        showwallet()
     elif command.lower() == "end" :
         print("TEST")
         #replace with end hour command
     else : #help command
-        print("TEST")
-        #replace with help command
+        help()
 
 
 def easymodegame() :
     print("Welcome to the easy mode of MSMG by SPDC Technologies. In order to win, you have to [FILL IN LATER]. In order to start, run the 'help' command.")
+    whatcommand()
         
 def mediummodegame() :
     print("test")
+    whatcommand()
 
 def hardmodegame() :
     print("test")
+    whatcommand()
     
 def startgame() :
     global money
