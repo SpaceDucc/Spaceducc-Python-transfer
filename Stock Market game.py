@@ -2,8 +2,8 @@ import random
 
 day = [1]
 hour = [1]
+moneygoal = 2000
 money = 0
-howmuch = 0
 ownedstock1 = [0]
 ownedstock2 = [0]
 ownedstock3 = [0]
@@ -24,18 +24,14 @@ stock6price = [40] #medium
 confidence6 = [50]
 stock7price = [2] #penny
 stock8price = [3] #penny
-confidence1 = [50] #1-100 --> 1-25 = low confidence --- 25-75 = average confidence --- 75-100 = high confidence
+#1-100 --> 1-25 = low confidence --- 25-75 = average confidence --- 75-100 = high confidence
 fakevar1 = [1] #fake variable for penny stocks
 goal = 2000
 command = 1
 game = 0
 
-def incrementtime(a,b) :
-    if a[0] != 12 :
-        a[0] = a[0] + 1
-    else :
-        b[0] = b[0] + 1
-        a[0] = a[0] + 1 #if hour is 13 run like 5 price change and then set hour to 1
+
+
 
 def lowconpricechange(a,b) : 
     lowconrandom = random.randint(1,100)
@@ -145,13 +141,20 @@ def showwallet() :
     global money
     print("You have $" + money)
 
+def stockhelp() :
+    print("You want to buy and sell stock at the correct times in order to make the most money. You do this using the different commands.")
+    print("'buy' allows you to buy stocks, and 'sell' allows you to sell the your stocks.")
+    print("'price' lets you see the prices of the stocks, 'owned' lets you see how much of each stock you own, 'money' lets you see how much money you have.")
+    print("'end' will end the hour you are on and change the prices of the stocks, and on hour 12, the day will roll over and prices will change more signifigantly, you can see the time with the 'time' command.")
+    print("")
+
 def buy() :
     global money
     mathmoney = 0
     pickstock = 0
     purchacestock = 0
     whatstock = 0
-    global howmuch 
+    howmuch = 0
     while pickstock == 0 :
         whatstock = input("What Stock Do you want to buy?(Glogel, Britcoin, Silicon, Obelisk, Corka Cola, Popsi, Haunted House, Dolphin):")
         if whatstock.lower() == "glogel" or whatstock.lower() == "britcoin" or whatstock.lower() == "silicon" or whatstock.lower() == "obelisk" or whatstock.lower() == "corka cola" or whatstock.lower() == "popsi" or whatstock.lower() == "haunted house" or whatstock.lower() == "dolphin" :
@@ -293,15 +296,236 @@ def buy() :
 
 def sell() :
     global money
+    mathmoney = 0
+    pickstock = 0
+    sellstock = 0
+    whatstock = 0
+    howmuch = 0
+    while pickstock == 0 :
+        whatstock = input("What Stock Do you want to sell?(Glogel, Britcoin, Silicon, Obelisk, Corka Cola, Popsi, Haunted House, Dolphin):")
+        if whatstock.lower() == "glogel" or whatstock.lower() == "britcoin" or whatstock.lower() == "silicon" or whatstock.lower() == "obelisk" or whatstock.lower() == "corka cola" or whatstock.lower() == "popsi" or whatstock.lower() == "haunted house" or whatstock.lower() == "dolphin" :
+            pickstock = 1
+        else :
+            print("That is not a stock")
+            whatstock = input("What Stock Do you want to sell?(Glogel, Britcoin, Silicon, Obelisk, Corka Cola, Popsi, Haunted House, Dolphin):")
+    
+    while sellstock == 0 :
+        if whatstock.lower() == "glogel" :
+            howmuch = input("how many Glogel stock do you want to sell?")
+            while howmuch != int(howmuch) :
+                if howmuch != int(howmuch) :
+                    print("that is not a number")
+                    howmuch = input("how many Glogel stock do you want to sell:")
+                else :
+                    continue
+            mathmoney = int(stock1price[0]) * howmuch
+            if ownedstock1[0] < howmuch :
+                print("You do not have enough stock")
+            else :
+                ownedstock1[0] = ownedstock1[0] - howmuch
+                money = money + mathmoney
+                sellstock = 1
 
+        if whatstock.lower() == "britcoin" :
+            howmuch = input("how many Britcoin stock do you want to sell?")
+            while howmuch != int(howmuch) :
+                if howmuch != int(howmuch) :
+                    print("that is not a number")
+                    howmuch = input("how many Britcoin stock do you want to sell:")
+                else :
+                    continue
+            mathmoney = int(stock2price[0]) * howmuch
+            if ownedstock2[0] < howmuch :
+                print("You do not have enough stock")
+            else :
+                ownedstock2[0] = ownedstock2[0] - howmuch
+                money = money + mathmoney
+                sellstock = 1
+        
+        if whatstock.lower() == "silicon" :
+            howmuch = input("how many Silicon Mountain stock do you want to sell?")
+            while howmuch != int(howmuch) :
+                if howmuch != int(howmuch) :
+                    print("that is not a number")
+                    howmuch = input("how many Silicon Mountain stock do you want to sell:")
+                else :
+                    continue
+            mathmoney = int(stock3price[0]) * howmuch
+            if ownedstock3[0] < howmuch :
+                print("You do not have enough stock")
+            else :
+                ownedstock3[0] = ownedstock3[0] - howmuch
+                money = money + mathmoney
+                sellstock = 1
+
+        if whatstock.lower() == "obelisk" :
+            howmuch = input("how many Obelisk of the Dark Gods stock do you want to sell?")
+            while howmuch != int(howmuch) :
+                if howmuch != int(howmuch) :
+                    print("that is not a number")
+                    howmuch = input("how many Obelisk of the Dark Gods stock do you want to sell:")
+                else :
+                    continue
+            mathmoney = int(stock4price[0]) * howmuch
+            if ownedstock4[0] < howmuch :
+                print("You do not have enough stock")
+            else :
+                ownedstock4[0] = ownedstock4[0] - howmuch
+                money = money + mathmoney
+                sellstock = 1
+
+        if whatstock.lower() == "corka cola" :
+            howmuch = input("how many Corka Cola stock do you want to sell?")
+            while howmuch != int(howmuch) :
+                if howmuch != int(howmuch) :
+                    print("that is not a number")
+                    howmuch = input("how many Corka Cola stock do you want to sell:")
+                else :
+                    continue
+            mathmoney = int(stock5price[0]) * howmuch
+            if ownedstock5[0] < howmuch :
+                print("You do not have enough stock")
+            else :
+                ownedstock5[0] = ownedstock5[0] - howmuch
+                money = money + mathmoney
+                sellstock = 1
+
+        if whatstock.lower() == "popsi" :
+            howmuch = input("how many Popsi stock do you want to sell?")
+            while howmuch != int(howmuch) :
+                if howmuch != int(howmuch) :
+                    print("that is not a number")
+                    howmuch = input("how many Popsi stock do you want to sell:")
+                else :
+                    continue
+            mathmoney = int(stock6price[0]) * howmuch
+            if ownedstock6[0] < howmuch :
+                print("You do not have enough stock")
+            else :
+                ownedstock6[0] = ownedstock6[0] - howmuch
+                money = money + mathmoney
+                sellstock = 1
+
+        if whatstock.lower() == "haunted house" :
+            howmuch = input("how many Super Terrifying Haunted House Emporium stock do you want to sell?")
+            while howmuch != int(howmuch) :
+                if howmuch != int(howmuch) :
+                    print("that is not a number")
+                    howmuch = input("how many Super Terrifying Haunted House Emporium stock do you want to sell:")
+                else :
+                    continue
+            mathmoney = int(stock7price[0]) * howmuch
+            if ownedstock7[0] < howmuch :
+                print("You do not have enough stock")
+            else :
+                ownedstock7[0] = ownedstock7[0] - howmuch
+                money = money + mathmoney
+                sellstock = 1
+
+        if whatstock.lower() == "dolphin" :
+            howmuch = input("how many Dolphin Rodeo Inc. stock do you want to sell?")
+            while howmuch != int(howmuch) :
+                if howmuch != int(howmuch) :
+                    print("that is not a number")
+                    howmuch = input("how many Dolphin Rodeo Inc. stock do you want to sell:")
+                else :
+                    continue
+            mathmoney = int(stock8price[0]) * howmuch
+            if ownedstock8[0] < howmuch :
+                print("You do not have enough stock")
+            else :
+                ownedstock8[0] = ownedstock8[0] - howmuch
+                money = money + mathmoney
+                sellstock = 1
+
+
+def incrementtime() :
+    if hour[0] != 12 :
+        hour[0] = hour[0] + 1
+        bluechippricechange(stock1price[0])
+        cryptopricechange(stock2price[0])
+        mediumconpricechange(stock7price[0], fakevar1)
+        mediumconpricechange(stock8price[0], fakevar1)
+
+        if confidence3[0] < 25 :
+            lowconpricechange(stock3price[0], confidence3[0])
+        elif confidence3[0] > 75 :
+            highconpricechange(stock3price[0], confidence3[0])
+        else :
+            mediumconpricechange(stock3price[0], confidence3[0])
+
+        if confidence4[0] < 25 :
+            lowconpricechange(stock4price[0], confidence4[0])
+        elif confidence4[0] > 75 :
+            highconpricechange(stock4price[0], confidence4[0])
+        else :
+            mediumconpricechange(stock4price[0], confidence4[0])
+
+        if confidence5[0] < 25 :
+            lowconpricechange(stock5price[0], confidence5[0])
+        elif confidence5[0] > 75 :
+            highconpricechange(stock5price[0], confidence5[0])
+        else :
+            mediumconpricechange(stock5price[0], confidence5[0])
+
+        if confidence6[0] < 25 :
+            lowconpricechange(stock6price[0], confidence6[0])
+        elif confidence6[0] > 75 :
+            highconpricechange(stock6price[0], confidence6[0])
+        else :
+            mediumconpricechange(stock6price[0], confidence6[0])
+
+    else :
+        day[0] = day[0] + 1
+        fakevar2 = 0
+        while fakevar2 != 5 :
+            bluechippricechange(stock1price[0])
+        cryptopricechange(stock2price[0])
+        mediumconpricechange(stock7price[0], fakevar1)
+        mediumconpricechange(stock8price[0], fakevar1)
+
+        if confidence3[0] < 25 :
+            lowconpricechange(stock3price[0], confidence3[0])
+        elif confidence3[0] > 75 :
+            highconpricechange(stock3price[0], confidence3[0])
+        else :
+            mediumconpricechange(stock3price[0], confidence3[0])
+
+        if confidence4[0] < 25 :
+            lowconpricechange(stock4price[0], confidence4[0])
+        elif confidence4[0] > 75 :
+            highconpricechange(stock4price[0], confidence4[0])
+        else :
+            mediumconpricechange(stock4price[0], confidence4[0])
+
+        if confidence5[0] < 25 :
+            lowconpricechange(stock5price[0], confidence5[0])
+        elif confidence5[0] > 75 :
+            highconpricechange(stock5price[0], confidence5[0])
+        else :
+            mediumconpricechange(stock5price[0], confidence5[0])
+
+        if confidence6[0] < 25 :
+            lowconpricechange(stock6price[0], confidence6[0])
+        elif confidence6[0] > 75 :
+            highconpricechange(stock6price[0], confidence6[0])
+        else :
+            mediumconpricechange(stock6price[0], confidence6[0])
+
+        fakevar2 = fakevar2 + 1
+        hour[0] = 1
+
+def whattime() :
+    print("day", day[0] + ", hour", hour[0])
 
 def whatcommand() :
     command = 1
-    command = input("what do you want to do?(buy,sell,info,end,help)")
-    while command.lower() != "buy" or command.lower() != "sell" or command.lower() != "info" or command.lower() != "end" or command.lower() != "help" or command.lower() != "price" : #add more?
-        if command.lower() != "buy" or command.lower() != "sell" or command.lower() != "info" or command.lower() != "end" or command.lower() != "help" or command.lower() != "price" : #if add in above line add here
+    command = input("what do you want to do?(buy,sell,price,owned,money,end,time,help)")
+    print(command)
+    while command.lower() != "buy" and command.lower() != "sell" and command.lower() != "price" and command.lower() != "owned" and command.lower() != "end" and command.lower() != "help" and command.lower() != "money" and command.lower() != "time" : #add more?
+        if command.lower() != "buy" and command.lower() != "sell" and command.lower() != "price" and command.lower() != "owned" and command.lower() != "end" and command.lower() != "help" and command.lower() != "money" and command.lower() != "time" : #if add in above line add here
             print("invalid command")
-            command = input("what do you want to do?(buy,sell,price,owned,money,end,help)")
+            command = input("what do you want to do?(buy,sell,price,owned,money,end,time,help)")
         else :
             break
     if command.lower() == "buy" :
@@ -316,17 +540,26 @@ def whatcommand() :
         showwallet()
     elif command.lower() == "end" :
         incrementtime()
+    elif command.lower() == "time" :
+        whattime()
     else : #help command
-        help()
+        stockhelp()
 
 
 def easymodegame() :
-    print("Welcome to the easy mode of MSMG by SPDC Technologies. In order to win, you have to [FILL IN LATER]. In order to start, run the 'help' command.")
+    print("Welcome to the easy difficulty mode of MSMG by SPDC Technologies. In order to win, you have to [FILL IN LATER]. In order to start, run the 'help' command.")
     whatcommand()
-        
+
 def mediummodegame() :
-    print("test")
-    whatcommand()
+    global moneygoal
+    print("Welcome to the medium difficulty mode of MSMG by SPDC Technologies. In order to win, you have to [FILL IN LATER]. In order to start, run the 'help' command")
+    while goal == 0:
+        if money < moneygoal :
+            whatcommand()
+        else :
+            print("you win")
+            game = 0
+
 
 def hardmodegame() :
     print("test")
@@ -335,6 +568,8 @@ def hardmodegame() :
 def startgame() :
     global money
     global game
+    global goal
+    goal = 0
     while game != 1 :
         print("Welcome to The Miniture Stock Market Game by SPDC Technologies.")
         difficulty = input("Please select a difficulty(easy, medium, or hard):")
