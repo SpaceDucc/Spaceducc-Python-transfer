@@ -162,7 +162,6 @@ def buy() :
             pickstock = 1
         else :
             print("That is not a stock")
-            whatstock = input("What Stock Do you want to buy?(Glogel, Britcoin, Silicon, Obelisk, Corka Cola, Popsi, Haunted House, Dolphin):")
     while purchacestock == 0 :
         if whatstock.lower() == "glogel" :
             howmuch = int(input("how many Glogel stock do you want to buy?:"))
@@ -172,15 +171,13 @@ def buy() :
                 except :
                     print("invalid stock")
                     howmuch = int(input("how many Glogel stock do you want to buy?:"))
-                else :
-                    continue
                 if howmuch < 0 :
                     print("invalid number")
                     howmuch = int(input("how many Glogel stock do you want to buy?:"))
                 else :
                     fakevar3 = 1
-            mathmoney = int(stock1price[0]) * howmuch
-            if int(mathmoney) > money :
+            mathmoney = float(stock1price[0]) * howmuch
+            if float(mathmoney) > money :
                 print("You do not have enough money")
             else :
                 ownedstock1[0] = ownedstock1[0] + howmuch
@@ -195,14 +192,12 @@ def buy() :
                 except :
                     print("invalid stock")
                     howmuch = int(input("how many Britcoin stock do you want to buy?:"))
-                else :
-                    continue
                 if howmuch < 0 :
                     print("invalid number")
                     howmuch = int(input("how many Britcoin stock do you want to buy?:"))
                 else :
                     fakevar3 = 1
-            mathmoney = int(stock2price[0]) * howmuch
+            mathmoney = float(stock2price[0]) * howmuch
             if int(mathmoney) > money :
                 print("You do not have enough money")
             else :
@@ -218,14 +213,12 @@ def buy() :
                 except :
                     print("invalid stock")
                     howmuch = int(input("how many Silicon Mountain stock do you want to buy?:"))
-                else :
-                    continue
                 if howmuch < 0 :
                     print("invalid number")
                     howmuch = int(input("how many Silicon Mountain stock do you want to buy?:"))
                 else :
                     fakevar3 = 1
-            mathmoney = int(stock3price[0]) * howmuch
+            mathmoney = float(stock3price[0]) * howmuch
             if int(mathmoney) > money :
                 print("You do not have enough money")
             else :
@@ -241,14 +234,12 @@ def buy() :
                 except :
                     print("invalid stock")
                     howmuch = int(input("how many Obelisk of the Dark Gods stock do you want to buy?:"))
-                else :
-                    continue
                 if howmuch < 0 :
                     print("invalid number")
                     howmuch = int(input("how many Obelisk of the Dark Gods stock do you want to buy?:"))
                 else :
                     fakevar3 = 1
-            mathmoney = int(stock4price[0]) * howmuch
+            mathmoney = float(stock4price[0]) * howmuch
             if int(mathmoney) > money :
                 print("You do not have enough money")
             else :
@@ -264,14 +255,12 @@ def buy() :
                 except :
                     print("invalid stock")
                     howmuch = int(input("how many Corka Cola stock do you want to buy?:"))
-                else :
-                    continue
                 if howmuch < 0 :
                     print("invalid number")
                     howmuch = int(input("how many Corka Cola stock do you want to buy?:"))
                 else :
                     fakevar3 = 1
-            mathmoney = int(stock5price[0]) * howmuch
+            mathmoney = float(stock5price[0]) * howmuch
             if int(mathmoney) > money :
                 print("You do not have enough money")
             else :
@@ -287,14 +276,12 @@ def buy() :
                 except :
                     print("invalid stock")
                     howmuch = int(input("how many Popsi stock do you want to buy?:"))
-                else :
-                    continue
                 if howmuch < 0 :
                     print("invalid number")
                     howmuch = int(input("how many Popsi stock do you want to buy?:"))
                 else :
                     fakevar3 = 1
-            mathmoney = int(stock6price[0]) * howmuch
+            mathmoney = float(stock6price[0]) * howmuch
             if int(mathmoney) > money :
                 print("You do not have enough money")
             else :
@@ -310,14 +297,12 @@ def buy() :
                 except :
                     print("invalid stock")
                     howmuch = int(input("how many Super Terrifying Haunted House Emporium stock do you want to buy?:"))
-                else :
-                    continue
                 if howmuch < 0 :
                     print("invalid number")
                     howmuch = int(input("how many Super Terrifying Haunted House Emporium stock do you want to buy?:"))
                 else :
                     fakevar3 = 1
-            mathmoney = int(stock7price[0]) * howmuch
+            mathmoney = float(stock7price[0]) * howmuch
             if int(mathmoney) > money :
                 print("You do not have enough money")
             else :
@@ -333,15 +318,12 @@ def buy() :
                 except :
                     print("invalid stock")
                     howmuch = int(input("how many Dolphin Rodeo Inc. stock do you want to buy?:"))
-                else :
-                    continue
                 if howmuch < 0 :
                     print("invalid number")
                     howmuch = int(input("how many Dolphin Rodeo Inc. stock do you want to buy?:"))
                 else :
                     fakevar3 = 1
-            mathmoney = int(stock8price[0]) * howmuch
-            print(mathmoney)
+            mathmoney = float(stock8price[0]) * howmuch
             if int(mathmoney) > money :
                 print("You do not have enough money")
             else :
@@ -366,7 +348,6 @@ def sell() :
             pickstock = 1
         else :
             print("That is not a stock")
-            whatstock = input("What Stock Do you want to sell?(Glogel, Britcoin, Silicon, Obelisk, Corka Cola, Popsi, Haunted House, Dolphin):")
     
     while sellstock == 0 :
         if whatstock.lower() == "glogel" :
@@ -377,14 +358,12 @@ def sell() :
                 except :
                     print("invalid stock")
                     howmuch = int(input("how many Glogel stock do you want to sell?:"))
-                else :
-                    continue
                 if howmuch < 0 :
                     print("invalid number")
                     howmuch = int(input("how many Glogel stock do you want to sell?:"))
                 else :
                     fakevar3 = 1
-            mathmoney = int(stock1price[0]) * howmuch
+            mathmoney = float(stock1price[0]) * howmuch
             if ownedstock1[0] < howmuch :
                 print("You do not have enough stock")
             else :
@@ -400,14 +379,12 @@ def sell() :
                 except :
                     print("invalid stock")
                     howmuch = int(input("how many Britcoin stock do you want to sell?:"))
-                else :
-                    continue
                 if howmuch < 0 :
                     print("invalid number")
                     howmuch = int(input("how many Britcoin stock do you want to sell?:"))
                 else :
                     fakevar3 = 1
-            mathmoney = int(stock2price[0]) * howmuch
+            mathmoney = float(stock2price[0]) * howmuch
             if ownedstock2[0] < howmuch :
                 print("You do not have enough stock")
             else :
@@ -423,14 +400,12 @@ def sell() :
                 except :
                     print("invalid stock")
                     howmuch = int(input("how many Silicon Mountain stock do you want to sell?:"))
-                else :
-                    continue
                 if howmuch < 0 :
                     print("invalid number")
                     howmuch = int(input("how many Silicon Mountain stock do you want to sell?:"))
                 else :
                     fakevar3 = 1
-            mathmoney = int(stock3price[0]) * howmuch
+            mathmoney = float(stock3price[0]) * howmuch
             if ownedstock3[0] < howmuch :
                 print("You do not have enough stock")
             else :
@@ -446,14 +421,12 @@ def sell() :
                 except :
                     print("invalid stock")
                     howmuch = int(input("how many Obelisk of the Dark Gods stock do you want to sell?:"))
-                else :
-                    continue
                 if howmuch < 0 :
                     print("invalid number")
                     howmuch = int(input("how many Obelisk of the Dark Gods stock do you want to sell?:"))
                 else :
                     fakevar3 = 1
-            mathmoney = int(stock4price[0]) * howmuch
+            mathmoney = float(stock4price[0]) * howmuch
             if ownedstock4[0] < howmuch :
                 print("You do not have enough stock")
             else :
@@ -469,14 +442,12 @@ def sell() :
                 except :
                     print("invalid stock")
                     howmuch = int(input("how many Corka Cola stock do you want to sell?:"))
-                else :
-                    continue
                 if howmuch < 0 :
                     print("invalid number")
                     howmuch = int(input("how many Corka Cola stock do you want to sell?:"))
                 else :
                     fakevar3 = 1
-            mathmoney = int(stock5price[0]) * howmuch
+            mathmoney = float(stock5price[0]) * howmuch
             if ownedstock5[0] < howmuch :
                 print("You do not have enough stock")
             else :
@@ -492,14 +463,12 @@ def sell() :
                 except :
                     print("invalid stock")
                     howmuch = int(input("how many Popsi stock do you want to sell?:"))
-                else :
-                    continue
                 if howmuch < 0 :
                     print("invalid number")
                     howmuch = int(input("how many Popsi stock do you want to sell?:"))
                 else :
                     fakevar3 = 1
-            mathmoney = int(stock6price[0]) * howmuch
+            mathmoney = float(stock6price[0]) * howmuch
             if ownedstock6[0] < howmuch :
                 print("You do not have enough stock")
             else :
@@ -515,14 +484,12 @@ def sell() :
                 except :
                     print("invalid stock")
                     howmuch = int(input("how many Super Terrifying Haunted House Emporium stock do you want to sell?:"))
-                else :
-                    continue
                 if howmuch < 0 :
                     print("invalid number")
                     howmuch = int(input("how many Super Terrifying Haunted House Emporium stock do you want to sell?:"))
                 else :
                     fakevar3 = 1
-            mathmoney = int(stock7price[0]) * howmuch
+            mathmoney = float(stock7price[0]) * howmuch
             if ownedstock7[0] < howmuch :
                 print("You do not have enough stock")
             else :
@@ -538,14 +505,12 @@ def sell() :
                 except :
                     print("invalid stock")
                     howmuch = int(input("how many Dolphin Rodeo Inc. stock do you want to sell?:"))
-                else :
-                    continue
                 if howmuch < 0 :
                     print("invalid number")
                     howmuch = int(input("how many Dolphin Rodeo Inc. stock do you want to sell?:"))
                 else :
                     fakevar3 = 1
-            mathmoney = int(stock8price[0]) * howmuch
+            mathmoney = float(stock8price[0]) * howmuch
             if ownedstock8[0] < howmuch :
                 print("You do not have enough stock")
             else :
