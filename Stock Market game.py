@@ -12,18 +12,18 @@ ownedstock5 = [0]
 ownedstock6 = [0]
 ownedstock7 = [0]
 ownedstock8 = [0]
-stock1price = [150] #bluechip
-stock2price = [30] #crypto
-stock3price = [15] #medium
+stock1price = [150.0] #bluechip
+stock2price = [30.0] #crypto
+stock3price = [15.0] #medium
 confidence3 = [50]
-stock4price = [20] #medium
+stock4price = [20.0] #medium
 confidence4 = [50]
-stock5price = [30] #medium
+stock5price = [30.0] #medium
 confidence5 = [50]
-stock6price = [40] #medium
+stock6price = [40.0] #medium
 confidence6 = [50]
-stock7price = [2] #penny
-stock8price = [3] #penny
+stock7price = [2.0] #penny
+stock8price = [3.0] #penny
 #1-100 --> 1-25 = low confidence --- 25-75 = average confidence --- 75-100 = high confidence
 fakevar1 = [1] #fake variable for penny stocks
 goal = 2000
@@ -118,14 +118,77 @@ def cryptopricechange(a) :
         a[0] = float(a[0]) * 2
 
 def showprice() :
-    print("Price of Glogel stock:", stock1price[0])
-    print("Price of Britcoin stock:", stock2price[0])
-    print("Price of Silicon Mountain stock:", stock3price[0])
-    print("Price of Obelisk of the Dark Gods stock:", stock4price[0])
-    print("Price of corka cola stock:", stock5price[0])
-    print("Price of popsi stock:", stock6price[0])
-    print("Price of Super Terrifying Haunted House Emporium stock:", stock7price[0])
-    print("Price of Dolphin Rodeo Inc. stock:", stock8price[0])
+    stock1priceround = str(round(stock1price[0],2))
+    stock1pricelen = len(stock1priceround.split(".")[1])
+    if stock1pricelen == 1 :
+        print("Price of Glogel stock: $" + str(round(stock1price[0],2)) + "0")
+    elif stock1pricelen == 2 :
+        print("Price of Glogel stock: $" + str(round(stock1price[0],2)))
+    else :
+        print("error")
+
+    stock2priceround = str(round(stock2price[0],2))
+    stock2pricelen = len(stock2priceround.split(".")[1])
+    if stock2pricelen == 1 :
+        print("Price of Britcoin stock: $" + str(round(stock2price[0],2)) + "0")
+    elif stock2pricelen == 2 :
+        print("Price of Britcoin stock: $" + str(round(stock2price[0],2)))
+    else :
+        print("error")
+    
+    stock3priceround = str(round(stock3price[0],2))
+    stock3pricelen = len(stock3priceround.split(".")[1])
+    if stock3pricelen == 1 :
+        print("Price of Silicon Mountain stock: $" + str(round(stock3price[0],2)) + "0")
+    elif stock3pricelen == 2 :
+        print("Price of Silicon Mountain stock: $" + str(round(stock3price[0],2)))
+    else :
+        print("error")
+    
+    stock4priceround = str(round(stock4price[0],2))
+    stock4pricelen = len(stock4priceround.split(".")[1])
+    if stock4pricelen == 1 :
+        print("Price of Obelisk of the Dark Gods stock: $" + str(round(stock4price[0],2)) + "0")
+    elif stock4pricelen == 2 :
+        print("Price of Obelisk of the Dark Gods stock: $" + str(round(stock4price[0],2)))
+    else :
+        print("error")
+    
+    stock5priceround = str(round(stock5price[0],2))
+    stock5pricelen = len(stock5priceround.split(".")[1])
+    if stock5pricelen == 1 :
+        print("Price of Corka Cola stock: $" + str(round(stock5price[0],2)) + "0")
+    elif stock5pricelen == 2 :
+        print("Price of Corka Cola stock: $" + str(round(stock5price[0],2)))
+    else :
+        print("error")
+
+    stock6priceround = str(round(stock6price[0],2))
+    stock6pricelen = len(stock6priceround.split(".")[1])
+    if stock6pricelen == 1 :
+        print("Price of Popsi stock: $" + str(round(stock6price[0],2)) + "0")
+    elif stock6pricelen == 2 :
+        print("Price of Popsi stock: $" + str(round(stock6price[0],2)))
+    else :
+        print("error")
+    
+    stock7priceround = str(round(stock7price[0],2))
+    stock7pricelen = len(stock7priceround.split(".")[1])
+    if stock7pricelen == 1 :
+        print("Price of Super Terrifying Haunted House Emporium stock: $" + str(round(stock7price[0],2)) + "0")
+    elif stock7pricelen == 2 :
+        print("Price of Super Terrifying Haunted House Emporium stock: $" + str(round(stock7price[0],2)))
+    else :
+        print("error")
+    
+    stock8priceround = str(round(stock8price[0],2))
+    stock8pricelen = len(stock8priceround.split(".")[1])
+    if stock8pricelen == 1 :
+        print("Price of Dolphin Rodeo Inc. stock: $" + str(round(stock8price[0],2)) + "0")
+    elif stock8pricelen == 2 :
+        print("Price of Dolphin Rodeo Inc. stock: $" + str(round(stock8price[0],2)))
+    else :
+        print("error")
 
 def showowned() :
     print("Owned Glogel stock:", ownedstock1[0])
@@ -139,7 +202,7 @@ def showowned() :
 
 def showwallet() :
     global money
-    print("You have $" + str(money))
+    print("You have $" + str(round(money,2)))
 
 def stockhelp() :
     print("You want to buy and sell stock at the correct times in order to make the most money. You do this using the different commands.")
