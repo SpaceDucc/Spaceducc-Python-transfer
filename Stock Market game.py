@@ -89,13 +89,13 @@ def highconpricechange(a,b) :
 
 def bluechippricechange(a) :
     bluechiprandom = random.randint(1,100)
-    if bluechiprandom >= 1 and bluechiprandom <= 15 :
+    if bluechiprandom >= 1 and bluechiprandom <= 10 :
         a[0] = float(a[0]) * .97
-    elif bluechiprandom >= 16 and bluechiprandom <= 30 :
+    elif bluechiprandom >= 11 and bluechiprandom <= 25 :
         a[0] = a[0]
-    elif bluechiprandom >= 31 and bluechiprandom <= 75 :
+    elif bluechiprandom >= 26 and bluechiprandom <= 65 :
         a[0] = float(a[0]) * 1.02
-    elif bluechiprandom >= 76 and bluechiprandom <= 90 :
+    elif bluechiprandom >= 66 and bluechiprandom <= 85 :
         a[0] = float(a[0]) * 1.05
     else :
         a[0] = float(a[0]) * 1.08
@@ -632,7 +632,7 @@ def easymodegame() :
 
 def mediummodegame() :
     global moneygoal
-    print("Welcome to the medium difficulty mode of MSMG by SPDC Technologies. In order to win, you have to [FILL IN LATER]. In order to start, run the 'help' command")
+    print("Welcome to the medium difficulty mode of MSMG by SPDC Technologies. In order to win, you have to get $2000. In order to start, run the 'help' command")
     while goal == 0:
         if money < moneygoal :
             whatcommand()
