@@ -3,15 +3,23 @@ import random
 day = [1]
 hour = [1]
 moneygoal = 2000
-money = 0
+money = float(0)
 ownedstock1 = [0]
+price1change = [0]
 ownedstock2 = [0]
+price2change = [0]
 ownedstock3 = [0]
+price3change = [0]
 ownedstock4 = [0]
+price4change = [0]
 ownedstock5 = [0]
+price5change = [0]
 ownedstock6 = [0]
+price6change = [0]
 ownedstock7 = [0]
+price7change = [0]
 ownedstock8 = [0]
+price8change = [0]
 stock1price = [150.0] #bluechip
 stock2price = [30.0] #crypto
 stock3price = [15.0] #medium
@@ -33,268 +41,325 @@ game = 0
 
 
 
-def lowconpricechange(a,b) : 
+def lowconpricechange(a,b,c) : 
     lowconrandom = random.randint(1,100)
     if lowconrandom >= 1 and lowconrandom <= 20 :
         a[0] = float(a[0]) * .9
         b[0] = b[0] - 2
+        c[0] = "-"
     elif lowconrandom >= 21 and lowconrandom <= 45 :
         a[0] = float(a[0]) * .95
         b[0] = b[0] - 1
+        c[0] = "-"
     elif lowconrandom >= 46 and lowconrandom <= 67 :
         a[0] = a[0]
         b[0] = b[0]
+        c[0] = "="
     elif lowconrandom >= 68 and lowconrandom <= 90 :
         a[0] = float(a[0]) * 1.05
         b[0] = b[0] + 1
+        c[0] = "+"
     else :
         a[0] = float(a[0]) * 1.10
         b[0] = b[0] + 2
+        c[0] = "+"
 
-def mediumconpricechange(a,b) :
+def mediumconpricechange(a,b,c) :
     mediumconrandom = random.randint(1,100)
     if mediumconrandom >= 1 and mediumconrandom <= 10 :
         a[0] = float(a[0]) * .9
         b[0] = b[0] - 2
+        c[0] = "-"
     elif mediumconrandom >= 11 and mediumconrandom <= 30 :
         a[0] = float(a[0]) * .95
         b[0] = b[0] - 1
+        c[0] = "-"
     elif mediumconrandom >= 31 and mediumconrandom <= 55 :
         a[0] = a[0]
         b[0] = b[0]
+        c[0] = "="
     elif mediumconrandom >= 56 and mediumconrandom <= 85 :
         a[0] = float(a[0]) * 1.05
         b[0] = b[0] + 1
+        c[0] = "+"
     else :
         a[0] = float(a[0]) * 1.10
         b[0] = b[0] + 2
+        c[0] = "+"
 
-def highconpricechange(a,b) :
+def highconpricechange(a,b,c) :
     highconrandom = random.randint(1,100)
     if highconrandom >= 1 and highconrandom <= 5 :
         a[0] = float(a[0]) * .9
         b[0] = b[0] - 2
+        c[0] = "-"
     elif highconrandom >= 6 and highconrandom <= 25 :
         a[0] = float(a[0]) * .95
         b[0] = b[0] - 1
+        c[0] = "-"
     elif highconrandom >= 26 and highconrandom <= 45 :
         a[0] = a[0]
         b[0] = b[0]
+        c[0] = "="
     elif highconrandom >= 46 and highconrandom <= 80 :
         a[0] = float(a[0]) * 1.05
         b[0] = b[0] + 1
+        c[0] = "+"
     else :
         a[0] = float(a[0]) * 1.10
         b[0] = b[0] + 2
+        c[0] = "+"
 
-def easylowconpricechange(a,b) : 
+def easylowconpricechange(a,b,c) : 
     lowconrandom = random.randint(1,100)
     if lowconrandom >= 1 and lowconrandom <= 20 :
         a[0] = float(a[0]) * .9
         b[0] = b[0] - 1
+        c[0] = "-"
     elif lowconrandom >= 21 and lowconrandom <= 45 :
         a[0] = float(a[0]) * .95
         b[0] = b[0] - .5
+        c[0] = "-"
     elif lowconrandom >= 46 and lowconrandom <= 67 :
         a[0] = a[0]
         b[0] = b[0]
+        c[0] = "="
     elif lowconrandom >= 68 and lowconrandom <= 90 :
         a[0] = float(a[0]) * 1.05
         b[0] = b[0] + 1.5
+        c[0] = "+"
     else :
         a[0] = float(a[0]) * 1.10
         b[0] = b[0] + 3
+        c[0] = "+"
 
-def easymediumconpricechange(a,b) :
+def easymediumconpricechange(a,b,c) :
     mediumconrandom = random.randint(1,100)
     if mediumconrandom >= 1 and mediumconrandom <= 10 :
         a[0] = float(a[0]) * .9
         b[0] = b[0] - 1
+        c[0] = "-"
     elif mediumconrandom >= 11 and mediumconrandom <= 30 :
         a[0] = float(a[0]) * .95
         b[0] = b[0] - .5
+        c[0] = "-"
     elif mediumconrandom >= 31 and mediumconrandom <= 55 :
         a[0] = a[0]
         b[0] = b[0]
+        c[0] = "="
     elif mediumconrandom >= 56 and mediumconrandom <= 85 :
         a[0] = float(a[0]) * 1.05
         b[0] = b[0] + 1.5
+        c[0] = "+"
     else :
         a[0] = float(a[0]) * 1.10
         b[0] = b[0] + 3
+        c[0] = "+"
 
-def easyhighconpricechange(a,b) :
+def easyhighconpricechange(a,b,c) :
     highconrandom = random.randint(1,100)
     if highconrandom >= 1 and highconrandom <= 5 :
         a[0] = float(a[0]) * .9
         b[0] = b[0] - 1
+        c[0] = "-"
     elif highconrandom >= 6 and highconrandom <= 25 :
         a[0] = float(a[0]) * .95
         b[0] = b[0] - .5
+        c[0] = "-"
     elif highconrandom >= 26 and highconrandom <= 45 :
         a[0] = a[0]
         b[0] = b[0]
+        c[0] = "="
     elif highconrandom >= 46 and highconrandom <= 80 :
         a[0] = float(a[0]) * 1.05
         b[0] = b[0] + 1.5
+        c[0] = "+"
     else :
         a[0] = float(a[0]) * 1.10
         b[0] = b[0] + 3
+        c[0] = "+"
 
-def hardlowconpricechange(a,b) : 
+def hardlowconpricechange(a,b,c) : 
     lowconrandom = random.randint(1,100)
     if lowconrandom >= 1 and lowconrandom <= 20 :
         a[0] = float(a[0]) * .9
         b[0] = b[0] - 3
+        c[0] = "-"
     elif lowconrandom >= 21 and lowconrandom <= 45 :
         a[0] = float(a[0]) * .95
         b[0] = b[0] - 1.5
+        c[0] = "-"
     elif lowconrandom >= 46 and lowconrandom <= 67 :
         a[0] = a[0]
         b[0] = b[0]
+        c[0] = "="
     elif lowconrandom >= 68 and lowconrandom <= 90 :
         a[0] = float(a[0]) * 1.05
         b[0] = b[0] + .5
+        c[0] = "+"
     else :
         a[0] = float(a[0]) * 1.10
         b[0] = b[0] + 1
+        c[0] = "+"
 
-def hardmediumconpricechange(a,b) :
+def hardmediumconpricechange(a,b,c) :
     mediumconrandom = random.randint(1,100)
     if mediumconrandom >= 1 and mediumconrandom <= 10 :
         a[0] = float(a[0]) * .9
         b[0] = b[0] - 3
+        c[0] = "-"
     elif mediumconrandom >= 11 and mediumconrandom <= 30 :
         a[0] = float(a[0]) * .95
         b[0] = b[0] - 1.5
+        c[0] = "-"
     elif mediumconrandom >= 31 and mediumconrandom <= 55 :
         a[0] = a[0]
         b[0] = b[0]
+        c[0] = "="
     elif mediumconrandom >= 56 and mediumconrandom <= 85 :
         a[0] = float(a[0]) * 1.05
         b[0] = b[0] + .5
+        c[0] = "+"
     else :
         a[0] = float(a[0]) * 1.10
         b[0] = b[0] + 1
+        c[0] = "+"
 
-def hardhighconpricechange(a,b) :
+def hardhighconpricechange(a,b,c) :
     highconrandom = random.randint(1,100)
     if highconrandom >= 1 and highconrandom <= 5 :
         a[0] = float(a[0]) * .9
         b[0] = b[0] - 3
+        c[0] = "-"
     elif highconrandom >= 6 and highconrandom <= 25 :
         a[0] = float(a[0]) * .95
         b[0] = b[0] - 1.5
+        c[0] = "-"
     elif highconrandom >= 26 and highconrandom <= 45 :
         a[0] = a[0]
         b[0] = b[0]
+        c[0] = "="
     elif highconrandom >= 46 and highconrandom <= 80 :
         a[0] = float(a[0]) * 1.05
         b[0] = b[0] + .5
+        c[0] = "+"
     else :
         a[0] = float(a[0]) * 1.10
         b[0] = b[0] + 1
+        c[0] = "+"
 
-def bluechippricechange(a) :
+def bluechippricechange(a,c) :
     bluechiprandom = random.randint(1,100)
     if bluechiprandom >= 1 and bluechiprandom <= 10 :
         a[0] = float(a[0]) * .97
+        c[0] = "-"
     elif bluechiprandom >= 11 and bluechiprandom <= 25 :
         a[0] = a[0]
+        c[0] = "="
     elif bluechiprandom >= 26 and bluechiprandom <= 65 :
         a[0] = float(a[0]) * 1.02
+        c[0] = "+"
     elif bluechiprandom >= 66 and bluechiprandom <= 85 :
         a[0] = float(a[0]) * 1.05
+        c[0] = "+"
     else :
         a[0] = float(a[0]) * 1.08
+        c[0] = "+"
     
-def cryptopricechange(a) :
+def cryptopricechange(a,c) :
     cryptorandom = random.randint(1,100)
     if cryptorandom >= 1 and cryptorandom <= 5 :
         a[0] = float(a[0]) * .5
+        c[0] = "-"
     elif cryptorandom >= 6 and cryptorandom <= 20 :
         a[0] = float(a[0]) * .75
+        c[0] = "-"
     elif cryptorandom >= 21 and cryptorandom <= 40 :
         a[0] = float(a[0]) * .9
+        c[0] = "-"
     elif cryptorandom >= 41 and cryptorandom <= 60 :
         a[0] = a[0]
+        c[0] = "="
     elif cryptorandom >= 61 and cryptorandom <= 80 :
         a[0] = float(a[0]) * 1.10
+        c[0] = "+"
     elif cryptorandom >= 81 and cryptorandom <= 95 :
         a[0] = float(a[0]) * 1.50
+        c[0] = "+"
     else :
         a[0] = float(a[0]) * 2
+        c[0] = "+"
 
 def showprice() :
     stock1priceround = str(round(stock1price[0],2))
     stock1pricelen = len(stock1priceround.split(".")[1])
     if stock1pricelen == 1 :
-        print("Price of Glogel stock: $" + str(round(stock1price[0],2)) + "0")
+        print("Price of Glogel stock: $" + str(round(stock1price[0],2)) + "0", price1change)
     elif stock1pricelen == 2 :
-        print("Price of Glogel stock: $" + str(round(stock1price[0],2)))
+        print("Price of Glogel stock: $" + str(round(stock1price[0],2)), price1change)
     else :
         print("error")
 
     stock2priceround = str(round(stock2price[0],2))
     stock2pricelen = len(stock2priceround.split(".")[1])
     if stock2pricelen == 1 :
-        print("Price of Britcoin stock: $" + str(round(stock2price[0],2)) + "0")
+        print("Price of Britcoin stock: $" + str(round(stock2price[0],2)) + "0", price2change)
     elif stock2pricelen == 2 :
-        print("Price of Britcoin stock: $" + str(round(stock2price[0],2)))
+        print("Price of Britcoin stock: $" + str(round(stock2price[0],2)), price2change)
     else :
         print("error")
     
     stock3priceround = str(round(stock3price[0],2))
     stock3pricelen = len(stock3priceround.split(".")[1])
     if stock3pricelen == 1 :
-        print("Price of Silicon Mountain stock: $" + str(round(stock3price[0],2)) + "0")
+        print("Price of Silicon Mountain stock: $" + str(round(stock3price[0],2)) + "0", price3change)
     elif stock3pricelen == 2 :
-        print("Price of Silicon Mountain stock: $" + str(round(stock3price[0],2)))
+        print("Price of Silicon Mountain stock: $" + str(round(stock3price[0],2)), price3change)
     else :
         print("error")
     
     stock4priceround = str(round(stock4price[0],2))
     stock4pricelen = len(stock4priceround.split(".")[1])
     if stock4pricelen == 1 :
-        print("Price of Obelisk of the Dark Gods stock: $" + str(round(stock4price[0],2)) + "0")
+        print("Price of Obelisk of the Dark Gods stock: $" + str(round(stock4price[0],2)) + "0", price4change)
     elif stock4pricelen == 2 :
-        print("Price of Obelisk of the Dark Gods stock: $" + str(round(stock4price[0],2)))
+        print("Price of Obelisk of the Dark Gods stock: $" + str(round(stock4price[0],2)), price4change)
     else :
         print("error")
     
     stock5priceround = str(round(stock5price[0],2))
     stock5pricelen = len(stock5priceround.split(".")[1])
     if stock5pricelen == 1 :
-        print("Price of Corka Cola stock: $" + str(round(stock5price[0],2)) + "0")
+        print("Price of Corka Cola stock: $" + str(round(stock5price[0],2)) + "0", price5change)
     elif stock5pricelen == 2 :
-        print("Price of Corka Cola stock: $" + str(round(stock5price[0],2)))
+        print("Price of Corka Cola stock: $" + str(round(stock5price[0],2)), price5change)
     else :
         print("error")
 
     stock6priceround = str(round(stock6price[0],2))
     stock6pricelen = len(stock6priceround.split(".")[1])
     if stock6pricelen == 1 :
-        print("Price of Popsi stock: $" + str(round(stock6price[0],2)) + "0")
+        print("Price of Popsi stock: $" + str(round(stock6price[0],2)) + "0", price6change)
     elif stock6pricelen == 2 :
-        print("Price of Popsi stock: $" + str(round(stock6price[0],2)))
+        print("Price of Popsi stock: $" + str(round(stock6price[0],2)), price6change)
     else :
         print("error")
     
     stock7priceround = str(round(stock7price[0],2))
     stock7pricelen = len(stock7priceround.split(".")[1])
     if stock7pricelen == 1 :
-        print("Price of Super Terrifying Haunted House Emporium stock: $" + str(round(stock7price[0],2)) + "0")
+        print("Price of Super Terrifying Haunted House Emporium stock: $" + str(round(stock7price[0],2)) + "0", price7change)
     elif stock7pricelen == 2 :
-        print("Price of Super Terrifying Haunted House Emporium stock: $" + str(round(stock7price[0],2)))
+        print("Price of Super Terrifying Haunted House Emporium stock: $" + str(round(stock7price[0],2)), price7change)
     else :
         print("error")
     
     stock8priceround = str(round(stock8price[0],2))
     stock8pricelen = len(stock8priceround.split(".")[1])
     if stock8pricelen == 1 :
-        print("Price of Dolphin Rodeo Inc. stock: $" + str(round(stock8price[0],2)) + "0")
+        print("Price of Dolphin Rodeo Inc. stock: $" + str(round(stock8price[0],2)) + "0", price8change)
     elif stock8pricelen == 2 :
-        print("Price of Dolphin Rodeo Inc. stock: $" + str(round(stock8price[0],2)))
+        print("Price of Dolphin Rodeo Inc. stock: $" + str(round(stock8price[0],2)), price8change)
     else :
         print("error")
 
@@ -690,229 +755,235 @@ def sell() :
 
 
 def incrementtime() :
+    global money
     if hour[0] != 12 :
         hour[0] = hour[0] + 1
-        bluechippricechange(stock1price)
-        cryptopricechange(stock2price)
-        mediumconpricechange(stock7price, fakevar1)
-        mediumconpricechange(stock8price, fakevar1)
+        bluechippricechange(stock1price, price1change)
+        cryptopricechange(stock2price, price2change)
+        mediumconpricechange(stock7price, fakevar1, price7change)
+        mediumconpricechange(stock8price, fakevar1, price8change)
 
         if confidence3[0] < 25 :
-            lowconpricechange(stock3price, confidence3)
+            lowconpricechange(stock3price, confidence3, price3change)
         elif confidence3[0] > 75 :
-            highconpricechange(stock3price, confidence3)
+            highconpricechange(stock3price, confidence3, price3change)
         else :
-            mediumconpricechange(stock3price, confidence3)
+            mediumconpricechange(stock3price, confidence3 , price3change)
 
         if confidence4[0] < 25 :
-            lowconpricechange(stock4price, confidence4)
+            lowconpricechange(stock4price, confidence4, price4change)
         elif confidence4[0] > 75 :
-            highconpricechange(stock4price, confidence4)
+            highconpricechange(stock4price, confidence4, price4change)
         else :
-            mediumconpricechange(stock4price, confidence4)
+            mediumconpricechange(stock4price, confidence4, price4change)
 
         if confidence5[0] < 25 :
-            lowconpricechange(stock5price, confidence5)
+            lowconpricechange(stock5price, confidence5, price5change)
         elif confidence5[0] > 75 :
-            highconpricechange(stock5price, confidence5)
+            highconpricechange(stock5price, confidence5, price5change)
         else :
-            mediumconpricechange(stock5price, confidence5)
+            mediumconpricechange(stock5price, confidence5, price5change)
 
         if confidence6[0] < 25 :
-            lowconpricechange(stock6price, confidence6)
+            lowconpricechange(stock6price, confidence6, price6change)
         elif confidence6[0] > 75 :
-            highconpricechange(stock6price, confidence6)
+            highconpricechange(stock6price, confidence6, price6change)
         else :
-            mediumconpricechange(stock6price, confidence6)
+            mediumconpricechange(stock6price, confidence6, price6change)
 
     else :
         day[0] = day[0] + 1
         fakevar2 = 0
+        money = money + 20
         while fakevar2 != 5 :
-            bluechippricechange(stock1price)
-            cryptopricechange(stock2price)
-            mediumconpricechange(stock7price, fakevar1)
-            mediumconpricechange(stock8price, fakevar1)
+            bluechippricechange(stock1price, price1change)
+            cryptopricechange(stock2price, price2change)
+            mediumconpricechange(stock7price, fakevar1, price7change)
+            mediumconpricechange(stock8price, fakevar1, price8change)
 
             if confidence3[0] < 25 :
-                lowconpricechange(stock3price, confidence3)
+                lowconpricechange(stock3price, confidence3, price3change)
             elif confidence3[0] > 75 :
-                highconpricechange(stock3price, confidence3)
+                highconpricechange(stock3price, confidence3, price3change)
             else :
-                mediumconpricechange(stock3price, confidence3)
+                mediumconpricechange(stock3price, confidence3, price3change)
 
             if confidence4[0] < 25 :
-                lowconpricechange(stock4price, confidence4)
+                lowconpricechange(stock4price, confidence4, price4change)
             elif confidence4[0] > 75 :
-                highconpricechange(stock4price, confidence4)
+                highconpricechange(stock4price, confidence4, price4change)
             else :
-                mediumconpricechange(stock4price, confidence4)
+                mediumconpricechange(stock4price, confidence4, price4change)
 
             if confidence5[0] < 25 :
-                lowconpricechange(stock5price, confidence5)
+                lowconpricechange(stock5price, confidence5, price5change)
             elif confidence5[0] > 75 :
-                highconpricechange(stock5price, confidence5)
+                highconpricechange(stock5price, confidence5, price5change)
             else :
-                mediumconpricechange(stock5price, confidence5)
+                mediumconpricechange(stock5price, confidence5, price5change)
 
             if confidence6[0] < 25 :
-                lowconpricechange(stock6price, confidence6)
+                lowconpricechange(stock6price, confidence6, price6change)
             elif confidence6[0] > 75 :
-                highconpricechange(stock6price, confidence6)
+                highconpricechange(stock6price, confidence6, price6change)
             else :
-                mediumconpricechange(stock6price, confidence6)
+                mediumconpricechange(stock6price, confidence6, price6change)
 
             fakevar2 = fakevar2 + 1
         hour[0] = 1
 
 def easyincrementtime() :
+    global money
     if hour[0] != 12 :
         hour[0] = hour[0] + 1
-        bluechippricechange(stock1price)
-        cryptopricechange(stock2price)
-        mediumconpricechange(stock7price, fakevar1)
-        mediumconpricechange(stock8price, fakevar1)
+        bluechippricechange(stock1price, price1change)
+        cryptopricechange(stock2price, price2change)
+        mediumconpricechange(stock7price, fakevar1, price7change)
+        mediumconpricechange(stock8price, fakevar1, price8change)
 
         if confidence3[0] < 25 :
-            easylowconpricechange(stock3price, confidence3)
+            easylowconpricechange(stock3price, confidence3, price3change)
         elif confidence3[0] > 75 :
-            easyhighconpricechange(stock3price, confidence3)
+            easyhighconpricechange(stock3price, confidence3, price3change)
         else :
-            easymediumconpricechange(stock3price, confidence3)
+            easymediumconpricechange(stock3price, confidence3, price3change)
 
         if confidence4[0] < 25 :
-            easylowconpricechange(stock4price, confidence4)
+            easylowconpricechange(stock4price, confidence4, price4change)
         elif confidence4[0] > 75 :
-            easyhighconpricechange(stock4price, confidence4)
+            easyhighconpricechange(stock4price, confidence4, price4change)
         else :
-            easymediumconpricechange(stock4price, confidence4)
+            easymediumconpricechange(stock4price, confidence4, price4change)
 
         if confidence5[0] < 25 :
-            easylowconpricechange(stock5price, confidence5)
+            easylowconpricechange(stock5price, confidence5, price5change)
         elif confidence5[0] > 75 :
-            easyhighconpricechange(stock5price, confidence5)
+            easyhighconpricechange(stock5price, confidence5, price5change)
         else :
-            easymediumconpricechange(stock5price, confidence5)
+            easymediumconpricechange(stock5price, confidence5, price5change)
 
         if confidence6[0] < 25 :
-            easylowconpricechange(stock6price, confidence6)
+            easylowconpricechange(stock6price, confidence6, price6change)
         elif confidence6[0] > 75 :
-            easyhighconpricechange(stock6price, confidence6)
+            easyhighconpricechange(stock6price, confidence6, price6change)
         else :
-            easymediumconpricechange(stock6price, confidence6)
+            easymediumconpricechange(stock6price, confidence6, price6change)
 
     else :
         day[0] = day[0] + 1
         fakevar2 = 0
+        money = money + 40
         while fakevar2 != 5 :
-            bluechippricechange(stock1price)
-            cryptopricechange(stock2price)
-            mediumconpricechange(stock7price, fakevar1)
-            mediumconpricechange(stock8price, fakevar1)
+            bluechippricechange(stock1price, price1change)
+            cryptopricechange(stock2price, price2change)
+            mediumconpricechange(stock7price, fakevar1, price7change)
+            mediumconpricechange(stock8price, fakevar1, price8change)
 
             if confidence3[0] < 25 :
-                easylowconpricechange(stock3price, confidence3)
+                easylowconpricechange(stock3price, confidence3, price3change)
             elif confidence3[0] > 75 :
-                easyhighconpricechange(stock3price, confidence3)
+                easyhighconpricechange(stock3price, confidence3, price3change)
             else :
-                easymediumconpricechange(stock3price, confidence3)
+                easymediumconpricechange(stock3price, confidence3, price3change)
 
             if confidence4[0] < 25 :
-                easylowconpricechange(stock4price, confidence4)
+                easylowconpricechange(stock4price, confidence4, price4change)
             elif confidence4[0] > 75 :
-                easyhighconpricechange(stock4price, confidence4)
+                easyhighconpricechange(stock4price, confidence4, price4change)
             else :
-                easymediumconpricechange(stock4price, confidence4)
+                easymediumconpricechange(stock4price, confidence4, price4change)
 
             if confidence5[0] < 25 :
-                easylowconpricechange(stock5price, confidence5)
+                easylowconpricechange(stock5price, confidence5, price5change)
             elif confidence5[0] > 75 :
-                easyhighconpricechange(stock5price, confidence5)
+                easyhighconpricechange(stock5price, confidence5, price5change)
             else :
-                easymediumconpricechange(stock5price, confidence5)
+                easymediumconpricechange(stock5price, confidence5, price5change)
 
             if confidence6[0] < 25 :
-                easylowconpricechange(stock6price, confidence6)
+                easylowconpricechange(stock6price, confidence6, price6change)
             elif confidence6[0] > 75 :
-                easyhighconpricechange(stock6price, confidence6)
+                easyhighconpricechange(stock6price, confidence6, price6change)
             else :
-                easymediumconpricechange(stock6price, confidence6)
+                easymediumconpricechange(stock6price, confidence6, price6change)
 
             fakevar2 = fakevar2 + 1
         hour[0] = 1
 
 def hardincrementtime() :
+    global money
     if hour[0] != 12 :
         hour[0] = hour[0] + 1
-        bluechippricechange(stock1price)
-        cryptopricechange(stock2price)
-        mediumconpricechange(stock7price, fakevar1)
-        mediumconpricechange(stock8price, fakevar1)
+        bluechippricechange(stock1price, price1change)
+        cryptopricechange(stock2price, price2change)
+        mediumconpricechange(stock7price, fakevar1, price7change)
+        mediumconpricechange(stock8price, fakevar1, price8change)
 
         if confidence3[0] < 25 :
-            hardlowconpricechange(stock3price, confidence3)
+            hardlowconpricechange(stock3price, confidence3, price3change)
         elif confidence3[0] > 75 :
-            hardhighconpricechange(stock3price, confidence3)
+            hardhighconpricechange(stock3price, confidence3, price3change)
         else :
-            hardmediumconpricechange(stock3price, confidence3)
+            hardmediumconpricechange(stock3price, confidence3, price3change)
 
         if confidence4[0] < 25 :
-            hardlowconpricechange(stock4price, confidence4)
+            hardlowconpricechange(stock4price, confidence4, price4change)
         elif confidence4[0] > 75 :
-            hardhighconpricechange(stock4price, confidence4)
+            hardhighconpricechange(stock4price, confidence4, price4change)
         else :
-            hardmediumconpricechange(stock4price, confidence4)
+            hardmediumconpricechange(stock4price, confidence4, price4change)
 
         if confidence5[0] < 25 :
-            hardlowconpricechange(stock5price, confidence5)
+            hardlowconpricechange(stock5price, confidence5, price5change)
         elif confidence5[0] > 75 :
-            hardhighconpricechange(stock5price, confidence5)
+            hardhighconpricechange(stock5price, confidence5, price5change)
         else :
-            hardmediumconpricechange(stock5price, confidence5)
+            hardmediumconpricechange(stock5price, confidence5, price5change)
 
         if confidence6[0] < 25 :
-            hardlowconpricechange(stock6price, confidence6)
+            hardlowconpricechange(stock6price, confidence6, price6change)
         elif confidence6[0] > 75 :
-            hardhighconpricechange(stock6price, confidence6)
+            hardhighconpricechange(stock6price, confidence6, price6change)
         else :
-            hardmediumconpricechange(stock6price, confidence6)
+            hardmediumconpricechange(stock6price, confidence6, price6change)
 
     else :
         day[0] = day[0] + 1
         fakevar2 = 0
+        money = money + 10
         while fakevar2 != 5 :
-            bluechippricechange(stock1price)
-            cryptopricechange(stock2price)
-            mediumconpricechange(stock7price, fakevar1)
-            mediumconpricechange(stock8price, fakevar1)
+            bluechippricechange(stock1price, price1change)
+            cryptopricechange(stock2price, price2change)
+            mediumconpricechange(stock7price, fakevar1, price7change)
+            mediumconpricechange(stock8price, fakevar1, price8change)
 
             if confidence3[0] < 25 :
-                hardlowconpricechange(stock3price, confidence3)
+                hardlowconpricechange(stock3price, confidence3, price3change)
             elif confidence3[0] > 75 :
-                hardhighconpricechange(stock3price, confidence3)
+                hardhighconpricechange(stock3price, confidence3, price3change)
             else :
-                hardmediumconpricechange(stock3price, confidence3)
+                hardmediumconpricechange(stock3price, confidence3, price3change)
 
             if confidence4[0] < 25 :
-                hardlowconpricechange(stock4price, confidence4)
+                hardlowconpricechange(stock4price, confidence4, price4change)
             elif confidence4[0] > 75 :
-                hardhighconpricechange(stock4price, confidence4)
+                hardhighconpricechange(stock4price, confidence4, price4change)
             else :
-                hardmediumconpricechange(stock4price, confidence4)
+                hardmediumconpricechange(stock4price, confidence4, price4change)
 
             if confidence5[0] < 25 :
-                hardlowconpricechange(stock5price, confidence5)
+                hardlowconpricechange(stock5price, confidence5, price5change)
             elif confidence5[0] > 75 :
-                hardhighconpricechange(stock5price, confidence5)
+                hardhighconpricechange(stock5price, confidence5, price5change)
             else :
-                hardmediumconpricechange(stock5price, confidence5)
+                hardmediumconpricechange(stock5price, confidence5, price5change)
 
             if confidence6[0] < 25 :
-                hardlowconpricechange(stock6price, confidence6)
+                hardlowconpricechange(stock6price, confidence6, price6change)
             elif confidence6[0] > 75 :
-                hardhighconpricechange(stock6price, confidence6)
+                hardhighconpricechange(stock6price, confidence6, price6change)
             else :
-                hardmediumconpricechange(stock6price, confidence6)
+                hardmediumconpricechange(stock6price, confidence6, price6change)
 
             fakevar2 = fakevar2 + 1
         hour[0] = 1
