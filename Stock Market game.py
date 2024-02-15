@@ -38,13 +38,13 @@ def lowconpricechange(a,b) :
     if lowconrandom >= 1 and lowconrandom <= 20 :
         a[0] = float(a[0]) * .9
         b[0] = b[0] - 2
-    elif lowconrandom >= 21 and lowconrandom <= 50 :
+    elif lowconrandom >= 21 and lowconrandom <= 45 :
         a[0] = float(a[0]) * .95
         b[0] = b[0] - 1
-    elif lowconrandom >= 51 and lowconrandom <= 70 :
+    elif lowconrandom >= 46 and lowconrandom <= 67 :
         a[0] = a[0]
         b[0] = b[0]
-    elif lowconrandom >= 71 and lowconrandom <= 90 :
+    elif lowconrandom >= 68 and lowconrandom <= 90 :
         a[0] = float(a[0]) * 1.05
         b[0] = b[0] + 1
     else :
@@ -56,13 +56,13 @@ def mediumconpricechange(a,b) :
     if mediumconrandom >= 1 and mediumconrandom <= 10 :
         a[0] = float(a[0]) * .9
         b[0] = b[0] - 2
-    elif mediumconrandom >= 11 and mediumconrandom <= 35 :
+    elif mediumconrandom >= 11 and mediumconrandom <= 30 :
         a[0] = float(a[0]) * .95
         b[0] = b[0] - 1
-    elif mediumconrandom >= 36 and mediumconrandom <= 60 :
+    elif mediumconrandom >= 31 and mediumconrandom <= 55 :
         a[0] = a[0]
         b[0] = b[0]
-    elif mediumconrandom >= 61 and mediumconrandom <= 90 :
+    elif mediumconrandom >= 56 and mediumconrandom <= 85 :
         a[0] = float(a[0]) * 1.05
         b[0] = b[0] + 1
     else :
@@ -77,10 +77,10 @@ def highconpricechange(a,b) :
     elif highconrandom >= 6 and highconrandom <= 25 :
         a[0] = float(a[0]) * .95
         b[0] = b[0] - 1
-    elif highconrandom >= 26 and highconrandom <= 50 :
+    elif highconrandom >= 26 and highconrandom <= 45 :
         a[0] = a[0]
         b[0] = b[0]
-    elif highconrandom >= 51 and highconrandom <= 80 :
+    elif highconrandom >= 46 and highconrandom <= 80 :
         a[0] = float(a[0]) * 1.05
         b[0] = b[0] + 1
     else :
