@@ -87,6 +87,114 @@ def highconpricechange(a,b) :
         a[0] = float(a[0]) * 1.10
         b[0] = b[0] + 2
 
+def easylowconpricechange(a,b) : 
+    lowconrandom = random.randint(1,100)
+    if lowconrandom >= 1 and lowconrandom <= 20 :
+        a[0] = float(a[0]) * .9
+        b[0] = b[0] - 1
+    elif lowconrandom >= 21 and lowconrandom <= 45 :
+        a[0] = float(a[0]) * .95
+        b[0] = b[0] - .5
+    elif lowconrandom >= 46 and lowconrandom <= 67 :
+        a[0] = a[0]
+        b[0] = b[0]
+    elif lowconrandom >= 68 and lowconrandom <= 90 :
+        a[0] = float(a[0]) * 1.05
+        b[0] = b[0] + 1.5
+    else :
+        a[0] = float(a[0]) * 1.10
+        b[0] = b[0] + 3
+
+def easymediumconpricechange(a,b) :
+    mediumconrandom = random.randint(1,100)
+    if mediumconrandom >= 1 and mediumconrandom <= 10 :
+        a[0] = float(a[0]) * .9
+        b[0] = b[0] - 1
+    elif mediumconrandom >= 11 and mediumconrandom <= 30 :
+        a[0] = float(a[0]) * .95
+        b[0] = b[0] - .5
+    elif mediumconrandom >= 31 and mediumconrandom <= 55 :
+        a[0] = a[0]
+        b[0] = b[0]
+    elif mediumconrandom >= 56 and mediumconrandom <= 85 :
+        a[0] = float(a[0]) * 1.05
+        b[0] = b[0] + 1.5
+    else :
+        a[0] = float(a[0]) * 1.10
+        b[0] = b[0] + 3
+
+def easyhighconpricechange(a,b) :
+    highconrandom = random.randint(1,100)
+    if highconrandom >= 1 and highconrandom <= 5 :
+        a[0] = float(a[0]) * .9
+        b[0] = b[0] - 1
+    elif highconrandom >= 6 and highconrandom <= 25 :
+        a[0] = float(a[0]) * .95
+        b[0] = b[0] - .5
+    elif highconrandom >= 26 and highconrandom <= 45 :
+        a[0] = a[0]
+        b[0] = b[0]
+    elif highconrandom >= 46 and highconrandom <= 80 :
+        a[0] = float(a[0]) * 1.05
+        b[0] = b[0] + 1.5
+    else :
+        a[0] = float(a[0]) * 1.10
+        b[0] = b[0] + 3
+
+def hardlowconpricechange(a,b) : 
+    lowconrandom = random.randint(1,100)
+    if lowconrandom >= 1 and lowconrandom <= 20 :
+        a[0] = float(a[0]) * .9
+        b[0] = b[0] - 3
+    elif lowconrandom >= 21 and lowconrandom <= 45 :
+        a[0] = float(a[0]) * .95
+        b[0] = b[0] - 1.5
+    elif lowconrandom >= 46 and lowconrandom <= 67 :
+        a[0] = a[0]
+        b[0] = b[0]
+    elif lowconrandom >= 68 and lowconrandom <= 90 :
+        a[0] = float(a[0]) * 1.05
+        b[0] = b[0] + .5
+    else :
+        a[0] = float(a[0]) * 1.10
+        b[0] = b[0] + 1
+
+def hardmediumconpricechange(a,b) :
+    mediumconrandom = random.randint(1,100)
+    if mediumconrandom >= 1 and mediumconrandom <= 10 :
+        a[0] = float(a[0]) * .9
+        b[0] = b[0] - 3
+    elif mediumconrandom >= 11 and mediumconrandom <= 30 :
+        a[0] = float(a[0]) * .95
+        b[0] = b[0] - 1.5
+    elif mediumconrandom >= 31 and mediumconrandom <= 55 :
+        a[0] = a[0]
+        b[0] = b[0]
+    elif mediumconrandom >= 56 and mediumconrandom <= 85 :
+        a[0] = float(a[0]) * 1.05
+        b[0] = b[0] + .5
+    else :
+        a[0] = float(a[0]) * 1.10
+        b[0] = b[0] + 1
+
+def hardhighconpricechange(a,b) :
+    highconrandom = random.randint(1,100)
+    if highconrandom >= 1 and highconrandom <= 5 :
+        a[0] = float(a[0]) * .9
+        b[0] = b[0] - 3
+    elif highconrandom >= 6 and highconrandom <= 25 :
+        a[0] = float(a[0]) * .95
+        b[0] = b[0] - 1.5
+    elif highconrandom >= 26 and highconrandom <= 45 :
+        a[0] = a[0]
+        b[0] = b[0]
+    elif highconrandom >= 46 and highconrandom <= 80 :
+        a[0] = float(a[0]) * 1.05
+        b[0] = b[0] + .5
+    else :
+        a[0] = float(a[0]) * 1.10
+        b[0] = b[0] + 1
+
 def bluechippricechange(a) :
     bluechiprandom = random.randint(1,100)
     if bluechiprandom >= 1 and bluechiprandom <= 10 :
@@ -657,6 +765,158 @@ def incrementtime() :
             fakevar2 = fakevar2 + 1
         hour[0] = 1
 
+def easyincrementtime() :
+    if hour[0] != 12 :
+        hour[0] = hour[0] + 1
+        bluechippricechange(stock1price)
+        cryptopricechange(stock2price)
+        mediumconpricechange(stock7price, fakevar1)
+        mediumconpricechange(stock8price, fakevar1)
+
+        if confidence3[0] < 25 :
+            easylowconpricechange(stock3price, confidence3)
+        elif confidence3[0] > 75 :
+            easyhighconpricechange(stock3price, confidence3)
+        else :
+            easymediumconpricechange(stock3price, confidence3)
+
+        if confidence4[0] < 25 :
+            easylowconpricechange(stock4price, confidence4)
+        elif confidence4[0] > 75 :
+            easyhighconpricechange(stock4price, confidence4)
+        else :
+            easymediumconpricechange(stock4price, confidence4)
+
+        if confidence5[0] < 25 :
+            easylowconpricechange(stock5price, confidence5)
+        elif confidence5[0] > 75 :
+            easyhighconpricechange(stock5price, confidence5)
+        else :
+            easymediumconpricechange(stock5price, confidence5)
+
+        if confidence6[0] < 25 :
+            easylowconpricechange(stock6price, confidence6)
+        elif confidence6[0] > 75 :
+            easyhighconpricechange(stock6price, confidence6)
+        else :
+            easymediumconpricechange(stock6price, confidence6)
+
+    else :
+        day[0] = day[0] + 1
+        fakevar2 = 0
+        while fakevar2 != 5 :
+            bluechippricechange(stock1price)
+            cryptopricechange(stock2price)
+            mediumconpricechange(stock7price, fakevar1)
+            mediumconpricechange(stock8price, fakevar1)
+
+            if confidence3[0] < 25 :
+                easylowconpricechange(stock3price, confidence3)
+            elif confidence3[0] > 75 :
+                easyhighconpricechange(stock3price, confidence3)
+            else :
+                easymediumconpricechange(stock3price, confidence3)
+
+            if confidence4[0] < 25 :
+                easylowconpricechange(stock4price, confidence4)
+            elif confidence4[0] > 75 :
+                easyhighconpricechange(stock4price, confidence4)
+            else :
+                easymediumconpricechange(stock4price, confidence4)
+
+            if confidence5[0] < 25 :
+                easylowconpricechange(stock5price, confidence5)
+            elif confidence5[0] > 75 :
+                easyhighconpricechange(stock5price, confidence5)
+            else :
+                easymediumconpricechange(stock5price, confidence5)
+
+            if confidence6[0] < 25 :
+                easylowconpricechange(stock6price, confidence6)
+            elif confidence6[0] > 75 :
+                easyhighconpricechange(stock6price, confidence6)
+            else :
+                easymediumconpricechange(stock6price, confidence6)
+
+            fakevar2 = fakevar2 + 1
+        hour[0] = 1
+
+def hardincrementtime() :
+    if hour[0] != 12 :
+        hour[0] = hour[0] + 1
+        bluechippricechange(stock1price)
+        cryptopricechange(stock2price)
+        mediumconpricechange(stock7price, fakevar1)
+        mediumconpricechange(stock8price, fakevar1)
+
+        if confidence3[0] < 25 :
+            hardlowconpricechange(stock3price, confidence3)
+        elif confidence3[0] > 75 :
+            hardhighconpricechange(stock3price, confidence3)
+        else :
+            hardmediumconpricechange(stock3price, confidence3)
+
+        if confidence4[0] < 25 :
+            hardlowconpricechange(stock4price, confidence4)
+        elif confidence4[0] > 75 :
+            hardhighconpricechange(stock4price, confidence4)
+        else :
+            hardmediumconpricechange(stock4price, confidence4)
+
+        if confidence5[0] < 25 :
+            hardlowconpricechange(stock5price, confidence5)
+        elif confidence5[0] > 75 :
+            hardhighconpricechange(stock5price, confidence5)
+        else :
+            hardmediumconpricechange(stock5price, confidence5)
+
+        if confidence6[0] < 25 :
+            hardlowconpricechange(stock6price, confidence6)
+        elif confidence6[0] > 75 :
+            hardhighconpricechange(stock6price, confidence6)
+        else :
+            hardmediumconpricechange(stock6price, confidence6)
+
+    else :
+        day[0] = day[0] + 1
+        fakevar2 = 0
+        while fakevar2 != 5 :
+            bluechippricechange(stock1price)
+            cryptopricechange(stock2price)
+            mediumconpricechange(stock7price, fakevar1)
+            mediumconpricechange(stock8price, fakevar1)
+
+            if confidence3[0] < 25 :
+                hardlowconpricechange(stock3price, confidence3)
+            elif confidence3[0] > 75 :
+                hardhighconpricechange(stock3price, confidence3)
+            else :
+                hardmediumconpricechange(stock3price, confidence3)
+
+            if confidence4[0] < 25 :
+                hardlowconpricechange(stock4price, confidence4)
+            elif confidence4[0] > 75 :
+                hardhighconpricechange(stock4price, confidence4)
+            else :
+                hardmediumconpricechange(stock4price, confidence4)
+
+            if confidence5[0] < 25 :
+                hardlowconpricechange(stock5price, confidence5)
+            elif confidence5[0] > 75 :
+                hardhighconpricechange(stock5price, confidence5)
+            else :
+                hardmediumconpricechange(stock5price, confidence5)
+
+            if confidence6[0] < 25 :
+                hardlowconpricechange(stock6price, confidence6)
+            elif confidence6[0] > 75 :
+                hardhighconpricechange(stock6price, confidence6)
+            else :
+                hardmediumconpricechange(stock6price, confidence6)
+
+            fakevar2 = fakevar2 + 1
+        hour[0] = 1
+
 def whattime() :
     print("day", day[0], "hour", hour[0])
 
@@ -687,6 +947,59 @@ def whatcommand() :
     else : #help command
         stockhelp()
 
+def easywhatcommand() :
+    command = 1
+    command = input("what do you want to do?(buy,sell,price,owned,money,end,time,help)")
+    print(command)
+    while command.lower() != "buy" and command.lower() != "sell" and command.lower() != "price" and command.lower() != "owned" and command.lower() != "end" and command.lower() != "help" and command.lower() != "money" and command.lower() != "time" : #add more?
+        if command.lower() != "buy" and command.lower() != "sell" and command.lower() != "price" and command.lower() != "owned" and command.lower() != "end" and command.lower() != "help" and command.lower() != "money" and command.lower() != "time" : #if add in above line add here
+            print("invalid command")
+            command = input("what do you want to do?(buy,sell,price,owned,money,end,time,help)")
+        else :
+            break
+    if command.lower() == "buy" :
+        buy()
+    elif command.lower() == "sell" :
+        sell()
+    elif command.lower() == "price" :
+        showprice()
+    elif command.lower() == "owned" :
+        showowned()
+    elif command.lower() == "money" :
+        showwallet()
+    elif command.lower() == "end" :
+        easyincrementtime()
+    elif command.lower() == "time" :
+        whattime()
+    else : #help command
+        stockhelp()
+
+def hardwhatcommand() :
+    command = 1
+    command = input("what do you want to do?(buy,sell,price,owned,money,end,time,help)")
+    print(command)
+    while command.lower() != "buy" and command.lower() != "sell" and command.lower() != "price" and command.lower() != "owned" and command.lower() != "end" and command.lower() != "help" and command.lower() != "money" and command.lower() != "time" : #add more?
+        if command.lower() != "buy" and command.lower() != "sell" and command.lower() != "price" and command.lower() != "owned" and command.lower() != "end" and command.lower() != "help" and command.lower() != "money" and command.lower() != "time" : #if add in above line add here
+            print("invalid command")
+            command = input("what do you want to do?(buy,sell,price,owned,money,end,time,help)")
+        else :
+            break
+    if command.lower() == "buy" :
+        buy()
+    elif command.lower() == "sell" :
+        sell()
+    elif command.lower() == "price" :
+        showprice()
+    elif command.lower() == "owned" :
+        showowned()
+    elif command.lower() == "money" :
+        showwallet()
+    elif command.lower() == "end" :
+        hardincrementtime()
+    elif command.lower() == "time" :
+        whattime()
+    else : #help command
+        stockhelp()
 
 def easymodegame() :
     game = 1
@@ -695,7 +1008,7 @@ def easymodegame() :
     print("Welcome to the easy difficulty mode of MSMG by SPDC Technologies. In order to win, you have to get $1000. In order to start, run the 'help' command.")
     while game == 1:
         if money < moneygoal :
-            whatcommand()
+            easywhatcommand()
         else :
             print("you win")
             game = 0
@@ -720,7 +1033,7 @@ def hardmodegame() :
     print("Welcome to the medium difficulty mode of MSMG by SPDC Technologies. In order to win, you have to get $4000. In order to start, run the 'help' command")
     while game == 1:
         if money < moneygoal :
-            whatcommand()
+            hardwhatcommand()
         else :
             print("you win")
             game = 0
