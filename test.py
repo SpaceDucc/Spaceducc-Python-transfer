@@ -1,10 +1,7 @@
-var1 = [10]
-var2 = [20]
+from turtle import *
 
-def testfunc(a,b) :
-    a[0] = a[0] + 10 
-    b[0] = b[0] + 20
-
-testfunc(var1,var2)
-print(var1[0])
-print(var2[0])
+for steps in range(100) :
+    for c in ('blue', 'red', 'green') :
+        color(c)
+        forward(steps)
+        right(30)
