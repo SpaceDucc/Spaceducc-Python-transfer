@@ -38,6 +38,7 @@ fakevar1 = [1] #fake variable for penny stocks
 goal = 2000
 command = 1
 game = 0
+win1 = GraphWin("MSMG", 1200, 700)
 
 
 
@@ -1114,8 +1115,21 @@ def startgame() :
     global money
     global game
     global goal
-    win1 = GraphWin("MSMG", 1200, 700)
+    global win1
     win1.setBackground(color_rgb(255,255,255)) #3 boxes ---> easy medium or hard
+    intropt = Point(600,300)
+    introtext = Text(intropt, "Welcome to The Miniture Stock Market Game by SPDC Technologies.")
+    introtext.setTextColor(color_rgb(0,0,0))
+    introtext.setSize(24)
+    introtext.draw(win1)
+    intropt2 = Point(600,450)
+    introtext2 = Text(intropt2, "Click to Continue")
+    introtext2.setTextColor(color_rgb(0,0,0))
+    introtext2.setSize(16)
+    introtext2.draw(win1)
+    win1.getMouse()
+    introtext.undraw()
+    introtext2.undraw()
     easypt1 = Point(80,150)
     easypt2 = Point(380,550)
     easypt3 = Point(230,350)
@@ -1151,24 +1165,37 @@ def startgame() :
     gamemodey = gamemode.getY()
     goal = 0
     while game != 1 :
-        print("Welcome to The Miniture Stock Market Game by SPDC Technologies.")
         if gamemodex <= 380 and gamemodex >= 80 and gamemodey <= 550 and gamemodey >= 150 :
-            print("EASY MODE")
+            easyrec.undraw()
+            easytext.undraw()
+            mediumrec.undraw()
+            mediumtext.undraw()
+            hardrec.undraw()
+            hardtext.undraw()
             money = 300
             easymodegame()
             game = 1
         elif gamemodex <= 750 and gamemodex >= 450 and gamemodey <= 550 and gamemodey >= 150 :
-            print("NORMAL MODE")
+            easyrec.undraw()
+            easytext.undraw()
+            mediumrec.undraw()
+            mediumtext.undraw()
+            hardrec.undraw()
+            hardtext.undraw()
             money = 200
             mediummodegame()
             game = 1
         elif gamemodex <= 1120 and gamemodex >= 820 and gamemodey <= 550 and gamemodey >= 150 :
-            print("HARD MODE")
+            easyrec.undraw()
+            easytext.undraw()
+            mediumrec.undraw()
+            mediumtext.undraw()
+            hardrec.undraw()
+            hardtext.undraw()
             money = 100
             hardmodegame()
             game = 1
         else :
-            print("invalid difficulty")
             gamemode = win1.getMouse()
             gamemodex = gamemode.getX()
             gamemodey = gamemode.getY()
