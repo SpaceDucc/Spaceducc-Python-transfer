@@ -1114,8 +1114,23 @@ def startgame() :
     global money
     global game
     global goal
-    win1 = GraphWin("MSMG", 1000, 1000)
+    win1 = GraphWin("MSMG", 1200, 700)
     win1.setBackground(color_rgb(255,255,255)) #3 boxes ---> easy medium or hard
+    easypt1 = Point(80,150)
+    easypt2 = Point(380,550)
+    easyrec = Rectangle(easypt1, easypt2)
+    easyrec.setFill(color_rgb(0,0,0))
+    easyrec.draw(win1)
+    mediumpt1 = Point(450,150)
+    mediumpt2 = Point(750,550)
+    mediumrec = Rectangle(mediumpt1, mediumpt2)
+    mediumrec.setFill(color_rgb(0,0,0))
+    mediumrec.draw(win1)
+    hardpt1 = Point(820,150)
+    hardpt2 = Point(1120,550)
+    hardrec = Rectangle(hardpt1, hardpt2)
+    hardrec.setFill(color_rgb(0,0,0))
+    hardrec.draw(win1)
     goal = 0
     while game != 1 :
         print("Welcome to The Miniture Stock Market Game by SPDC Technologies.")

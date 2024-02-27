@@ -2,7 +2,7 @@ from turtle import *
 from graphics import *
 
 def test1() :
-    win = GraphWin("Mywindow", 500, 500)
+    win = GraphWin("Mywindow", 1200, 700)
     win.setBackground(color_rgb(255,255,255))
     pt1 = Point(250,250)
     cir1 = Circle(pt1,100)
@@ -66,5 +66,25 @@ def test2() :
     win1.getMouse()
     win1.close()
     
-test2()
+def test3() :
+    win1 = GraphWin("MSMG", 1200, 700)
+    win1.setBackground(color_rgb(255,255,255)) #3 boxes ---> easy medium or hard
+    easypt1 = Point(80,200)
+    easypt2 = Point(380,500)
+    easyrec = Rectangle(easypt1, easypt2)
+    easyrec.setFill(color_rgb(0,0,0))
+    easyrec.draw(win1)
+    mediumpt1 = Point(450,200)
+    mediumpt2 = Point(750,500)
+    mediumrec = Rectangle(mediumpt1, mediumpt2)
+    mediumrec.setFill(color_rgb(0,0,0))
+    mediumrec.draw(win1)
+    hardpt1 = Point(820,200)
+    hardpt2 = Point(1120,500)
+    hardrec = Rectangle(hardpt1, hardpt2)
+    hardrec.setFill(color_rgb(0,0,0))
+    hardrec.draw(win1)
+
+    win1.getMouse()
+test3()
 
