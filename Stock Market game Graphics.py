@@ -1146,23 +1146,32 @@ def startgame() :
     hardtext.setTextColor(color_rgb(255,255,255))
     hardtext.setSize(36)
     hardtext.draw(win1)
+    gamemode = win1.getMouse()
+    gamemodex = gamemode.getX()
+    gamemodey = gamemode.getY()
     goal = 0
     while game != 1 :
         print("Welcome to The Miniture Stock Market Game by SPDC Technologies.")
-        difficulty = input("Please select a difficulty(easy, medium, or hard):")
-        if difficulty.lower() == "easy" :
+        if gamemodex <= 380 and gamemodex >= 80 and gamemodey <= 550 and gamemodey >= 150 :
+            print("EASY MODE")
             money = 300
             easymodegame()
             game = 1
-        elif difficulty.lower() == "medium" :
+        elif gamemodex <= 750 and gamemodex >= 450 and gamemodey <= 550 and gamemodey >= 150 :
+            print("NORMAL MODE")
             money = 200
             mediummodegame()
             game = 1
-        elif difficulty.lower() == "hard" :
+        elif gamemodex <= 1120 and gamemodex >= 820 and gamemodey <= 550 and gamemodey >= 150 :
+            print("HARD MODE")
             money = 100
             hardmodegame()
             game = 1
         else :
             print("invalid difficulty")
+            gamemode = win1.getMouse()
+            gamemodex = gamemode.getX()
+            gamemodey = gamemode.getY()
+
 
 startgame()
