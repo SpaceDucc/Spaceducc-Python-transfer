@@ -67,39 +67,55 @@ def test2() :
     win1.close()
     
 def test3() :
+    day = [1]
+    hour = [1]
+    game = 1
+    test22 = ["Day", str(day[0]), "Hour", str(hour[0])]
+
     win1 = GraphWin("MSMG", 1200, 700)
     win1.setBackground(color_rgb(255,255,255)) #3 boxes ---> easy medium or hard
-    easypt1 = Point(80,150)
-    easypt2 = Point(380,550)
-    easypt3 = Point(230,350)
-    easyrec = Rectangle(easypt1, easypt2)
-    easyrec.setFill(color_rgb(0,0,0))
-    easyrec.draw(win1)
-    easytext = Text(easypt3,"Easy Mode")
-    easytext.setTextColor(color_rgb(255,255,255))
-    easytext.setSize(36)
-    easytext.draw(win1)
-    mediumpt1 = Point(450,150)
-    mediumpt2 = Point(750,550)
-    mediumpt3 = Point(600,350)
-    mediumrec = Rectangle(mediumpt1, mediumpt2)
-    mediumrec.setFill(color_rgb(0,0,0))
-    mediumrec.draw(win1)
-    mediumtext = Text(mediumpt3, "Normal Mode")
-    mediumtext.setTextColor(color_rgb(255,255,255))
-    mediumtext.setSize(36)
-    mediumtext.draw(win1)
-    hardpt1 = Point(820,150)
-    hardpt2 = Point(1120,550)
-    hardpt3 = Point(970,350)
-    hardrec = Rectangle(hardpt1, hardpt2)
-    hardrec.setFill(color_rgb(0,0,0))
-    hardrec.draw(win1)
-    hardtext = Text(hardpt3, "Hard Mode")
-    hardtext.setTextColor(color_rgb(255,255,255))
-    hardtext.setSize(36)
-    hardtext.draw(win1)
+    buypt1 = Point(100,100)
+    buypt2 = Point(300,250)
+    buyrec = Rectangle(buypt1,buypt2)
+    buyrec.setFill(color_rgb(0,0,0))
+    buyrec.draw(win1)
+
+    buypt3 = Point(200,175)
+    buytext = Text(buypt3, "Buy Stock")
+    buytext.setTextColor(color_rgb(255,255,255))
+    buytext.setSize(24)
+    buytext.draw(win1)
+
+    sellpt1 = Point(100,300)
+    sellpt2 = Point(300,450)
+    sellrec = Rectangle(sellpt1,sellpt2)
+    sellrec.setFill(color_rgb(0,0,0))
+    sellrec.draw(win1)
+
+    sellpt3 = Point(200,375)
+    selltext = Text(sellpt3, "Sell Stock")
+    selltext.setTextColor(color_rgb(255,255,255))
+    selltext.setSize(24)
+    selltext.draw(win1)
+
+
+    clockpt3 = Point(1050,100)
+    clocktext = Text(clockpt3, test22)
+    clocktext.setTextColor(color_rgb(0,0,0))
+    clocktext.setSize(24)
+    clocktext.draw(win1)
+
+    while game != 0 :
+        win1.getMouse()
+        day[0] = day[0] + 1
+        hour[0] = hour[0] + 1
+        clocktext.undraw()
+        test22 = ["Day", str(day[0]), "Hour", str(hour[0])]
+        clocktext = Text(clockpt3, test22)
+        clocktext.draw(win1)
+
 
     win1.getMouse()
+
 test3()
 

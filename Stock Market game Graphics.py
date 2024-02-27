@@ -994,28 +994,59 @@ def whattime() :
     print("day", day[0], "hour", hour[0])
 
 def whatcommand() :
-    command = 1
-    command = input("what do you want to do?(buy,sell,price,owned,money,end,time,help)")
-    print(command)
-    while command.lower() != "buy" and command.lower() != "sell" and command.lower() != "price" and command.lower() != "owned" and command.lower() != "end" and command.lower() != "help" and command.lower() != "money" and command.lower() != "time" : #add more?
-        if command.lower() != "buy" and command.lower() != "sell" and command.lower() != "price" and command.lower() != "owned" and command.lower() != "end" and command.lower() != "help" and command.lower() != "money" and command.lower() != "time" : #if add in above line add here
-            print("invalid command")
-            command = input("what do you want to do?(buy,sell,price,owned,money,end,time,help)")
-        else :
-            break
-    if command.lower() == "buy" :
+    global day
+    global hour
+    
+    buypt1 = Point(100,100)
+    buypt2 = Point(300,250)
+    buyrec = Rectangle(buypt1,buypt2)
+    buyrec.setFill(color_rgb(0,0,0))
+    buyrec.draw(win1)
+
+    buypt3 = Point(200,175)
+    buytext = Text(buypt3, "Buy Stock")
+    buytext.setTextColor(color_rgb(255,255,255))
+    buytext.setSize(24)
+    buytext.draw(win1)
+
+    sellpt1 = Point(100,300)
+    sellpt2 = Point(300,450)
+    sellrec = Rectangle(sellpt1,sellpt2)
+    sellrec.setFill(color_rgb(0,0,0))
+    sellrec.draw(win1)
+
+    sellpt3 = Point(200,375)
+    selltext = Text(sellpt3, "Sell Stock")
+    selltext.setTextColor(color_rgb(255,255,255))
+    selltext.setSize(24)
+    selltext.draw(win1)
+
+    clockpt1 = Point(1000,50)
+    clockpt2 = Point(1100,150)
+    clockrec = Rectangle(clockpt1,clockpt2)
+    clockrec.setFill(color_rgb(0,0,0))
+    clockrec.draw(win1)
+
+    clockpt3 = Point(1050,100)
+    clocktext = Text(clockpt3, "Day", day[0], "Hour", hour[0])
+    clocktext.setTextColor(color_rgb(255,255,255))
+    clocktext.setSize(24)
+    clocktext.draw(win1)
+
+
+    if 
         buy()
-    elif command.lower() == "sell" :
+    elif 
         sell()
-    elif command.lower() == "price" :
+    elif 
         showprice()
-    elif command.lower() == "owned" :
+    elif 
         showowned()
-    elif command.lower() == "money" :
+    elif 
         showwallet()
-    elif command.lower() == "end" :
+    elif 
         incrementtime()
-    elif command.lower() == "time" :
+    elif
         whattime()
     else : #help command
         stockhelp()
@@ -1074,11 +1105,11 @@ def hardwhatcommand() :
     else : #help command
         stockhelp()
 
+
 def easymodegame() :
     game = 1
     global money
     moneygoal = int(1000)
-    print("Welcome to the easy difficulty mode of MSMG by SPDC Technologies. In order to win, you have to get $1000. In order to start, run the 'help' command.")
     while game == 1:
         if money < moneygoal :
             easywhatcommand()
@@ -1086,11 +1117,11 @@ def easymodegame() :
             print("you win")
             game = 0
 
+
 def mediummodegame() :
     game = 1
     global money
     moneygoal = int(2000)
-    print("Welcome to the medium difficulty mode of MSMG by SPDC Technologies. In order to win, you have to get $2000. In order to start, run the 'help' command")
     while game == 1:
         if money < moneygoal :
             whatcommand()
@@ -1103,14 +1134,14 @@ def hardmodegame() :
     game = 1
     global money
     moneygoal = int(4000)
-    print("Welcome to the medium difficulty mode of MSMG by SPDC Technologies. In order to win, you have to get $4000. In order to start, run the 'help' command")
     while game == 1:
         if money < moneygoal :
             hardwhatcommand()
         else :
             print("you win")
             game = 0
-    
+
+
 def startgame() :
     global money
     global game
