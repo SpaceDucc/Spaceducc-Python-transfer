@@ -1,4 +1,5 @@
 import random
+from graphics import *
 
 day = [1]
 hour = [1]
@@ -1113,6 +1114,8 @@ def startgame() :
     global money
     global game
     global goal
+    win1 = GraphWin("MSMG", 1000, 1000)
+    win1.setBackground(color_rgb(255,255,255)) #3 boxes ---> easy medium or hard
     goal = 0
     while game != 1 :
         print("Welcome to The Miniture Stock Market Game by SPDC Technologies.")
