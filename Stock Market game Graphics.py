@@ -997,41 +997,68 @@ def whatcommand() :
     global day
     global hour
     
-    buypt1 = Point(100,100)
-    buypt2 = Point(300,250)
+    buypt1 = Point(50,50)
+    buypt2 = Point(250,150)
     buyrec = Rectangle(buypt1,buypt2)
     buyrec.setFill(color_rgb(0,0,0))
     buyrec.draw(win1)
 
-    buypt3 = Point(200,175)
+    buypt3 = Point(150,100)
     buytext = Text(buypt3, "Buy Stock")
     buytext.setTextColor(color_rgb(255,255,255))
     buytext.setSize(24)
     buytext.draw(win1)
 
-    sellpt1 = Point(100,300)
-    sellpt2 = Point(300,450)
+    sellpt1 = Point(50,200)
+    sellpt2 = Point(250,300)
     sellrec = Rectangle(sellpt1,sellpt2)
     sellrec.setFill(color_rgb(0,0,0))
     sellrec.draw(win1)
 
-    sellpt3 = Point(200,375)
+    sellpt3 = Point(150,250)
     selltext = Text(sellpt3, "Sell Stock")
     selltext.setTextColor(color_rgb(255,255,255))
     selltext.setSize(24)
     selltext.draw(win1)
 
-    clockpt1 = Point(1000,50)
-    clockpt2 = Point(1100,150)
+    statuspt1 = Point(50,350)
+    statuspt2 = Point(250,450)
+    statusrec = Rectangle(statuspt1,statuspt2)
+    statusrec.setFill(color_rgb(0,0,0))
+    statusrec.draw(win1)
+
+    statuspt3 = Point(150,400)
+    statustext = Text(statuspt3, "Information")
+    statustext.setTextColor(color_rgb(255,255,255))
+    statustext.setSize(24)
+    statustext.draw(win1)
+
+    timept1 = Point(50,500)
+    timept2 = Point(250,600)
+    timerec = Rectangle(timept1,timept2)
+    timerec.setFill(color_rgb(0,0,0))
+    timerec.draw(win1)
+
+    timept3 = Point(150,550)
+    timetext = Text(timept3, "Next Hour")
+    timetext.setTextColor(color_rgb(255,255,255))
+    timetext.setSize(24)
+    timetext.draw(win1)
+
+    clockpt1 = Point(1000,25)
+    clockpt2 = Point(1100,75)
     clockrec = Rectangle(clockpt1,clockpt2)
     clockrec.setFill(color_rgb(0,0,0))
     clockrec.draw(win1)
 
-    clockpt3 = Point(1050,100)
-    clocktext = Text(clockpt3, "Day", day[0], "Hour", hour[0])
+    clockpt3 = Point(1050,50)
+    clocktexttext = ["Day", str(day[0]), "Hour", str(hour[0])]
+    clocktext = Text(clockpt3, clocktexttext)
     clocktext.setTextColor(color_rgb(255,255,255))
-    clocktext.setSize(24)
+    clocktext.setSize(16)
     clocktext.draw(win1)
+    
+    
 
 
     if 
@@ -1046,6 +1073,12 @@ def whatcommand() :
         showwallet()
     elif 
         incrementtime()
+        clocktext.undraw()
+        clocktexttext = ["Day", str(day[0]), "Hour", str(hour[0]) ]
+        clocktext = Text(clockpt3, clocktexttext)
+        clocktext.setTextColor(color_rgb(255,255,255))
+        clocktext.setSize(16)
+        clocktext.draw(win1)
     elif
         whattime()
     else : #help command
