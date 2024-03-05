@@ -292,7 +292,7 @@ def cryptopricechange(a,c) :
         a[0] = float(a[0]) * 2
         c[0] = "+"
 
-def showprice() :
+def showinfo() :
     stock1priceround = str(round(stock1price[0],2))
     stock1pricelen = len(stock1priceround.split(".")[1])
     if stock1pricelen == 1 :
@@ -374,6 +374,127 @@ def buy() :
     whatstock = 0
     howmuch = 0
     fakevar3 = 0
+    global buyrec
+    global buytext
+    global sellrec
+    global selltext
+    global statusrec
+    global statustext
+    global timerec
+    global timetext
+    global clockrec
+    global clocktext
+    global clocktexttext
+    global moneyrec
+    global moneytext
+    global moneytexttext
+    global win1
+
+    buyrec.undraw()
+    buytext.undraw()
+    sellrec.undraw()
+    selltext.undraw()
+    statusrec.undraw()
+    statustext.undraw()
+    timerec.undraw()
+    timetext.undraw()
+    
+    stock1pt1 = Point(120,200)
+    stock1pt2 = Point(320,350)
+    stock1rec = Rectangle(stock1pt1,stock1pt2)
+    stock1rec.setFill(color_rgb(0,0,0))
+    stock1rec.draw(win1)
+
+    stock1pt3 = Point(220,275)
+    stock1text = Text(stock1pt3,"Glogel Stock")
+    stock1text.setTextColor(color_rgb(255,255,255))
+    stock1text.setSize(24)
+    stock1text.draw(win1)
+
+    stock2pt1 = Point(360,200)
+    stock2pt2 = Point(560,350)
+    stock2rec = Rectangle(stock2pt1,stock2pt2)
+    stock2rec.setFill(color_rgb(0,0,0))
+    stock2rec.draw(win1)
+
+    stock2pt3 = Point(460,275)
+    stock2text = Text(stock2pt3,"Britcoin Stock")
+    stock2text.setTextColor(color_rgb(255,255,255))
+    stock2text.setSize(24)
+    stock2text.draw(win1)
+
+    stock3pt1 = Point(620,200)
+    stock3pt2 = Point(820,350)
+    stock3rec = Rectangle(stock3pt1,stock3pt2)
+    stock3rec.setFill(color_rgb(0,0,0))
+    stock3rec.draw(win1)
+
+    stock3pt3 = Point(720,275)
+    stock3text = Text(stock3pt3,"Silicon Mountain Stock")
+    stock3text.setTextColor(color_rgb(255,255,255))
+    stock3text.setSize(24)
+    stock3text.draw(win1)
+
+    stock4pt1 = Point(880,200)
+    stock4pt2 = Point(1080,350)
+    stock4rec = Rectangle(stock4pt1,stock4pt2)
+    stock4rec.setFill(color_rgb(0,0,0))
+    stock4rec.draw(win1)
+
+    stock4pt3 = Point(980,275)
+    stock4text = Text(stock4pt3,"Obelisk of the Dark Gods Stock")
+    stock4text.setTextColor(color_rgb(255,255,255))
+    stock4text.setSize(24)
+    stock4text.draw(win1)
+
+    stock5pt1 = Point(120,450)
+    stock5pt2 = Point(320,600)
+    stock5rec = Rectangle(stock5pt1,stock5pt2)
+    stock5rec.setFill(color_rgb(0,0,0))
+    stock5rec.draw(win1)
+
+    stock5pt3 = Point(220,525)
+    stock5text = Text(stock5pt3,"Corka Cola Stock")
+    stock5text.setTextColor(color_rgb(255,255,255))
+    stock5text.setSize(24)
+    stock5text.draw(win1)
+
+    stock6pt1 = Point(360,450)
+    stock6pt2 = Point(560,600)
+    stock6rec = Rectangle(stock6pt1,stock6pt2)
+    stock6rec.setFill(color_rgb(0,0,0))
+    stock6rec.draw(win1)
+
+    stock6pt3 = Point(460,525)
+    stock6text = Text(stock6pt3,"Popsi Stock")
+    stock6text.setTextColor(color_rgb(255,255,255))
+    stock6text.setSize(24)
+    stock6text.draw(win1)
+
+    stock7pt1 = Point(620,450)
+    stock7pt2 = Point(820,600)
+    stock7rec = Rectangle(stock7pt1,stock7pt2)
+    stock7rec.setFill(color_rgb(0,0,0))
+    stock7rec.draw(win1)
+
+    stock7pt3 = Point(720,525)
+    stock7text = Text(stock7pt3,"Super Terrifying Haunted House Emporium Stock")
+    stock7text.setTextColor(color_rgb(255,255,255))
+    stock7text.setSize(24)
+    stock7text.draw(win1)
+
+    stock8pt1 = Point(880,450)
+    stock8pt2 = Point(1080,600)
+    stock8rec = Rectangle(stock8pt1,stock8pt2)
+    stock8rec.setFill(color_rgb(0,0,0))
+    stock8rec.draw(win1)
+
+    stock8pt3 = Point(980,525)
+    stock8text = Text(stock8pt3,"Dolphin Rodeo Inc. Stock")
+    stock8text.setTextColor(color_rgb(255,255,255))
+    stock8text.setSize(24)
+    stock8text.draw(win1)
+
     while pickstock == 0 :
         whatstock = input("What Stock Do you want to buy?(Glogel, Britcoin, Silicon, Obelisk, Corka Cola, Popsi, Haunted House, Dolphin):")
         if whatstock.lower() == "glogel" or whatstock.lower() == "britcoin" or whatstock.lower() == "silicon" or whatstock.lower() == "obelisk" or whatstock.lower() == "corka cola" or whatstock.lower() == "popsi" or whatstock.lower() == "haunted house" or whatstock.lower() == "dolphin" :
@@ -975,7 +1096,21 @@ def whatcommand() :
     global day
     global hour
     global money
-
+    global buyrec
+    global buytext
+    global sellrec
+    global selltext
+    global statusrec
+    global statustext
+    global timerec
+    global timetext
+    global clockrec
+    global clocktext
+    global clocktexttext
+    global moneyrec
+    global moneytext
+    global moneytexttext
+    
     buypt1 = Point(50,50)
     buypt2 = Point(250,150)
     buyrec = Rectangle(buypt1,buypt2)
@@ -1049,7 +1184,7 @@ def whatcommand() :
     moneytext.setTextColor(color_rgb(255,255,255))
     moneytext.setSize(16)
     moneytext.draw(win1)
-    
+
     mouse = 0
     mouse = win1.getMouse()
     mousex = mouse.getX()
@@ -1061,7 +1196,7 @@ def whatcommand() :
     elif mousex >= 50 and mousex <= 250 and mousey >= 200 and mousey <= 300 :
         sell()
     elif mousex >=50 and mousex <= 250 and mousey >= 350 and mousey <= 450 :
-        showprice() #change to show info
+        showinfo() #change to show info
     elif mousex >=50 and mousex <= 250 and mousey >= 500 and mousey <= 600 :
         incrementtime()
         clocktext.undraw()
