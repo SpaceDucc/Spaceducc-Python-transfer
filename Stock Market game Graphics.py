@@ -1058,20 +1058,19 @@ def whatcommand() :
     clocktext.setSize(16)
     clocktext.draw(win1)
     
-    
+    mouse = 0
+    mouse = win1.getMouse()
+    mousex = mouse.getX()
+    mousey = mouse.getY()
 
 
-    if 
+    if mousex >=50 and mousex <= 250 and mousey >= 50 and mousey <= 150 :
         buy()
-    elif 
+    elif mousex >= 50 and mousex <= 250 and mousey >= 200 and mousey <= 300 :
         sell()
-    elif 
-        showprice()
-    elif 
-        showowned()
-    elif 
-        showwallet()
-    elif 
+    elif mousex >=50 and mousex <= 250 and mousey >= 350 and mousey <= 450 :
+        showprice() #change to show info
+    elif mousex >=50 and mousex <= 250 and mousey >= 500 and mousey <= 600 :
         incrementtime()
         clocktext.undraw()
         clocktexttext = ["Day", str(day[0]), "Hour", str(hour[0]) ]
@@ -1079,10 +1078,8 @@ def whatcommand() :
         clocktext.setTextColor(color_rgb(255,255,255))
         clocktext.setSize(16)
         clocktext.draw(win1)
-    elif
-        whattime()
     else : #help command
-        stockhelp()
+        pass
 
 def easywhatcommand() :
     command = 1
