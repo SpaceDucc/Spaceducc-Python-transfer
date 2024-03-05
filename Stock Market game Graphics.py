@@ -365,25 +365,6 @@ def showprice() :
     else :
         print("error")
 
-def showowned() :
-    print("Owned Glogel stock:", ownedstock1[0])
-    print("Owned Britcoin stock:", ownedstock2[0])
-    print("Owned Silicon Mountain stock:", ownedstock3[0])
-    print("Owned Obelisk of the Dark Gods stock:", ownedstock4[0])
-    print("Owned corka Cola stock:", ownedstock5[0])
-    print("Owned Popsi stock:", ownedstock6[0])
-    print("Owned Super Terrifying Haunted House Emporium stock:", ownedstock7[0])
-    print("Owned Dolphin Rodeo Inc. stock:", ownedstock8[0])
-
-def showwallet() :
-    global money
-    print("You have $" + str(round(money,2)))
-
-def stockhelp() :
-    print("You want to buy and sell stock at the correct times in order to make the most money. You do this using the different commands.")
-    print("'buy' allows you to buy stocks, and 'sell' allows you to sell the your stocks.")
-    print("'price' lets you see the prices of the stocks, 'owned' lets you see how much of each stock you own, 'money' lets you see how much money you have.")
-    print("'end' will end the hour you are on and change the prices of the stocks, and on hour 12, the day will roll over and prices will change more signifigantly, you can see the time with the 'time' command.")
 
 def buy() :
     global money
@@ -990,13 +971,11 @@ def hardincrementtime() :
             fakevar2 = fakevar2 + 1
         hour[0] = 1
 
-def whattime() :
-    print("day", day[0], "hour", hour[0])
-
 def whatcommand() :
     global day
     global hour
-    
+    global money
+
     buypt1 = Point(50,50)
     buypt2 = Point(250,150)
     buyrec = Rectangle(buypt1,buypt2)
@@ -1057,6 +1036,19 @@ def whatcommand() :
     clocktext.setTextColor(color_rgb(255,255,255))
     clocktext.setSize(16)
     clocktext.draw(win1)
+    
+    moneypt1 = Point(1000,100)
+    moneypt2 = Point(1100,150)
+    moneyrec = Rectangle(moneypt1,moneypt2)
+    moneyrec.setFill(color_rgb(0,0,0))
+    moneyrec.draw(win1)
+
+    moneypt3 = Point(1050,125)
+    moneytexttext = ["$",str(money)]
+    moneytext = Text(moneypt3, moneytexttext)
+    moneytext.setTextColor(color_rgb(255,255,255))
+    moneytext.setSize(16)
+    moneytext.draw(win1)
     
     mouse = 0
     mouse = win1.getMouse()
