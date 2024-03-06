@@ -162,6 +162,22 @@ stock8text1 = Text(stock8pt3,"Dolphin Rodeo")
 stock8pt4 = Point(980,540)
 stock8text2 = Text(stock8pt4,"Inc. Stock")
 
+buystockamountpt1 = Point(400,250)
+buystockamountpt2 = Point(800,500)
+buystockamountrec = Rectangle(buystockamountpt1,buystockamountpt2)
+
+buystockamountpt3 = Point(600,300)
+buystockamounttext1 = Text(buystockamountpt3, "How many stocks do you wish to buy?")
+
+buystockamountpt4 = Point(600,400)
+buystockamountentry = Entry(buystockamountpt4,4)
+
+buystockamountpt5 = Point(600,330)
+buystockamounttext2 = Text(buystockamountpt5, "Click to confirm entry")
+
+invalidnumberpt1 = Point(600,450)
+invalidnumbertext = Text(invalidnumberpt1,"Invalid number,try again")
+
 def lowconpricechange(a,b,c) : 
     lowconrandom = random.randint(1,100)
     if lowconrandom >= 1 and lowconrandom <= 20 :
@@ -531,6 +547,11 @@ def buy() :
     global stock8rec
     global stock8text1
     global stock8text2
+    global buystockamountrec
+    global buystockamounttext1
+    global buystockamounttext2
+    global buystockamountentry
+    global invalidnumbertext
 
     stock1rec.setFill(color_rgb(0,0,0))
     stock1rec.draw(win1)
@@ -616,22 +637,113 @@ def buy() :
     whatstock = 0
 
     while pickstock == 0 :
-        continue
+        mouse = win1.getMouse()
+        mousex = mouse.getX()
+        mousey = mouse.getY()
+        
+        if mousex >= 120 and mousex <= 320 and mousey >= 200 and mousey <= 350 :
+            whatstock = 1
+            pickstock = 1
+
+        elif mousex >= 360 and mousex <= 560 and mousey >= 200 and mousey <= 350 :
+            whatstock = 2
+            pickstock = 1
+        
+        elif mousex >= 620 and mousex <= 820 and mousey >= 200 and mousey <= 350 :
+            whatstock = 3
+            pickstock = 1
+
+        elif mousex >= 880 and mousex <= 1080 and mousey >= 200 and mousey <= 350 :
+            whatstock = 4
+            pickstock = 1
+
+        elif mousex >= 120 and mousex <= 320 and mousey >= 450 and mousey <= 600 :
+            whatstock = 5
+            pickstock = 1
+
+        elif mousex >= 360 and mousex <= 560 and mousey >= 450 and mousey <= 600 :
+            whatstock = 6
+            pickstock = 1
+
+        elif mousex >= 620 and mousex <= 820 and mousey >= 450 and mousey <= 600 :
+            whatstock = 7
+            pickstock = 1
+
+        elif mousex >= 880 and mousex <= 1080 and mousey >= 450 and mousey <= 600 :
+            whatstock = 8
+            pickstock = 1
+        else :
+            pass
+    
+    stock1rec.undraw()
+    stock1text.undraw()
+    stock2rec.undraw()
+    stock2text.undraw()
+    stock3rec.undraw()
+    stock3text1.undraw()
+    stock3text2.undraw()
+    stock3text3.undraw()
+    stock4rec.undraw()
+    stock4text1.undraw()
+    stock4text2.undraw()
+    stock4text3.undraw()
+    stock5rec.undraw()
+    stock5text.undraw()
+    stock6rec.undraw()
+    stock6text.undraw()
+    stock7rec.undraw()
+    stock7text1.undraw()
+    stock7text2.undraw()
+    stock7text3.undraw()
+    stock8rec.undraw()
+    stock8text1.undraw()
+    stock8text2.undraw()
+    
+    purchacestock = 0
 
     while purchacestock == 0 :
-        if whatstock.lower() == "glogel" :
-            howmuch = int(input("how many Glogel stock do you want to buy?:"))
-            while fakevar3 == 0 :   
-                try :
-                    howmuch != int(howmuch)
-                except :
-                    print("invalid number")
-                    howmuch = int(input("how many Glogel stock do you want to buy?:"))
-                if howmuch < int(0) :
-                    print("invalid number")
-                    howmuch = int(input("how many Glogel stock do you want to buy?:"))
-                else :
-                    fakevar3 = 1
+        buystockamountrec.undraw()
+        buystockamountrec.setFill(color_rgb(0,0,0))
+        buystockamountrec.draw(win1)
+
+        buystockamounttext1.undraw()
+        buystockamounttext1.setTextColor(color_rgb(255,255,255))
+        buystockamounttext1.setSize(24)
+        buystockamounttext1.draw(win1)
+
+        buystockamounttext2.undraw()
+        buystockamounttext2.setTextColor(color_rgb(255,255,255))
+        buystockamounttext2.setSize(24)
+        buystockamounttext2.draw(win1)
+
+        buystockamountentry.undraw()
+        buystockamountentry.setTextColor(color_rgb(255,255,255))
+        buystockamountentry.setSize(24)
+        buystockamountentry.draw(win1)
+        
+        
+        while fakevar3 == 0 :
+            win1.getMouse()
+            invalidnumbertext.undraw()
+            howmuch = buystockamountentry.getText()
+            print(howmuch)
+            try :
+                howmuch = int(buystockamountentry.getText)
+            except :
+                invalidnumbertext.setTextColor(color_rgb(255,255,255))
+                invalidnumbertext.setSize(24)
+                invalidnumbertext.draw(win1)
+            if int(howmuch) < int(0) :
+                invalidnumbertext.undraw()
+                invalidnumbertext.setTextColor(color_rgb(255,255,255))
+                invalidnumbertext.setSize(24)
+                invalidnumbertext.draw(win1)
+            else :
+                howmuch = int(howmuch)
+                fakevar3 = 1
+        
+        if whatstock == 1 :
+            
             mathmoney = float(stock1price[0]) * howmuch
             if float(mathmoney) > money :
                 print("You do not have enough money")
@@ -639,156 +751,6 @@ def buy() :
                 ownedstock1[0] = ownedstock1[0] + howmuch
                 money = money - mathmoney
                 purchacestock = 1
-
-        elif whatstock.lower() == "britcoin" :
-            howmuch = int(input("how many Britcoin stock do you want to buy?:"))
-            while fakevar3 == 0 :   
-                try :
-                    howmuch != int(howmuch)
-                except :
-                    print("invalid stock")
-                    howmuch = int(input("how many Britcoin stock do you want to buy?:"))
-                if howmuch < int(0) :
-                    print("invalid number")
-                    howmuch = int(input("how many Britcoin stock do you want to buy?:"))
-                else :
-                    fakevar3 = 1
-            mathmoney = float(stock2price[0]) * howmuch
-            if float(mathmoney) > money :
-                print("You do not have enough money")
-            else :
-                ownedstock2[0] = ownedstock2[0] + howmuch
-                money = money - mathmoney
-                purchacestock = 1
-
-        elif whatstock.lower() == "silicon" :
-            howmuch = int(input("how many Silicon Mountain stock do you want to buy?:"))
-            while fakevar3 == 0 :   
-                try :
-                    howmuch != int(howmuch)
-                except :
-                    print("invalid stock")
-                    howmuch = int(input("how many Silicon Mountain stock do you want to buy?:"))
-                if howmuch < int(0) :
-                    print("invalid number")
-                    howmuch = int(input("how many Silicon Mountain stock do you want to buy?:"))
-                else :
-                    fakevar3 = 1
-            mathmoney = float(stock3price[0]) * howmuch
-            if float(mathmoney) > money :
-                print("You do not have enough money")
-            else :
-                ownedstock3[0] = ownedstock3[0] + howmuch
-                money = money - mathmoney
-                purchacestock = 1
-
-        elif whatstock.lower() == "obelisk" :
-            howmuch = int(input("how many Obelisk of the Dark Gods stock do you want to buy?:"))
-            while fakevar3 == 0 :   
-                try :
-                    howmuch != int(howmuch)
-                except :
-                    print("invalid stock")
-                    howmuch = int(input("how many Obelisk of the Dark Gods stock do you want to buy?:"))
-                if howmuch < int(0) :
-                    print("invalid number")
-                    howmuch = int(input("how many Obelisk of the Dark Gods stock do you want to buy?:"))
-                else :
-                    fakevar3 = 1
-            mathmoney = float(stock4price[0]) * howmuch
-            if float(mathmoney) > money :
-                print("You do not have enough money")
-            else :
-                ownedstock4[0] = ownedstock4[0] + howmuch
-                money = money - mathmoney
-                purchacestock = 1
-
-        elif whatstock.lower() == "corka cola" :
-            howmuch = int(input("how many Corka Cola stock do you want to buy?:"))
-            while fakevar3 == 0 :   
-                try :
-                    howmuch != int(howmuch)
-                except :
-                    print("invalid stock")
-                    howmuch = int(input("how many Corka Cola stock do you want to buy?:"))
-                if howmuch < int(0) :
-                    print("invalid number")
-                    howmuch = int(input("how many Corka Cola stock do you want to buy?:"))
-                else :
-                    fakevar3 = 1
-            mathmoney = float(stock5price[0]) * howmuch
-            if float(mathmoney) > money :
-                print("You do not have enough money")
-            else :
-                ownedstock5[0] = ownedstock5[0] + howmuch
-                money = money - mathmoney
-                purchacestock = 1
-
-        elif whatstock.lower() == "popsi" :
-            howmuch = int(input("how many Popsi stock do you want to buy?:"))
-            while fakevar3 == 0 :   
-                try :
-                    howmuch != int(howmuch)
-                except :
-                    print("invalid stock")
-                    howmuch = int(input("how many Popsi stock do you want to buy?:"))
-                if howmuch < int(0) :
-                    print("invalid number")
-                    howmuch = int(input("how many Popsi stock do you want to buy?:"))
-                else :
-                    fakevar3 = 1
-            mathmoney = float(stock6price[0]) * howmuch
-            if float(mathmoney) > money :
-                print("You do not have enough money")
-            else :
-                ownedstock6[0] = ownedstock6[0] + howmuch
-                money = money - mathmoney
-                purchacestock = 1
-
-        elif whatstock.lower() == "haunted house" :
-            howmuch = int(input("how many Super Terrifying Haunted House Emporium stock do you want to buy?:"))
-            while fakevar3 == 0 :   
-                try :
-                    howmuch != int(howmuch)
-                except :
-                    print("invalid stock")
-                    howmuch = int(input("how many Super Terrifying Haunted House Emporium stock do you want to buy?:"))
-                if howmuch < int(0) :
-                    print("invalid number")
-                    howmuch = int(input("how many Super Terrifying Haunted House Emporium stock do you want to buy?:"))
-                else :
-                    fakevar3 = 1
-            mathmoney = float(stock7price[0]) * howmuch
-            if float(mathmoney) > money :
-                print("You do not have enough money")
-            else :
-                ownedstock7[0] = ownedstock7[0] + howmuch
-                money = money - mathmoney
-                purchacestock = 1
-
-        elif whatstock.lower() == "dolphin" :
-            howmuch = int(input("how many Dolphin Rodeo Inc. stock do you want to buy?:"))
-            while fakevar3 == 0 :   
-                try :
-                    howmuch != int(howmuch)
-                except :
-                    print("invalid stock")
-                    howmuch = int(input("how many Dolphin Rodeo Inc. stock do you want to buy?:"))
-                if howmuch < int(0) :
-                    print("invalid number")
-                    howmuch = int(input("how many Dolphin Rodeo Inc. stock do you want to buy?:"))
-                else :
-                    fakevar3 = 1
-            mathmoney = float(stock8price[0]) * howmuch
-            if float(mathmoney) > money :
-                print("You do not have enough money")
-            else :
-                ownedstock8[0] = ownedstock8[0] + howmuch
-                money = money - mathmoney
-                purchacestock = 1
-
-        else :
-            print("[THIS SHOULDN'T HAPPEN]")
 
 def sell() :
     global money
@@ -1500,3 +1462,4 @@ def startgame() :
 
 
 startgame()
+win1.getMouse
