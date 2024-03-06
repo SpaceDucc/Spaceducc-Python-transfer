@@ -40,8 +40,106 @@ command = 1
 game = 0
 win1 = GraphWin("MSMG", 1200, 700)
 
+buypt1 = Point(50,50)
+buypt2 = Point(250,150)
+buyrec = Rectangle(buypt1,buypt2)
 
+buypt3 = Point(150,100)
+buytext = Text(buypt3, "Buy Stock")
 
+sellpt1 = Point(50,200)
+sellpt2 = Point(250,300)
+sellrec = Rectangle(sellpt1,sellpt2)
+
+sellpt3 = Point(150,250)
+selltext = Text(sellpt3, "Sell Stock")
+selltext.setTextColor(color_rgb(255,255,255))
+
+statuspt1 = Point(50,350)
+statuspt2 = Point(250,450)
+statusrec = Rectangle(statuspt1,statuspt2)
+
+statuspt3 = Point(150,400)
+statustext = Text(statuspt3, "Information")
+
+timept1 = Point(50,500)
+timept2 = Point(250,600)
+timerec = Rectangle(timept1,timept2)
+
+timept3 = Point(150,550)
+timetext = Text(timept3, "Next Hour")
+
+clockpt1 = Point(1000,25)
+clockpt2 = Point(1100,75)
+clockrec = Rectangle(clockpt1,clockpt2)
+
+clockpt3 = Point(1050,50)
+clocktexttext = ["Day", str(day[0]), "Hour", str(hour[0])]
+clocktext = Text(clockpt3, clocktexttext)
+
+moneypt1 = Point(1000,100)
+moneypt2 = Point(1100,150)
+moneyrec = Rectangle(moneypt1,moneypt2)
+
+moneypt3 = Point(1050,125)
+moneytexttext = ["$",str(money)]
+moneytext = Text(moneypt3, moneytexttext)
+
+stock1pt1 = Point(120,200)
+stock1pt2 = Point(320,350)
+stock1rec = Rectangle(stock1pt1,stock1pt2)
+
+stock1pt3 = Point(220,275)
+stock1text = Text(stock1pt3,"Glogel Stock")
+
+stock2pt1 = Point(360,200)
+stock2pt2 = Point(560,350)
+stock2rec = Rectangle(stock2pt1,stock2pt2)
+
+stock2pt3 = Point(460,275)
+stock2text = Text(stock2pt3,"Britcoin Stock")
+
+stock3pt1 = Point(620,200)
+stock3pt2 = Point(820,350)
+stock3rec = Rectangle(stock3pt1,stock3pt2)
+
+stock3pt3 = Point(720,275)
+stock3text = Text(stock3pt3,"Silicon Mountain Stock")
+
+stock4pt1 = Point(880,200)
+stock4pt2 = Point(1080,350)
+stock4rec = Rectangle(stock4pt1,stock4pt2)
+
+stock4pt3 = Point(980,275)
+stock4text = Text(stock4pt3,"Obelisk of the Dark Gods Stock")
+
+stock5pt1 = Point(120,450)
+stock5pt2 = Point(320,600)
+stock5rec = Rectangle(stock5pt1,stock5pt2)
+
+stock5pt3 = Point(220,525)
+stock5text = Text(stock5pt3,"Corka Cola Stock")
+
+stock6pt1 = Point(360,450)
+stock6pt2 = Point(560,600)
+stock6rec = Rectangle(stock6pt1,stock6pt2)
+
+stock6pt3 = Point(460,525)
+stock6text = Text(stock6pt3,"Popsi Stock")
+
+stock7pt1 = Point(620,450)
+stock7pt2 = Point(820,600)
+stock7rec = Rectangle(stock7pt1,stock7pt2)
+
+stock7pt3 = Point(720,525)
+stock7text = Text(stock7pt3,"Super Terrifying Haunted House Emporium Stock")
+
+stock8pt1 = Point(880,450)
+stock8pt2 = Point(1080,600)
+stock8rec = Rectangle(stock8pt1,stock8pt2)
+
+stock8pt3 = Point(980,525)
+stock8text = Text(stock8pt3,"Dolphin Rodeo Inc. Stock")
 
 def lowconpricechange(a,b,c) : 
     lowconrandom = random.randint(1,100)
@@ -389,118 +487,85 @@ def buy() :
     global moneytext
     global moneytexttext
     global win1
+    global stock1rec
+    global stock1text
+    global stock2rec
+    global stock2text
+    global stock3rec
+    global stock3text
+    global stock4rec
+    global stock4text
+    global stock5rec
+    global stock5text
+    global stock6rec
+    global stock6text
+    global stock7rec
+    global stock7text
+    global stock8rec
+    global stock8text
 
-    buyrec.undraw()
-    buytext.undraw()
-    sellrec.undraw()
-    selltext.undraw()
-    statusrec.undraw()
-    statustext.undraw()
-    timerec.undraw()
-    timetext.undraw()
-    
-    stock1pt1 = Point(120,200)
-    stock1pt2 = Point(320,350)
-    stock1rec = Rectangle(stock1pt1,stock1pt2)
     stock1rec.setFill(color_rgb(0,0,0))
     stock1rec.draw(win1)
 
-    stock1pt3 = Point(220,275)
-    stock1text = Text(stock1pt3,"Glogel Stock")
     stock1text.setTextColor(color_rgb(255,255,255))
     stock1text.setSize(24)
     stock1text.draw(win1)
-
-    stock2pt1 = Point(360,200)
-    stock2pt2 = Point(560,350)
-    stock2rec = Rectangle(stock2pt1,stock2pt2)
+    
     stock2rec.setFill(color_rgb(0,0,0))
     stock2rec.draw(win1)
-
-    stock2pt3 = Point(460,275)
-    stock2text = Text(stock2pt3,"Britcoin Stock")
+    
     stock2text.setTextColor(color_rgb(255,255,255))
     stock2text.setSize(24)
     stock2text.draw(win1)
 
-    stock3pt1 = Point(620,200)
-    stock3pt2 = Point(820,350)
-    stock3rec = Rectangle(stock3pt1,stock3pt2)
     stock3rec.setFill(color_rgb(0,0,0))
     stock3rec.draw(win1)
 
-    stock3pt3 = Point(720,275)
-    stock3text = Text(stock3pt3,"Silicon Mountain Stock")
     stock3text.setTextColor(color_rgb(255,255,255))
     stock3text.setSize(24)
     stock3text.draw(win1)
 
-    stock4pt1 = Point(880,200)
-    stock4pt2 = Point(1080,350)
-    stock4rec = Rectangle(stock4pt1,stock4pt2)
     stock4rec.setFill(color_rgb(0,0,0))
     stock4rec.draw(win1)
 
-    stock4pt3 = Point(980,275)
-    stock4text = Text(stock4pt3,"Obelisk of the Dark Gods Stock")
     stock4text.setTextColor(color_rgb(255,255,255))
     stock4text.setSize(24)
     stock4text.draw(win1)
 
-    stock5pt1 = Point(120,450)
-    stock5pt2 = Point(320,600)
-    stock5rec = Rectangle(stock5pt1,stock5pt2)
     stock5rec.setFill(color_rgb(0,0,0))
     stock5rec.draw(win1)
 
-    stock5pt3 = Point(220,525)
-    stock5text = Text(stock5pt3,"Corka Cola Stock")
     stock5text.setTextColor(color_rgb(255,255,255))
     stock5text.setSize(24)
     stock5text.draw(win1)
 
-    stock6pt1 = Point(360,450)
-    stock6pt2 = Point(560,600)
-    stock6rec = Rectangle(stock6pt1,stock6pt2)
     stock6rec.setFill(color_rgb(0,0,0))
     stock6rec.draw(win1)
 
-    stock6pt3 = Point(460,525)
-    stock6text = Text(stock6pt3,"Popsi Stock")
     stock6text.setTextColor(color_rgb(255,255,255))
     stock6text.setSize(24)
     stock6text.draw(win1)
 
-    stock7pt1 = Point(620,450)
-    stock7pt2 = Point(820,600)
-    stock7rec = Rectangle(stock7pt1,stock7pt2)
     stock7rec.setFill(color_rgb(0,0,0))
     stock7rec.draw(win1)
 
-    stock7pt3 = Point(720,525)
-    stock7text = Text(stock7pt3,"Super Terrifying Haunted House Emporium Stock")
     stock7text.setTextColor(color_rgb(255,255,255))
     stock7text.setSize(24)
     stock7text.draw(win1)
 
-    stock8pt1 = Point(880,450)
-    stock8pt2 = Point(1080,600)
-    stock8rec = Rectangle(stock8pt1,stock8pt2)
     stock8rec.setFill(color_rgb(0,0,0))
     stock8rec.draw(win1)
 
-    stock8pt3 = Point(980,525)
-    stock8text = Text(stock8pt3,"Dolphin Rodeo Inc. Stock")
     stock8text.setTextColor(color_rgb(255,255,255))
     stock8text.setSize(24)
     stock8text.draw(win1)
 
+    pickstock = 0
+    whatstock = 0
+
     while pickstock == 0 :
-        whatstock = input("What Stock Do you want to buy?(Glogel, Britcoin, Silicon, Obelisk, Corka Cola, Popsi, Haunted House, Dolphin):")
-        if whatstock.lower() == "glogel" or whatstock.lower() == "britcoin" or whatstock.lower() == "silicon" or whatstock.lower() == "obelisk" or whatstock.lower() == "corka cola" or whatstock.lower() == "popsi" or whatstock.lower() == "haunted house" or whatstock.lower() == "dolphin" :
-            pickstock = 1
-        else :
-            print("That is not a stock")
+        break
+
     while purchacestock == 0 :
         if whatstock.lower() == "glogel" :
             howmuch = int(input("how many Glogel stock do you want to buy?:"))
@@ -1111,76 +1176,43 @@ def whatcommand() :
     global moneytext
     global moneytexttext
     
-    buypt1 = Point(50,50)
-    buypt2 = Point(250,150)
-    buyrec = Rectangle(buypt1,buypt2)
     buyrec.setFill(color_rgb(0,0,0))
     buyrec.draw(win1)
 
-    buypt3 = Point(150,100)
-    buytext = Text(buypt3, "Buy Stock")
     buytext.setTextColor(color_rgb(255,255,255))
     buytext.setSize(24)
     buytext.draw(win1)
 
-    sellpt1 = Point(50,200)
-    sellpt2 = Point(250,300)
-    sellrec = Rectangle(sellpt1,sellpt2)
     sellrec.setFill(color_rgb(0,0,0))
     sellrec.draw(win1)
 
-    sellpt3 = Point(150,250)
-    selltext = Text(sellpt3, "Sell Stock")
-    selltext.setTextColor(color_rgb(255,255,255))
     selltext.setSize(24)
     selltext.draw(win1)
 
-    statuspt1 = Point(50,350)
-    statuspt2 = Point(250,450)
-    statusrec = Rectangle(statuspt1,statuspt2)
     statusrec.setFill(color_rgb(0,0,0))
     statusrec.draw(win1)
 
-    statuspt3 = Point(150,400)
-    statustext = Text(statuspt3, "Information")
     statustext.setTextColor(color_rgb(255,255,255))
     statustext.setSize(24)
     statustext.draw(win1)
 
-    timept1 = Point(50,500)
-    timept2 = Point(250,600)
-    timerec = Rectangle(timept1,timept2)
     timerec.setFill(color_rgb(0,0,0))
     timerec.draw(win1)
 
-    timept3 = Point(150,550)
-    timetext = Text(timept3, "Next Hour")
     timetext.setTextColor(color_rgb(255,255,255))
     timetext.setSize(24)
     timetext.draw(win1)
-
-    clockpt1 = Point(1000,25)
-    clockpt2 = Point(1100,75)
-    clockrec = Rectangle(clockpt1,clockpt2)
+    
     clockrec.setFill(color_rgb(0,0,0))
     clockrec.draw(win1)
 
-    clockpt3 = Point(1050,50)
-    clocktexttext = ["Day", str(day[0]), "Hour", str(hour[0])]
-    clocktext = Text(clockpt3, clocktexttext)
     clocktext.setTextColor(color_rgb(255,255,255))
     clocktext.setSize(16)
     clocktext.draw(win1)
     
-    moneypt1 = Point(1000,100)
-    moneypt2 = Point(1100,150)
-    moneyrec = Rectangle(moneypt1,moneypt2)
     moneyrec.setFill(color_rgb(0,0,0))
     moneyrec.draw(win1)
 
-    moneypt3 = Point(1050,125)
-    moneytexttext = ["$",str(money)]
-    moneytext = Text(moneypt3, moneytexttext)
     moneytext.setTextColor(color_rgb(255,255,255))
     moneytext.setSize(16)
     moneytext.draw(win1)
@@ -1190,21 +1222,40 @@ def whatcommand() :
     mousex = mouse.getX()
     mousey = mouse.getY()
 
-
     if mousex >=50 and mousex <= 250 and mousey >= 50 and mousey <= 150 :
+        buyrec.undraw()
+        buytext.undraw()
+        sellrec.undraw()
+        selltext.undraw()
+        statusrec.undraw()
+        statustext.undraw()
+        timerec.undraw()
+        timetext.undraw()
         buy()
+        moneyrec.undraw()
+        moneytext.undraw()
+        clockrec.undraw()
+        clocktext.undraw()
     elif mousex >= 50 and mousex <= 250 and mousey >= 200 and mousey <= 300 :
         sell()
     elif mousex >=50 and mousex <= 250 and mousey >= 350 and mousey <= 450 :
         showinfo() #change to show info
     elif mousex >=50 and mousex <= 250 and mousey >= 500 and mousey <= 600 :
         incrementtime()
+        buyrec.undraw()
+        buytext.undraw()
+        sellrec.undraw()
+        selltext.undraw()
+        statusrec.undraw()
+        statustext.undraw()
+        timerec.undraw()
+        timetext.undraw()
         clocktext.undraw()
+        moneyrec.undraw()
+        moneytext.undraw()
+        clockrec.undraw()
         clocktexttext = ["Day", str(day[0]), "Hour", str(hour[0]) ]
         clocktext = Text(clockpt3, clocktexttext)
-        clocktext.setTextColor(color_rgb(255,255,255))
-        clocktext.setSize(16)
-        clocktext.draw(win1)
     else : #help command
         pass
 
@@ -1278,9 +1329,16 @@ def easymodegame() :
 def mediummodegame() :
     game = 1
     global money
+    global moneypt3
+    global moneytext
+    global moneytexttext
     moneygoal = int(2000)
+    moneytexttext = ["$",str(money)]
+    moneytext = Text(moneypt3, moneytexttext)
     while game == 1:
         if money < moneygoal :
+            moneytexttext = ["$",str(money)]
+            moneytext = Text(moneypt3, moneytexttext)
             whatcommand()
         else :
             print("you win")
