@@ -171,7 +171,7 @@ stockchange1text = Text(stockchange1pt3,"1")
 
 stockchange2pt1 = Point(360,200)
 stockchange2pt2 = Point(560,350)
-stockchange2rec = Rectangle(stockchange2pt1,stockachange2pt2)
+stockchange2rec = Rectangle(stockchange2pt1,stockchange2pt2)
 
 stockchange2pt3 = Point(460,275)
 stockchange2text = Text(stockchange2pt3,"2")
