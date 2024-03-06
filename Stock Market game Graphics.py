@@ -211,12 +211,12 @@ stockchange25rec = Rectangle(stockchange25pt1,stockchange25pt2)
 stockchange25pt3 = Point(720,495)
 stockchange25text1 = Text(stockchange25pt3,"25")
 
-stockchange50pt1 = Point(880,450)
-stockchange50pt2 = Point(1080,600)
-stockchange50rec = Rectangle(stockchange50pt1,stockchange50pt2)
+stockchange0pt1 = Point(880,450)
+stockchange0pt2 = Point(1080,600)
+stockchange0rec = Rectangle(stockchange0pt1,stockchange0pt2)
 
-stockchange50pt3 = Point(980,510)
-stockchange50text1 = Text(stockchange50pt3,"50")
+stockchange0pt3 = Point(980,510)
+stockchange0text1 = Text(stockchange0pt3,"0")
 
 buystockamountpt1 = Point(400,250)
 buystockamountpt2 = Point(800,500)
