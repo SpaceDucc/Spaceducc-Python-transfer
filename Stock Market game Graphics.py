@@ -162,6 +162,62 @@ stock8text1 = Text(stock8pt3,"Dolphin Rodeo")
 stock8pt4 = Point(980,540)
 stock8text2 = Text(stock8pt4,"Inc. Stock")
 
+stockadd1pt1 = Point(120,200)
+stockadd1pt2 = Point(320,350)
+stockadd1rec = Rectangle(stockadd1pt1,stockadd1pt2)
+
+stockchange1pt3 = Point(220,275)
+stockchange1text = Text(stockchange1pt3,"1")
+
+stockchange2pt1 = Point(360,200)
+stockchange2pt2 = Point(560,350)
+stockchange2rec = Rectangle(stockchange2pt1,stockachange2pt2)
+
+stockchange2pt3 = Point(460,275)
+stockchange2text = Text(stockchange2pt3,"2")
+
+stockchange3pt1 = Point(620,200)
+stockchange3pt2 = Point(820,350)
+stockchange3rec = Rectangle(stockchange3pt1,stockchange3pt2)
+
+stockchange3pt3 = Point(720,245)
+stockchange3text1 = Text(stockchange3pt3,"3")
+
+stockchange4pt1 = Point(880,200)
+stockchange4pt2 = Point(1080,350)
+stockchange4rec = Rectangle(stockchange4pt1,stockchange4pt2)
+
+stockchange4pt3 = Point(980,245)
+stockchange4text1 = Text(stockchange4pt3,"4")
+
+stockchange5pt1 = Point(120,450)
+stockchange5pt2 = Point(320,600)
+stockchange5rec = Rectangle(stockchange5pt1,stockchange5pt2)
+
+stockchange5pt3 = Point(220,525)
+stockchange5text = Text(stockchange5pt3,"5")
+
+stockchange10pt1 = Point(360,450)
+stockchange10pt2 = Point(560,600)
+stockchange10rec = Rectangle(stockchange10pt1,stockchange10pt2)
+
+stockchange10pt3 = Point(460,525)
+stockchange10text = Text(stockchange10pt3,"10")
+
+stockchange25pt1 = Point(620,450)
+stockchange25pt2 = Point(820,600)
+stockchange25rec = Rectangle(stockchange25pt1,stockchange25pt2)
+
+stockchange25pt3 = Point(720,495)
+stockchange25text1 = Text(stockchange25pt3,"25")
+
+stockchange50pt1 = Point(880,450)
+stockchange50pt2 = Point(1080,600)
+stockchange50rec = Rectangle(stockchange50pt1,stockchange50pt2)
+
+stockchange50pt3 = Point(980,510)
+stockchange50text1 = Text(stockchange50pt3,"50")
+
 buystockamountpt1 = Point(400,250)
 buystockamountpt2 = Point(800,500)
 buystockamountrec = Rectangle(buystockamountpt1,buystockamountpt2)
