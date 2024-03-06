@@ -103,15 +103,27 @@ stock3pt1 = Point(620,200)
 stock3pt2 = Point(820,350)
 stock3rec = Rectangle(stock3pt1,stock3pt2)
 
-stock3pt3 = Point(720,275)
-stock3text = Text(stock3pt3,"Silicon Mountain Stock")
+stock3pt3 = Point(720,245)
+stock3text1 = Text(stock3pt3,"Silicon")
+
+stock3pt4 = Point(720,275)
+stock3text2 = Text(stock3pt4,"Mountain")
+
+stock3pt5 = Point(720,305)
+stock3text3 = Text(stock3pt5,"Stock")
 
 stock4pt1 = Point(880,200)
 stock4pt2 = Point(1080,350)
 stock4rec = Rectangle(stock4pt1,stock4pt2)
 
-stock4pt3 = Point(980,275)
-stock4text = Text(stock4pt3,"Obelisk of the Dark Gods Stock")
+stock4pt3 = Point(980,245)
+stock4text1 = Text(stock4pt3,"Obelisk of")
+
+stock4pt4 = Point(980,275)
+stock4text2 = Text(stock4pt4,"the Dark Gods")
+
+stock4pt5 = Point(980,305)
+stock4text3 = Text(stock4pt5,"Stock")
 
 stock5pt1 = Point(120,450)
 stock5pt2 = Point(320,600)
@@ -131,15 +143,24 @@ stock7pt1 = Point(620,450)
 stock7pt2 = Point(820,600)
 stock7rec = Rectangle(stock7pt1,stock7pt2)
 
-stock7pt3 = Point(720,525)
-stock7text = Text(stock7pt3,"Super Terrifying Haunted House Emporium Stock")
+stock7pt3 = Point(720,495)
+stock7text1 = Text(stock7pt3,"Super Terrifying")
+
+stock7pt4 = Point(720,525)
+stock7text2 = Text(stock7pt4,"Haunted House")
+
+stock7pt5 = Point(720,555)
+stock7text3 = Text(stock7pt5,"Emporium Stock")
 
 stock8pt1 = Point(880,450)
 stock8pt2 = Point(1080,600)
 stock8rec = Rectangle(stock8pt1,stock8pt2)
 
-stock8pt3 = Point(980,525)
-stock8text = Text(stock8pt3,"Dolphin Rodeo Inc. Stock")
+stock8pt3 = Point(980,510)
+stock8text1 = Text(stock8pt3,"Dolphin Rodeo")
+
+stock8pt4 = Point(980,540)
+stock8text2 = Text(stock8pt4,"Inc. Stock")
 
 def lowconpricechange(a,b,c) : 
     lowconrandom = random.randint(1,100)
@@ -492,17 +513,24 @@ def buy() :
     global stock2rec
     global stock2text
     global stock3rec
-    global stock3text
+    global stock3text1
+    global stock3text2
+    global stock3text3
     global stock4rec
-    global stock4text
+    global stock4text1
+    global stock4text2
+    global stock4text3
     global stock5rec
     global stock5text
     global stock6rec
     global stock6text
     global stock7rec
-    global stock7text
+    global stock7text1
+    global stock7text2
+    global stock7text3
     global stock8rec
-    global stock8text
+    global stock8text1
+    global stock8text2
 
     stock1rec.setFill(color_rgb(0,0,0))
     stock1rec.draw(win1)
@@ -521,16 +549,28 @@ def buy() :
     stock3rec.setFill(color_rgb(0,0,0))
     stock3rec.draw(win1)
 
-    stock3text.setTextColor(color_rgb(255,255,255))
-    stock3text.setSize(24)
-    stock3text.draw(win1)
+    stock3text1.setTextColor(color_rgb(255,255,255))
+    stock3text1.setSize(24)
+    stock3text1.draw(win1)
+    stock3text2.setTextColor(color_rgb(255,255,255))
+    stock3text2.setSize(24)
+    stock3text2.draw(win1)
+    stock3text3.setTextColor(color_rgb(255,255,255))
+    stock3text3.setSize(24)
+    stock3text3.draw(win1)
 
     stock4rec.setFill(color_rgb(0,0,0))
     stock4rec.draw(win1)
 
-    stock4text.setTextColor(color_rgb(255,255,255))
-    stock4text.setSize(24)
-    stock4text.draw(win1)
+    stock4text1.setTextColor(color_rgb(255,255,255))
+    stock4text1.setSize(24)
+    stock4text1.draw(win1)
+    stock4text2.setTextColor(color_rgb(255,255,255))
+    stock4text2.setSize(24)
+    stock4text2.draw(win1)
+    stock4text3.setTextColor(color_rgb(255,255,255))
+    stock4text3.setSize(24)
+    stock4text3.draw(win1)
 
     stock5rec.setFill(color_rgb(0,0,0))
     stock5rec.draw(win1)
@@ -549,22 +589,34 @@ def buy() :
     stock7rec.setFill(color_rgb(0,0,0))
     stock7rec.draw(win1)
 
-    stock7text.setTextColor(color_rgb(255,255,255))
-    stock7text.setSize(24)
-    stock7text.draw(win1)
+    stock7text1.setTextColor(color_rgb(255,255,255))
+    stock7text1.setSize(24)
+    stock7text1.draw(win1)
+
+    stock7text2.setTextColor(color_rgb(255,255,255))
+    stock7text2.setSize(24)
+    stock7text2.draw(win1)
+
+    stock7text3.setTextColor(color_rgb(255,255,255))
+    stock7text3.setSize(24)
+    stock7text3.draw(win1)
 
     stock8rec.setFill(color_rgb(0,0,0))
     stock8rec.draw(win1)
 
-    stock8text.setTextColor(color_rgb(255,255,255))
-    stock8text.setSize(24)
-    stock8text.draw(win1)
+    stock8text1.setTextColor(color_rgb(255,255,255))
+    stock8text1.setSize(24)
+    stock8text1.draw(win1)
+
+    stock8text2.setTextColor(color_rgb(255,255,255))
+    stock8text2.setSize(24)
+    stock8text2.draw(win1)
 
     pickstock = 0
     whatstock = 0
 
     while pickstock == 0 :
-        break
+        continue
 
     while purchacestock == 0 :
         if whatstock.lower() == "glogel" :
