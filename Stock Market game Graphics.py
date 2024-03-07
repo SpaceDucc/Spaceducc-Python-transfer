@@ -562,9 +562,7 @@ def buy() :
     mathmoney = 0
     pickstock = 0
     purchacestock = 0
-    whatstock = 0
     howmuch = 0
-    fakevar3 = 0
     global buyrec
     global buytext
     global sellrec
@@ -777,36 +775,193 @@ def buy() :
         buystockamountentry.setSize(24)
         buystockamountentry.draw(win1)
         
+        fakevar3 = 0
+        fakevar4 = 0
+        fakevar5 = 0
+        fakevar6 = 0
         
-        while fakevar3 == 0 :
-            win1.getMouse()
-            invalidnumbertext.undraw()
-            howmuch = buystockamountentry.getText()
-            print(howmuch)
-            try :
-                howmuch = int(buystockamountentry.getText)
-            except :
-                invalidnumbertext.setTextColor(color_rgb(255,255,255))
-                invalidnumbertext.setSize(24)
-                invalidnumbertext.draw(win1)
-            if int(howmuch) < int(0) :
+        while fakevar6 == 0 :
+            while fakevar3 == 0 :
+                win1.getMouse()
                 invalidnumbertext.undraw()
-                invalidnumbertext.setTextColor(color_rgb(255,255,255))
-                invalidnumbertext.setSize(24)
-                invalidnumbertext.draw(win1)
-            else :
-                howmuch = int(howmuch)
-                fakevar3 = 1
+                howmuch = buystockamountentry.getText()
+                try :
+                    howmuch = int(buystockamountentry.getText())
+                except ValueError :
+                    invalidnumbertext.setTextColor(color_rgb(255,255,255))
+                    invalidnumbertext.setSize(24)
+                    invalidnumbertext.draw(win1)
+                else :
+                    fakevar3 = 1
+
+            while fakevar5 == 0 :
+                if int(howmuch) < int(0) :
+                    invalidnumbertext.undraw()
+                    invalidnumbertext.setTextColor(color_rgb(255,255,255))
+                    invalidnumbertext.setSize(24)
+                    invalidnumbertext.draw(win1)
+                    fakevar5 = 1
+                    fakevar3 = 0
+                else :
+                    howmuch = int(howmuch)
+                    fakevar3 = 1
+                    fakevar4 = 1
+                    fakevar5 = 1
+                    fakevar6 = 1
         
-        if whatstock == 1 :
+        while fakevar4 == 1 :
+            mathmoney = 0
+            if whatstock == 1 :
+                mathmoney = float(stock1price[0]) * howmuch
+                if float(mathmoney) > money :
+                    fakevar4 = 0
+                    purchacestock = 0
+                    buystockamountentry.undraw()
+                    buystockamounttext1.undraw()
+                    buystockamounttext2.undraw()
+                    buystockamountrec.undraw()
+                else :
+                    ownedstock1[0] = ownedstock1[0] + howmuch
+                    money = money - mathmoney
+                    purchacestock = 1
+                    fakevar4 = 0
+                    buystockamountentry.undraw()
+                    buystockamounttext1.undraw()
+                    buystockamounttext2.undraw()
+                    buystockamountrec.undraw()
+
+            elif whatstock == 2 :
+                mathmoney = float(stock2price[0]) * howmuch
+                if float(mathmoney) > money :
+                    fakevar4 = 0
+                    purchacestock = 0
+                    buystockamountentry.undraw()
+                    buystockamounttext1.undraw()
+                    buystockamounttext2.undraw()
+                    buystockamountrec.undraw()
+                else :
+                    ownedstock2[0] = ownedstock2[0] + howmuch
+                    money = money - mathmoney
+                    purchacestock = 1
+                    fakevar4 = 0
+                    buystockamountentry.undraw()
+                    buystockamounttext1.undraw()
+                    buystockamounttext2.undraw()
+                    buystockamountrec.undraw()
             
-            mathmoney = float(stock1price[0]) * howmuch
-            if float(mathmoney) > money :
-                print("You do not have enough money")
-            else :
-                ownedstock1[0] = ownedstock1[0] + howmuch
-                money = money - mathmoney
-                purchacestock = 1
+            elif whatstock == 3 :
+                mathmoney = float(stock3price[0]) * howmuch
+                if float(mathmoney) > money :
+                    fakevar4 = 0
+                    purchacestock = 0
+                    buystockamountentry.undraw()
+                    buystockamounttext1.undraw()
+                    buystockamounttext2.undraw()
+                    buystockamountrec.undraw()
+                else :
+                    ownedstock3[0] = ownedstock3[0] + howmuch
+                    money = money - mathmoney
+                    purchacestock = 1
+                    fakevar4 = 0
+                    buystockamountentry.undraw()
+                    buystockamounttext1.undraw()
+                    buystockamounttext2.undraw()
+                    buystockamountrec.undraw()
+
+            elif whatstock == 4 :
+                mathmoney = float(stock4price[0]) * howmuch
+                if float(mathmoney) > money :
+                    fakevar4 = 0
+                    purchacestock = 0
+                    buystockamountentry.undraw()
+                    buystockamounttext1.undraw()
+                    buystockamounttext2.undraw()
+                    buystockamountrec.undraw()
+                else :
+                    ownedstock4[0] = ownedstock4[0] + howmuch
+                    money = money - mathmoney
+                    purchacestock = 1
+                    fakevar4 = 0
+                    buystockamountentry.undraw()
+                    buystockamounttext1.undraw()
+                    buystockamounttext2.undraw()
+                    buystockamountrec.undraw()
+            
+            elif whatstock == 5 :
+                mathmoney = float(stock5price[0]) * howmuch
+                if float(mathmoney) > money :
+                    fakevar4 = 0
+                    purchacestock = 0
+                    buystockamountentry.undraw()
+                    buystockamounttext1.undraw()
+                    buystockamounttext2.undraw()
+                    buystockamountrec.undraw()
+                else :
+                    ownedstock5[0] = ownedstock5[0] + howmuch
+                    money = money - mathmoney
+                    purchacestock = 1
+                    fakevar4 = 0
+                    buystockamountentry.undraw()
+                    buystockamounttext1.undraw()
+                    buystockamounttext2.undraw()
+                    buystockamountrec.undraw()
+
+            elif whatstock == 6 :
+                mathmoney = float(stock6price[0]) * howmuch
+                if float(mathmoney) > money :
+                    fakevar4 = 0
+                    purchacestock = 0
+                    buystockamountentry.undraw()
+                    buystockamounttext1.undraw()
+                    buystockamounttext2.undraw()
+                    buystockamountrec.undraw()
+                else :
+                    ownedstock6[0] = ownedstock6[0] + howmuch
+                    money = money - mathmoney
+                    purchacestock = 1
+                    fakevar4 = 0
+                    buystockamountentry.undraw()
+                    buystockamounttext1.undraw()
+                    buystockamounttext2.undraw()
+                    buystockamountrec.undraw()
+
+            elif whatstock == 7 :
+                mathmoney = float(stock7price[0]) * howmuch
+                if float(mathmoney) > money :
+                    fakevar4 = 0
+                    purchacestock = 0
+                    buystockamountentry.undraw()
+                    buystockamounttext1.undraw()
+                    buystockamounttext2.undraw()
+                    buystockamountrec.undraw()
+                else :
+                    ownedstock7[0] = ownedstock7[0] + howmuch
+                    money = money - mathmoney
+                    purchacestock = 1
+                    fakevar4 = 0
+                    buystockamountentry.undraw()
+                    buystockamounttext1.undraw()
+                    buystockamounttext2.undraw()
+                    buystockamountrec.undraw()
+
+            elif whatstock == 8 :
+                mathmoney = float(stock8price[0]) * howmuch
+                if float(mathmoney) > money :
+                    fakevar4 = 0
+                    purchacestock = 0
+                    buystockamountentry.undraw()
+                    buystockamounttext1.undraw()
+                    buystockamounttext2.undraw()
+                    buystockamountrec.undraw()
+                else :
+                    ownedstock8[0] = ownedstock8[0] + howmuch
+                    money = money - mathmoney
+                    purchacestock = 1
+                    fakevar4 = 0
+                    buystockamountentry.undraw()
+                    buystockamounttext1.undraw()
+                    buystockamounttext2.undraw()
+                    buystockamountrec.undraw()
 
 def sell() :
     global money
@@ -1407,7 +1562,14 @@ def mediummodegame() :
     moneytext = Text(moneypt3, moneytexttext)
     while game == 1:
         if money < moneygoal :
-            moneytexttext = ["$",str(money)]
+            moneyround = str(round(money,2))
+            moneylen = len(moneyround.split("."))
+            if moneylen == 1 :
+                moneytexttext = "$",str(round(money,2)),"0"
+            elif moneylen == 2 :
+                moneytexttext = "$",str(round(money,2))
+            else :
+                print("error")
             moneytext = Text(moneypt3, moneytexttext)
             whatcommand()
         else :
@@ -1488,7 +1650,7 @@ def startgame() :
             mediumtext.undraw()
             hardrec.undraw()
             hardtext.undraw()
-            money = 300
+            money = float(300)
             easymodegame()
             game = 1
         elif gamemodex <= 750 and gamemodex >= 450 and gamemodey <= 550 and gamemodey >= 150 :
@@ -1498,7 +1660,7 @@ def startgame() :
             mediumtext.undraw()
             hardrec.undraw()
             hardtext.undraw()
-            money = 200
+            money = float(200)
             mediummodegame()
             game = 1
         elif gamemodex <= 1120 and gamemodex >= 820 and gamemodey <= 550 and gamemodey >= 150 :
@@ -1508,7 +1670,7 @@ def startgame() :
             mediumtext.undraw()
             hardrec.undraw()
             hardtext.undraw()
-            money = 100
+            money = float(100)
             hardmodegame()
             game = 1
         else :
