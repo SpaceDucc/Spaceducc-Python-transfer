@@ -35,6 +35,13 @@ stock7price = [2.0] #penny
 stock8price = [3.0] #penny
 #1-100 --> 1-25 = low confidence --- 25-75 = average confidence --- 75-100 = high confidence
 fakevar1 = [1] #fake variable for penny stocks
+fakevar2 = 0
+fakevar3 = 0
+fakevar4 = 0
+fakevar5 = 0
+fakevar6 = 0
+fakevar7 = 0
+howmuch = 0
 goal = 2000
 command = 1
 game = 0
@@ -564,12 +571,43 @@ def showinfo() :
     else :
         print("error")
 
+def buymath(a,b) :
+    global mathmoney
+    global money
+    global howmuch
+    global fakevar4
+    global fakevar7
+    global purchacestock
+    global buystockamountentry
+    global buystockamounttext1
+    global buystockamounttext2
+    global buystockamountrec
+    mathmoney = float(a[0]) * howmuch
+    if float(mathmoney) > money :
+        fakevar4 = 0
+        purchacestock = 0
+        fakevar7 = 1
+        buystockamountentry.undraw()
+        buystockamounttext1.undraw()
+        buystockamounttext2.undraw()
+        buystockamountrec.undraw()
+    else :
+        b[0] = b[0] + howmuch
+        money = money - mathmoney
+        purchacestock = 1
+        fakevar4 = 0
+        buystockamountentry.undraw()
+        buystockamounttext1.undraw()
+        buystockamounttext2.undraw()
+        buystockamountrec.undraw()
+
 
 def buy() :
     global money
     mathmoney = 0
     pickstock = 0
     purchacestock = 0
+    global howmuch
     howmuch = 0
     global buyrec
     global buytext
@@ -579,9 +617,6 @@ def buy() :
     global statustext
     global timerec
     global timetext
-    global clockrec
-    global clocktext
-    global clocktexttext
     global moneyrec
     global moneytext
     global moneytexttext
@@ -614,6 +649,13 @@ def buy() :
     global buystockamounttext2
     global buystockamountentry
     global invalidnumbertext
+    global fakevar2
+    global fakevar3
+    global fakevar4
+    global fakevar5
+    global fakevar6
+    global fakevar7
+    fakevar7 = 0
 
     stock1rec.draw(win1)
     stock1text.draw(win1)
@@ -727,10 +769,14 @@ def buy() :
         buystockamountentry.undraw()
         buystockamountentry.draw(win1)
         
+        if fakevar7 == 1 :
+            invalidnumbertext.draw(win1)
+
         fakevar3 = 0
         fakevar4 = 0
         fakevar5 = 0
         fakevar6 = 0
+        fakevar7 = 0
         
         while fakevar6 == 0 :
             while fakevar3 == 0 :
@@ -760,11 +806,11 @@ def buy() :
         while fakevar4 == 1 :
             mathmoney = 0
             if whatstock == 1 :
-                mathmoney = float(stock1price[0]) * howmuch
+                mathmoney = float(stock1price[0]) * howmuch #you can replace each part of the if statement with a function
                 if float(mathmoney) > money :
                     fakevar4 = 0
                     purchacestock = 0
-                    invalidnumbertext.draw(win1)
+                    fakevar7 = 1
                     buystockamountentry.undraw()
                     buystockamounttext1.undraw()
                     buystockamounttext2.undraw()
@@ -784,11 +830,11 @@ def buy() :
                 if float(mathmoney) > money :
                     fakevar4 = 0
                     purchacestock = 0
+                    fakevar7 = 1
                     buystockamountentry.undraw()
                     buystockamounttext1.undraw()
                     buystockamounttext2.undraw()
                     buystockamountrec.undraw()
-                    invalidnumbertext.draw(win1)
                 else :
                     ownedstock2[0] = ownedstock2[0] + howmuch
                     money = money - mathmoney
@@ -804,11 +850,11 @@ def buy() :
                 if float(mathmoney) > money :
                     fakevar4 = 0
                     purchacestock = 0
+                    fakevar7 = 1
                     buystockamountentry.undraw()
                     buystockamounttext1.undraw()
                     buystockamounttext2.undraw()
                     buystockamountrec.undraw()
-                    invalidnumbertext.draw(win1)
                 else :
                     ownedstock3[0] = ownedstock3[0] + howmuch
                     money = money - mathmoney
@@ -824,11 +870,11 @@ def buy() :
                 if float(mathmoney) > money :
                     fakevar4 = 0
                     purchacestock = 0
+                    fakevar7 = 1
                     buystockamountentry.undraw()
                     buystockamounttext1.undraw()
                     buystockamounttext2.undraw()
                     buystockamountrec.undraw()
-                    invalidnumbertext.draw(win1)
                 else :
                     ownedstock4[0] = ownedstock4[0] + howmuch
                     money = money - mathmoney
@@ -844,11 +890,11 @@ def buy() :
                 if float(mathmoney) > money :
                     fakevar4 = 0
                     purchacestock = 0
+                    fakevar7 = 1
                     buystockamountentry.undraw()
                     buystockamounttext1.undraw()
                     buystockamounttext2.undraw()
                     buystockamountrec.undraw()
-                    invalidnumbertext.draw(win1)
                 else :
                     ownedstock5[0] = ownedstock5[0] + howmuch
                     money = money - mathmoney
@@ -864,11 +910,11 @@ def buy() :
                 if float(mathmoney) > money :
                     fakevar4 = 0
                     purchacestock = 0
+                    fakevar7 = 1
                     buystockamountentry.undraw()
                     buystockamounttext1.undraw()
                     buystockamounttext2.undraw()
                     buystockamountrec.undraw()
-                    invalidnumbertext.draw(win1)
                 else :
                     ownedstock6[0] = ownedstock6[0] + howmuch
                     money = money - mathmoney
@@ -884,11 +930,11 @@ def buy() :
                 if float(mathmoney) > money :
                     fakevar4 = 0
                     purchacestock = 0
+                    fakevar7 = 1
                     buystockamountentry.undraw()
                     buystockamounttext1.undraw()
                     buystockamounttext2.undraw()
                     buystockamountrec.undraw()
-                    invalidnumbertext.draw(win1)
                 else :
                     ownedstock7[0] = ownedstock7[0] + howmuch
                     money = money - mathmoney
@@ -904,11 +950,11 @@ def buy() :
                 if float(mathmoney) > money :
                     fakevar4 = 0
                     purchacestock = 0
+                    fakevar7 = 1
                     buystockamountentry.undraw()
                     buystockamounttext1.undraw()
                     buystockamounttext2.undraw()
                     buystockamountrec.undraw()
-                    invalidnumbertext.draw(win1)
                 else :
                     ownedstock8[0] = ownedstock8[0] + howmuch
                     money = money - mathmoney
@@ -1389,6 +1435,7 @@ def whatcommand() :
         statustext.undraw()
         timerec.undraw()
         timetext.undraw()
+        buystockamountentry.setText("")
         buy()
         moneyrec.undraw()
         moneytext.undraw()
@@ -1414,6 +1461,8 @@ def whatcommand() :
         clockrec.undraw()
         clocktexttext = ["Day", str(day[0]), "Hour", str(hour[0]) ]
         clocktext = Text(clockpt3, clocktexttext)
+        clocktext.setTextColor(color_rgb(255,255,255))
+        clocktext.setSize(16)
     else : #help command
         pass
 
@@ -1493,6 +1542,8 @@ def mediummodegame() :
     moneygoal = int(2000)
     moneytexttext = ["$",str(money)]
     moneytext = Text(moneypt3, moneytexttext)
+    moneytext.setTextColor(color_rgb(255,255,255))
+    moneytext.setSize(16)
     while game == 1:
         if money < moneygoal :
             moneyround = str(round(money,2))
@@ -1504,6 +1555,8 @@ def mediummodegame() :
             else :
                 print("error")
             moneytext = Text(moneypt3, moneytexttext)
+            moneytext.setTextColor(color_rgb(255,255,255))
+            moneytext.setSize(16)
             whatcommand()
         else :
             print("you win")
