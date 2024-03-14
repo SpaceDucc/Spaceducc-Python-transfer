@@ -43,196 +43,204 @@ win1 = GraphWin("MSMG", 1200, 700)
 buypt1 = Point(50,50)
 buypt2 = Point(250,150)
 buyrec = Rectangle(buypt1,buypt2)
+buyrec.setFill(color_rgb(0,0,0))
 
 buypt3 = Point(150,100)
 buytext = Text(buypt3, "Buy Stock")
+buytext.setTextColor(color_rgb(255,255,255))
+buytext.setSize(24)
 
 sellpt1 = Point(50,200)
 sellpt2 = Point(250,300)
 sellrec = Rectangle(sellpt1,sellpt2)
+sellrec.setFill(color_rgb(0,0,0))
 
 sellpt3 = Point(150,250)
 selltext = Text(sellpt3, "Sell Stock")
 selltext.setTextColor(color_rgb(255,255,255))
+selltext.setSize(24)
 
 statuspt1 = Point(50,350)
 statuspt2 = Point(250,450)
 statusrec = Rectangle(statuspt1,statuspt2)
+statusrec.setFill(color_rgb(0,0,0))
 
 statuspt3 = Point(150,400)
 statustext = Text(statuspt3, "Information")
+statustext.setTextColor(color_rgb(255,255,255))
+statustext.setSize(24)
 
 timept1 = Point(50,500)
 timept2 = Point(250,600)
 timerec = Rectangle(timept1,timept2)
+timerec.setFill(color_rgb(0,0,0))
 
 timept3 = Point(150,550)
 timetext = Text(timept3, "Next Hour")
+timetext.setTextColor(color_rgb(255,255,255))
+timetext.setSize(24)
 
 clockpt1 = Point(1000,25)
 clockpt2 = Point(1100,75)
 clockrec = Rectangle(clockpt1,clockpt2)
+clockrec.setFill(color_rgb(0,0,0))
 
 clockpt3 = Point(1050,50)
 clocktexttext = ["Day", str(day[0]), "Hour", str(hour[0])]
 clocktext = Text(clockpt3, clocktexttext)
+clocktext.setTextColor(color_rgb(255,255,255))
+clocktext.setSize(16)
 
 moneypt1 = Point(1000,100)
 moneypt2 = Point(1100,150)
 moneyrec = Rectangle(moneypt1,moneypt2)
+moneyrec.setFill(color_rgb(0,0,0))
 
 moneypt3 = Point(1050,125)
 moneytexttext = ["$",str(money)]
 moneytext = Text(moneypt3, moneytexttext)
+moneytext.setTextColor(color_rgb(255,255,255))
+moneytext.setSize(16)
 
 stock1pt1 = Point(120,200)
 stock1pt2 = Point(320,350)
 stock1rec = Rectangle(stock1pt1,stock1pt2)
+stock1rec.setFill(color_rgb(0,0,0))
 
 stock1pt3 = Point(220,275)
 stock1text = Text(stock1pt3,"Glogel Stock")
+stock1text.setTextColor(color_rgb(255,255,255))
+stock1text.setSize(24)
 
 stock2pt1 = Point(360,200)
 stock2pt2 = Point(560,350)
 stock2rec = Rectangle(stock2pt1,stock2pt2)
+stock2rec.setFill(color_rgb(0,0,0))
 
 stock2pt3 = Point(460,275)
 stock2text = Text(stock2pt3,"Britcoin Stock")
+stock2text.setTextColor(color_rgb(255,255,255))
+stock2text.setSize(24)
 
 stock3pt1 = Point(620,200)
 stock3pt2 = Point(820,350)
 stock3rec = Rectangle(stock3pt1,stock3pt2)
+stock3rec.setFill(color_rgb(0,0,0))
 
 stock3pt3 = Point(720,245)
 stock3text1 = Text(stock3pt3,"Silicon")
+stock3text1.setTextColor(color_rgb(255,255,255))
+stock3text1.setSize(24)
 
 stock3pt4 = Point(720,275)
 stock3text2 = Text(stock3pt4,"Mountain")
+stock3text2.setTextColor(color_rgb(255,255,255))
+stock3text2.setSize(24)
 
 stock3pt5 = Point(720,305)
 stock3text3 = Text(stock3pt5,"Stock")
+stock3text3.setTextColor(color_rgb(255,255,255))
+stock3text3.setSize(24)
 
 stock4pt1 = Point(880,200)
 stock4pt2 = Point(1080,350)
 stock4rec = Rectangle(stock4pt1,stock4pt2)
+stock4rec.setFill(color_rgb(0,0,0))
 
 stock4pt3 = Point(980,245)
 stock4text1 = Text(stock4pt3,"Obelisk of")
+stock4text1.setTextColor(color_rgb(255,255,255))
+stock4text1.setSize(24)
 
 stock4pt4 = Point(980,275)
 stock4text2 = Text(stock4pt4,"the Dark Gods")
+stock4text1.setTextColor(color_rgb(255,255,255))
+stock4text1.setSize(24)
 
 stock4pt5 = Point(980,305)
 stock4text3 = Text(stock4pt5,"Stock")
+stock4text3.setTextColor(color_rgb(255,255,255))
+stock4text3.setSize(24)
 
 stock5pt1 = Point(120,450)
 stock5pt2 = Point(320,600)
 stock5rec = Rectangle(stock5pt1,stock5pt2)
+stock5rec.setFill(color_rgb(0,0,0))
 
 stock5pt3 = Point(220,525)
 stock5text = Text(stock5pt3,"Corka Cola Stock")
+stock5text.setTextColor(color_rgb(255,255,255))
+stock5text.setSize(24)
 
 stock6pt1 = Point(360,450)
 stock6pt2 = Point(560,600)
 stock6rec = Rectangle(stock6pt1,stock6pt2)
+stock6rec.setFill(color_rgb(0,0,0))
 
 stock6pt3 = Point(460,525)
 stock6text = Text(stock6pt3,"Popsi Stock")
+stock6text.setTextColor(color_rgb(255,255,255))
+stock6text.setSize(24)
 
 stock7pt1 = Point(620,450)
 stock7pt2 = Point(820,600)
 stock7rec = Rectangle(stock7pt1,stock7pt2)
+stock7rec.setFill(color_rgb(0,0,0))
 
 stock7pt3 = Point(720,495)
 stock7text1 = Text(stock7pt3,"Super Terrifying")
+stock7text1.setTextColor(color_rgb(255,255,255))
+stock7text1.setSize(24)
 
 stock7pt4 = Point(720,525)
 stock7text2 = Text(stock7pt4,"Haunted House")
+stock7text2.setTextColor(color_rgb(255,255,255))
+stock7text2.setSize(24)
 
 stock7pt5 = Point(720,555)
 stock7text3 = Text(stock7pt5,"Emporium Stock")
+stock7text3.setTextColor(color_rgb(255,255,255))
+stock7text3.setSize(24)
 
 stock8pt1 = Point(880,450)
 stock8pt2 = Point(1080,600)
 stock8rec = Rectangle(stock8pt1,stock8pt2)
+stock8rec.setFill(color_rgb(0,0,0))
 
 stock8pt3 = Point(980,510)
 stock8text1 = Text(stock8pt3,"Dolphin Rodeo")
+stock8text1.setTextColor(color_rgb(255,255,255))
+stock8text1.setSize(24)
 
 stock8pt4 = Point(980,540)
 stock8text2 = Text(stock8pt4,"Inc. Stock")
-
-stockadd1pt1 = Point(120,200)
-stockadd1pt2 = Point(320,350)
-stockadd1rec = Rectangle(stockadd1pt1,stockadd1pt2)
-
-stockchange1pt3 = Point(220,275)
-stockchange1text = Text(stockchange1pt3,"1")
-
-stockchange2pt1 = Point(360,200)
-stockchange2pt2 = Point(560,350)
-stockchange2rec = Rectangle(stockchange2pt1,stockchange2pt2)
-
-stockchange2pt3 = Point(460,275)
-stockchange2text = Text(stockchange2pt3,"2")
-
-stockchange3pt1 = Point(620,200)
-stockchange3pt2 = Point(820,350)
-stockchange3rec = Rectangle(stockchange3pt1,stockchange3pt2)
-
-stockchange3pt3 = Point(720,245)
-stockchange3text1 = Text(stockchange3pt3,"3")
-
-stockchange4pt1 = Point(880,200)
-stockchange4pt2 = Point(1080,350)
-stockchange4rec = Rectangle(stockchange4pt1,stockchange4pt2)
-
-stockchange4pt3 = Point(980,245)
-stockchange4text1 = Text(stockchange4pt3,"4")
-
-stockchange5pt1 = Point(120,450)
-stockchange5pt2 = Point(320,600)
-stockchange5rec = Rectangle(stockchange5pt1,stockchange5pt2)
-
-stockchange5pt3 = Point(220,525)
-stockchange5text = Text(stockchange5pt3,"5")
-
-stockchange10pt1 = Point(360,450)
-stockchange10pt2 = Point(560,600)
-stockchange10rec = Rectangle(stockchange10pt1,stockchange10pt2)
-
-stockchange10pt3 = Point(460,525)
-stockchange10text = Text(stockchange10pt3,"10")
-
-stockchange25pt1 = Point(620,450)
-stockchange25pt2 = Point(820,600)
-stockchange25rec = Rectangle(stockchange25pt1,stockchange25pt2)
-
-stockchange25pt3 = Point(720,495)
-stockchange25text1 = Text(stockchange25pt3,"25")
-
-stockchange0pt1 = Point(880,450)
-stockchange0pt2 = Point(1080,600)
-stockchange0rec = Rectangle(stockchange0pt1,stockchange0pt2)
-
-stockchange0pt3 = Point(980,510)
-stockchange0text1 = Text(stockchange0pt3,"0")
+stock8text1.setTextColor(color_rgb(255,255,255))
+stock8text1.setSize(24)
 
 buystockamountpt1 = Point(400,250)
 buystockamountpt2 = Point(800,500)
 buystockamountrec = Rectangle(buystockamountpt1,buystockamountpt2)
+buystockamountrec.setFill(color_rgb(0,0,0))
 
 buystockamountpt3 = Point(600,300)
 buystockamounttext1 = Text(buystockamountpt3, "How many stocks do you wish to buy?")
+buystockamounttext1.setTextColor(color_rgb(255,255,255))
+buystockamounttext1.setSize(24)
 
 buystockamountpt4 = Point(600,400)
 buystockamountentry = Entry(buystockamountpt4,4)
+buystockamountentry.setTextColor(color_rgb(255,255,255))
+buystockamountentry.setSize(24)
 
 buystockamountpt5 = Point(600,330)
 buystockamounttext2 = Text(buystockamountpt5, "Click to confirm entry")
+buystockamounttext2.setTextColor(color_rgb(255,255,255))
+buystockamounttext2.setSize(24)
 
 invalidnumberpt1 = Point(600,450)
 invalidnumbertext = Text(invalidnumberpt1,"Invalid number,try again")
+invalidnumbertext.setTextColor(color_rgb(255,255,255))
+invalidnumbertext.setSize(24)
 
 def lowconpricechange(a,b,c) : 
     lowconrandom = random.randint(1,100)
@@ -607,84 +615,35 @@ def buy() :
     global buystockamountentry
     global invalidnumbertext
 
-    stock1rec.setFill(color_rgb(0,0,0))
     stock1rec.draw(win1)
-
-    stock1text.setTextColor(color_rgb(255,255,255))
-    stock1text.setSize(24)
     stock1text.draw(win1)
-    
-    stock2rec.setFill(color_rgb(0,0,0))
+
     stock2rec.draw(win1)
-    
-    stock2text.setTextColor(color_rgb(255,255,255))
-    stock2text.setSize(24)
     stock2text.draw(win1)
 
-    stock3rec.setFill(color_rgb(0,0,0))
     stock3rec.draw(win1)
-
-    stock3text1.setTextColor(color_rgb(255,255,255))
-    stock3text1.setSize(24)
     stock3text1.draw(win1)
-    stock3text2.setTextColor(color_rgb(255,255,255))
-    stock3text2.setSize(24)
     stock3text2.draw(win1)
-    stock3text3.setTextColor(color_rgb(255,255,255))
-    stock3text3.setSize(24)
     stock3text3.draw(win1)
 
-    stock4rec.setFill(color_rgb(0,0,0))
     stock4rec.draw(win1)
-
-    stock4text1.setTextColor(color_rgb(255,255,255))
-    stock4text1.setSize(24)
     stock4text1.draw(win1)
-    stock4text2.setTextColor(color_rgb(255,255,255))
-    stock4text2.setSize(24)
     stock4text2.draw(win1)
-    stock4text3.setTextColor(color_rgb(255,255,255))
-    stock4text3.setSize(24)
     stock4text3.draw(win1)
 
-    stock5rec.setFill(color_rgb(0,0,0))
     stock5rec.draw(win1)
-
-    stock5text.setTextColor(color_rgb(255,255,255))
-    stock5text.setSize(24)
     stock5text.draw(win1)
 
-    stock6rec.setFill(color_rgb(0,0,0))
     stock6rec.draw(win1)
-
-    stock6text.setTextColor(color_rgb(255,255,255))
-    stock6text.setSize(24)
     stock6text.draw(win1)
 
-    stock7rec.setFill(color_rgb(0,0,0))
     stock7rec.draw(win1)
-
-    stock7text1.setTextColor(color_rgb(255,255,255))
-    stock7text1.setSize(24)
     stock7text1.draw(win1)
-
-    stock7text2.setTextColor(color_rgb(255,255,255))
-    stock7text2.setSize(24)
     stock7text2.draw(win1)
-
-    stock7text3.setTextColor(color_rgb(255,255,255))
-    stock7text3.setSize(24)
     stock7text3.draw(win1)
 
-    stock8rec.setFill(color_rgb(0,0,0))
     stock8rec.draw(win1)
-
-    stock8text1.setTextColor(color_rgb(255,255,255))
-    stock8text1.setSize(24)
     stock8text1.draw(win1)
-
-    stock8text2.setTextColor(color_rgb(255,255,255))
-    stock8text2.setSize(24)
     stock8text2.draw(win1)
 
     pickstock = 0
@@ -757,22 +716,15 @@ def buy() :
 
     while purchacestock == 0 :
         buystockamountrec.undraw()
-        buystockamountrec.setFill(color_rgb(0,0,0))
         buystockamountrec.draw(win1)
 
         buystockamounttext1.undraw()
-        buystockamounttext1.setTextColor(color_rgb(255,255,255))
-        buystockamounttext1.setSize(24)
         buystockamounttext1.draw(win1)
 
         buystockamounttext2.undraw()
-        buystockamounttext2.setTextColor(color_rgb(255,255,255))
-        buystockamounttext2.setSize(24)
         buystockamounttext2.draw(win1)
 
         buystockamountentry.undraw()
-        buystockamountentry.setTextColor(color_rgb(255,255,255))
-        buystockamountentry.setSize(24)
         buystockamountentry.draw(win1)
         
         fakevar3 = 0
@@ -788,8 +740,6 @@ def buy() :
                 try :
                     howmuch = int(buystockamountentry.getText())
                 except ValueError :
-                    invalidnumbertext.setTextColor(color_rgb(255,255,255))
-                    invalidnumbertext.setSize(24)
                     invalidnumbertext.draw(win1)
                 else :
                     fakevar3 = 1
@@ -797,8 +747,6 @@ def buy() :
             while fakevar5 == 0 :
                 if int(howmuch) < int(0) :
                     invalidnumbertext.undraw()
-                    invalidnumbertext.setTextColor(color_rgb(255,255,255))
-                    invalidnumbertext.setSize(24)
                     invalidnumbertext.draw(win1)
                     fakevar5 = 1
                     fakevar3 = 0
@@ -816,6 +764,7 @@ def buy() :
                 if float(mathmoney) > money :
                     fakevar4 = 0
                     purchacestock = 0
+                    invalidnumbertext.draw(win1)
                     buystockamountentry.undraw()
                     buystockamounttext1.undraw()
                     buystockamounttext2.undraw()
@@ -839,6 +788,7 @@ def buy() :
                     buystockamounttext1.undraw()
                     buystockamounttext2.undraw()
                     buystockamountrec.undraw()
+                    invalidnumbertext.draw(win1)
                 else :
                     ownedstock2[0] = ownedstock2[0] + howmuch
                     money = money - mathmoney
@@ -858,6 +808,7 @@ def buy() :
                     buystockamounttext1.undraw()
                     buystockamounttext2.undraw()
                     buystockamountrec.undraw()
+                    invalidnumbertext.draw(win1)
                 else :
                     ownedstock3[0] = ownedstock3[0] + howmuch
                     money = money - mathmoney
@@ -877,6 +828,7 @@ def buy() :
                     buystockamounttext1.undraw()
                     buystockamounttext2.undraw()
                     buystockamountrec.undraw()
+                    invalidnumbertext.draw(win1)
                 else :
                     ownedstock4[0] = ownedstock4[0] + howmuch
                     money = money - mathmoney
@@ -896,6 +848,7 @@ def buy() :
                     buystockamounttext1.undraw()
                     buystockamounttext2.undraw()
                     buystockamountrec.undraw()
+                    invalidnumbertext.draw(win1)
                 else :
                     ownedstock5[0] = ownedstock5[0] + howmuch
                     money = money - mathmoney
@@ -915,6 +868,7 @@ def buy() :
                     buystockamounttext1.undraw()
                     buystockamounttext2.undraw()
                     buystockamountrec.undraw()
+                    invalidnumbertext.draw(win1)
                 else :
                     ownedstock6[0] = ownedstock6[0] + howmuch
                     money = money - mathmoney
@@ -934,6 +888,7 @@ def buy() :
                     buystockamounttext1.undraw()
                     buystockamounttext2.undraw()
                     buystockamountrec.undraw()
+                    invalidnumbertext.draw(win1)
                 else :
                     ownedstock7[0] = ownedstock7[0] + howmuch
                     money = money - mathmoney
@@ -953,6 +908,7 @@ def buy() :
                     buystockamounttext1.undraw()
                     buystockamounttext2.undraw()
                     buystockamountrec.undraw()
+                    invalidnumbertext.draw(win1)
                 else :
                     ownedstock8[0] = ownedstock8[0] + howmuch
                     money = money - mathmoney
@@ -1401,45 +1357,22 @@ def whatcommand() :
     global moneytext
     global moneytexttext
     
-    buyrec.setFill(color_rgb(0,0,0))
     buyrec.draw(win1)
-
-    buytext.setTextColor(color_rgb(255,255,255))
-    buytext.setSize(24)
     buytext.draw(win1)
 
-    sellrec.setFill(color_rgb(0,0,0))
     sellrec.draw(win1)
-
-    selltext.setSize(24)
     selltext.draw(win1)
 
-    statusrec.setFill(color_rgb(0,0,0))
     statusrec.draw(win1)
-
-    statustext.setTextColor(color_rgb(255,255,255))
-    statustext.setSize(24)
     statustext.draw(win1)
 
-    timerec.setFill(color_rgb(0,0,0))
     timerec.draw(win1)
-
-    timetext.setTextColor(color_rgb(255,255,255))
-    timetext.setSize(24)
     timetext.draw(win1)
     
-    clockrec.setFill(color_rgb(0,0,0))
     clockrec.draw(win1)
-
-    clocktext.setTextColor(color_rgb(255,255,255))
-    clocktext.setSize(16)
     clocktext.draw(win1)
     
-    moneyrec.setFill(color_rgb(0,0,0))
     moneyrec.draw(win1)
-
-    moneytext.setTextColor(color_rgb(255,255,255))
-    moneytext.setSize(16)
     moneytext.draw(win1)
 
     mouse = 0
