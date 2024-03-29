@@ -1438,7 +1438,7 @@ def whatcommand() :
         clocktext = Text(clockpt3, clocktexttext)
         clocktext.setTextColor(color_rgb(255,255,255))
         clocktext.setSize(16)
-    else : #help command
+    else :
         pass
 
 def easywhatcommand() :
@@ -1499,9 +1499,27 @@ def hardwhatcommand() :
 def easymodegame() :
     game = 1
     global money
+    global moneypt3
+    global moneytext
+    global moneytexttext
     moneygoal = int(1000)
+    moneytexttext = ["$",str(money)]
+    moneytext = Text(moneypt3, moneytexttext)
+    moneytext.setTextColor(color_rgb(255,255,255))
+    moneytext.setSize(16)
     while game == 1:
         if money < moneygoal :
+            moneyround = str(round(money,2))
+            moneylen = len(moneyround.split("."))
+            if moneylen == 1 :
+                moneytexttext = "$",str(round(money,2)),"0"
+            elif moneylen == 2 :
+                moneytexttext = "$",str(round(money,2))
+            else :
+                print("error")
+            moneytext = Text(moneypt3, moneytexttext)
+            moneytext.setTextColor(color_rgb(255,255,255))
+            moneytext.setSize(16)
             easywhatcommand()
         else :
             print("you win")
@@ -1541,14 +1559,31 @@ def mediummodegame() :
 def hardmodegame() :
     game = 1
     global money
+    global moneypt3
+    global moneytext
+    global moneytexttext
     moneygoal = int(4000)
+    moneytexttext = ["$",str(money)]
+    moneytext = Text(moneypt3, moneytexttext)
+    moneytext.setTextColor(color_rgb(255,255,255))
+    moneytext.setSize(16)
     while game == 1:
         if money < moneygoal :
+            moneyround = str(round(money,2))
+            moneylen = len(moneyround.split("."))
+            if moneylen == 1 :
+                moneytexttext = "$",str(round(money,2)),"0"
+            elif moneylen == 2 :
+                moneytexttext = "$",str(round(money,2))
+            else :
+                print("error")
+            moneytext = Text(moneypt3, moneytexttext)
+            moneytext.setTextColor(color_rgb(255,255,255))
+            moneytext.setSize(16)
             hardwhatcommand()
         else :
             print("you win")
             game = 0
-
 
 def startgame() :
     global money
