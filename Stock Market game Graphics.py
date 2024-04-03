@@ -98,7 +98,7 @@ clockpt3 = Point(1050,50)
 clocktexttext = ["Day", str(day[0]), "Hour", str(hour[0])]
 clocktext = Text(clockpt3, clocktexttext)
 clocktext.setTextColor(color_rgb(255,255,255))
-clocktext.setSize(16)
+clocktext.setSize(12)
 
 moneypt1 = Point(1000,100)
 moneypt2 = Point(1100,150)
@@ -159,17 +159,17 @@ stock4rec.setFill(color_rgb(0,0,0))
 stock4pt3 = Point(980,245)
 stock4text1 = Text(stock4pt3,"Obelisk of")
 stock4text1.setTextColor(color_rgb(255,255,255))
-stock4text1.setSize(24)
+stock4text1.setSize(22)
 
 stock4pt4 = Point(980,275)
 stock4text2 = Text(stock4pt4,"the Dark Gods")
 stock4text2.setTextColor(color_rgb(255,255,255))
-stock4text2.setSize(24)
+stock4text2.setSize(22)
 
 stock4pt5 = Point(980,305)
 stock4text3 = Text(stock4pt5,"Stock")
 stock4text3.setTextColor(color_rgb(255,255,255))
-stock4text3.setSize(24)
+stock4text3.setSize(22)
 
 stock5pt1 = Point(120,450)
 stock5pt2 = Point(320,600)
@@ -179,7 +179,7 @@ stock5rec.setFill(color_rgb(0,0,0))
 stock5pt3 = Point(220,525)
 stock5text = Text(stock5pt3,"Corka Cola Stock")
 stock5text.setTextColor(color_rgb(255,255,255))
-stock5text.setSize(24)
+stock5text.setSize(18)
 
 stock6pt1 = Point(360,450)
 stock6pt2 = Point(560,600)
@@ -199,17 +199,17 @@ stock7rec.setFill(color_rgb(0,0,0))
 stock7pt3 = Point(720,495)
 stock7text1 = Text(stock7pt3,"Super Terrifying")
 stock7text1.setTextColor(color_rgb(255,255,255))
-stock7text1.setSize(24)
+stock7text1.setSize(20)
 
 stock7pt4 = Point(720,525)
 stock7text2 = Text(stock7pt4,"Haunted House")
 stock7text2.setTextColor(color_rgb(255,255,255))
-stock7text2.setSize(24)
+stock7text2.setSize(20)
 
 stock7pt5 = Point(720,555)
 stock7text3 = Text(stock7pt5,"Emporium Stock")
 stock7text3.setTextColor(color_rgb(255,255,255))
-stock7text3.setSize(24)
+stock7text3.setSize(20)
 
 stock8pt1 = Point(880,450)
 stock8pt2 = Point(1080,600)
@@ -223,8 +223,8 @@ stock8text1.setSize(24)
 
 stock8pt4 = Point(980,540)
 stock8text2 = Text(stock8pt4,"Inc. Stock")
-stock8text1.setTextColor(color_rgb(255,255,255))
-stock8text1.setSize(24)
+stock8text2.setTextColor(color_rgb(255,255,255))
+stock8text2.setSize(24)
 
 stockamountpt1 = Point(400,250)
 stockamountpt2 = Point(800,500)
@@ -234,7 +234,7 @@ stockamountrec.setFill(color_rgb(0,0,0))
 stockamountpt3 = Point(600,300)
 buystockamounttext1 = Text(stockamountpt3, "How many stocks do you wish to buy?")
 buystockamounttext1.setTextColor(color_rgb(255,255,255))
-buystockamounttext1.setSize(24)
+buystockamounttext1.setSize(18)
 
 stockamountpt4 = Point(600,400)
 stockamountentry = Entry(stockamountpt4,4)
@@ -244,17 +244,31 @@ stockamountentry.setSize(24)
 stockamountpt5 = Point(600,330)
 stockamounttext1 = Text(stockamountpt5, "Click to confirm entry")
 stockamounttext1.setTextColor(color_rgb(255,255,255))
-stockamounttext1.setSize(24)
+stockamounttext1.setSize(18)
 
 stockamountpt3 = Point(600,300)
 sellstockamounttext1 = Text(stockamountpt3, "How many stocks do you wish to sell?")
 sellstockamounttext1.setTextColor(color_rgb(255,255,255))
-sellstockamounttext1.setSize(24)
+sellstockamounttext1.setSize(18)
 
 invalidnumberpt1 = Point(600,450)
 invalidnumbertext = Text(invalidnumberpt1,"Invalid number,try again")
 invalidnumbertext.setTextColor(color_rgb(255,255,255))
-invalidnumbertext.setSize(24)
+invalidnumbertext.setSize(18)
+
+showinfopt1 = Point(100,50)
+showinfopt2 = Point(1000,650)
+showinforec = Rectangle(showinfopt1, showinfopt2)
+showinforec.setFill(color_rgb(0,0,0))
+
+showinfopt3 = Point(550,80)
+showinfopt4 = Point(550,155)
+showinfopt5 = Point(550,230)
+showinfopt6 = Point(550,305)
+showinfopt7 = Point(550,390)
+showinfopt8 = Point(550,470)
+showinfopt9 = Point(550,545)
+showinfopt10 = Point(550,620)
 
 def lowconpricechange(a,b,c) : 
     lowconrandom = random.randint(1,100)
@@ -506,77 +520,160 @@ def cryptopricechange(a,c) :
         c[0] = "+"
 
 def showinfo() :
+    global showinfopt3
+    global showinfopt4
+    global showinfopt5
+    global showinfopt6
+    global showinfopt7
+    global showinfopt8
+    global showinfopt9
+    global showinfopt10
+    global showinforec
+    global ownedstock1
+    global ownedstock2
+    global ownedstock3
+    global ownedstock4
+    global ownedstock5
+    global ownedstock6
+    global ownedstock7
+    global ownedstock8
+    global stock1price
+    global stock2price
+    global stock3price
+    global stock4price
+    global stock5price
+    global stock6price
+    global stock7price
+    global stock8price
+    global price1change
+    global price2change
+    global price3change
+    global price4change
+    global price5change
+    global price6change
+    global price7change
+    global price8change
+
     stock1priceround = str(round(stock1price[0],2))
     stock1pricelen = len(stock1priceround.split(".")[1])
     if stock1pricelen == 1 :
-        print("Price of Glogel stock: $" + str(round(stock1price[0],2)) + "0", price1change[0])
+        stock1text = "Glogel stock: $" + str(round(stock1price[0],2)) + "0", price1change[0], "owned:", ownedstock1[0]
     elif stock1pricelen == 2 :
-        print("Price of Glogel stock: $" + str(round(stock1price[0],2)), price1change[0])
+        stock1text = "Glogel stock: $" + str(round(stock1price[0],2)), price1change[0], "owned:", ownedstock1[0]
     else :
         print("error")
 
     stock2priceround = str(round(stock2price[0],2))
     stock2pricelen = len(stock2priceround.split(".")[1])
     if stock2pricelen == 1 :
-        print("Price of Britcoin stock: $" + str(round(stock2price[0],2)) + "0", price2change[0])
+        stock2text = "Britcoin stock: $" + str(round(stock2price[0],2)) + "0", price2change[0], "owned:", ownedstock2[0]
     elif stock2pricelen == 2 :
-        print("Price of Britcoin stock: $" + str(round(stock2price[0],2)), price2change[0])
+        stock2text = "Britcoin stock: $" + str(round(stock2price[0],2)), price2change[0], "owned:", ownedstock2[0]
     else :
         print("error")
     
     stock3priceround = str(round(stock3price[0],2))
     stock3pricelen = len(stock3priceround.split(".")[1])
     if stock3pricelen == 1 :
-        print("Price of Silicon Mountain stock: $" + str(round(stock3price[0],2)) + "0", price3change[0])
+        stock3text = "Silicon Mountain stock: $" + str(round(stock3price[0],2)) + "0", price3change[0], "owned:", ownedstock3[0]
     elif stock3pricelen == 2 :
-        print("Price of Silicon Mountain stock: $" + str(round(stock3price[0],2)), price3change[0])
+        stock3text = "Silicon Mountain stock: $" + str(round(stock3price[0],2)), price3change[0], "owned:", ownedstock3[0]
     else :
         print("error")
     
     stock4priceround = str(round(stock4price[0],2))
     stock4pricelen = len(stock4priceround.split(".")[1])
     if stock4pricelen == 1 :
-        print("Price of Obelisk of the Dark Gods stock: $" + str(round(stock4price[0],2)) + "0", price4change[0])
+        stock4text = "Obelisk of the Dark Gods stock: $" + str(round(stock4price[0],2)) + "0", price4change[0], "owned:", ownedstock4[0]
     elif stock4pricelen == 2 :
-        print("Price of Obelisk of the Dark Gods stock: $" + str(round(stock4price[0],2)), price4change[0])
+        stock4text = "Obelisk of the Dark Gods stock: $" + str(round(stock4price[0],2)), price4change[0], "owned:", ownedstock4[0]
     else :
         print("error")
     
     stock5priceround = str(round(stock5price[0],2))
     stock5pricelen = len(stock5priceround.split(".")[1])
     if stock5pricelen == 1 :
-        print("Price of Corka Cola stock: $" + str(round(stock5price[0],2)) + "0", price5change[0])
+        stock5text = "Corka Cola stock: $" + str(round(stock5price[0],2)) + "0", price5change[0], "owned:", ownedstock5[0]
     elif stock5pricelen == 2 :
-        print("Price of Corka Cola stock: $" + str(round(stock5price[0],2)), price5change[0])
+        stock5text = "Corka Cola stock: $" + str(round(stock5price[0],2)), price5change[0], "owned:", ownedstock5[0]
     else :
         print("error")
 
     stock6priceround = str(round(stock6price[0],2))
     stock6pricelen = len(stock6priceround.split(".")[1])
     if stock6pricelen == 1 :
-        print("Price of Popsi stock: $" + str(round(stock6price[0],2)) + "0", price6change[0])
+        stock6text = "Popsi stock: $" + str(round(stock6price[0],2)) + "0", price6change[0], "owned:", ownedstock6[0]
     elif stock6pricelen == 2 :
-        print("Price of Popsi stock: $" + str(round(stock6price[0],2)), price6change[0])
+        stock6text = "Popsi stock: $" + str(round(stock6price[0],2)), price6change[0], "owned:", ownedstock6[0]
     else :
         print("error")
     
     stock7priceround = str(round(stock7price[0],2))
     stock7pricelen = len(stock7priceround.split(".")[1])
     if stock7pricelen == 1 :
-        print("Price of Super Terrifying Haunted House Emporium stock: $" + str(round(stock7price[0],2)) + "0", price7change[0])
+        stock7text = "Super Terrifying Haunted House Emporium stock: $" + str(round(stock7price[0],2)) + "0", price7change[0], "owned:", ownedstock7[0]
     elif stock7pricelen == 2 :
-        print("Price of Super Terrifying Haunted House Emporium stock: $" + str(round(stock7price[0],2)), price7change[0])
+        stock7text = "Super Terrifying Haunted House Emporium stock: $" + str(round(stock7price[0],2)), price7change[0], "owned:", ownedstock7[0]
     else :
         print("error")
     
     stock8priceround = str(round(stock8price[0],2))
     stock8pricelen = len(stock8priceround.split(".")[1])
     if stock8pricelen == 1 :
-        print("Price of Dolphin Rodeo Inc. stock: $" + str(round(stock8price[0],2)) + "0", price8change[0])
+        stock8text = "Dolphin Rodeo Inc. stock: $" + str(round(stock8price[0],2)) + "0", price8change[0], "owned:", ownedstock8[0]
     elif stock8pricelen == 2 :
-        print("Price of Dolphin Rodeo Inc. stock: $" + str(round(stock8price[0],2)), price8change[0])
+        stock8text = "Dolphin Rodeo Inc. stock: $" + str(round(stock8price[0],2)), price8change[0], "owned:", ownedstock8[0]
     else :
         print("error")
+
+    showinfotext1 = Text(showinfopt3, stock1text)
+    showinfotext1.setTextColor(color_rgb(255,255,255))
+    showinfotext1.setSize(20)
+    showinfotext2 = Text(showinfopt4, stock2text)
+    showinfotext2.setTextColor(color_rgb(255,255,255))
+    showinfotext2.setSize(20)
+    showinfotext3 = Text(showinfopt5, stock3text)
+    showinfotext3.setTextColor(color_rgb(255,255,255))
+    showinfotext3.setSize(20)
+    showinfotext4 = Text(showinfopt6, stock4text)
+    showinfotext4.setTextColor(color_rgb(255,255,255))
+    showinfotext4.setSize(20)
+    showinfotext5 = Text(showinfopt7, stock5text)
+    showinfotext5.setTextColor(color_rgb(255,255,255))
+    showinfotext5.setSize(20)
+    showinfotext6 = Text(showinfopt8, stock6text)
+    showinfotext6.setTextColor(color_rgb(255,255,255))
+    showinfotext6.setSize(20)
+    showinfotext7 = Text(showinfopt9, stock7text)
+    showinfotext7.setTextColor(color_rgb(255,255,255))
+    showinfotext7.setSize(20)
+    showinfotext8 = Text(showinfopt10, stock8text)
+    showinfotext8.setTextColor(color_rgb(255,255,255))
+    showinfotext8.setSize(20)
+
+    showinforec.draw(win1)
+    showinfotext1.draw(win1)
+    showinfotext2.draw(win1)
+    showinfotext3.draw(win1)
+    showinfotext4.draw(win1)
+    showinfotext5.draw(win1)
+    showinfotext6.draw(win1)
+    showinfotext7.draw(win1)
+    showinfotext8.draw(win1)
+
+    win1.getMouse()
+
+    showinforec.undraw()
+    showinfotext1.undraw()
+    showinfotext2.undraw()
+    showinfotext3.undraw()
+    showinfotext4.undraw()
+    showinfotext5.undraw()
+    showinfotext6.undraw()
+    showinfotext7.undraw()
+    showinfotext8.undraw()
+
+    
 
 def buymath(a,b) :
     global mathmoney
@@ -1419,7 +1516,19 @@ def whatcommand() :
         clockrec.undraw()
         clocktext.undraw()
     elif mousex >=50 and mousex <= 250 and mousey >= 350 and mousey <= 450 :
-        showinfo() #change to show info
+        buyrec.undraw()
+        buytext.undraw()
+        sellrec.undraw()
+        selltext.undraw()
+        statusrec.undraw()
+        statustext.undraw()
+        timerec.undraw()
+        timetext.undraw()
+        showinfo()
+        moneyrec.undraw()
+        moneytext.undraw()
+        clockrec.undraw()
+        clocktext.undraw()
     elif mousex >=50 and mousex <= 250 and mousey >= 500 and mousey <= 600 :
         incrementtime()
         buyrec.undraw()
@@ -1437,64 +1546,247 @@ def whatcommand() :
         clocktexttext = ["Day", str(day[0]), "Hour", str(hour[0]) ]
         clocktext = Text(clockpt3, clocktexttext)
         clocktext.setTextColor(color_rgb(255,255,255))
-        clocktext.setSize(16)
+        clocktext.setSize(12)
     else :
         pass
 
 def easywhatcommand() :
-    command = 1
-    command = input("what do you want to do?(buy,sell,price,owned,money,end,time,help)")
-    print(command)
-    while command.lower() != "buy" and command.lower() != "sell" and command.lower() != "price" and command.lower() != "owned" and command.lower() != "end" and command.lower() != "help" and command.lower() != "money" and command.lower() != "time" : #add more?
-        if command.lower() != "buy" and command.lower() != "sell" and command.lower() != "price" and command.lower() != "owned" and command.lower() != "end" and command.lower() != "help" and command.lower() != "money" and command.lower() != "time" : #if add in above line add here
-            print("invalid command")
-            command = input("what do you want to do?(buy,sell,price,owned,money,end,time,help)")
-        else :
-            break
-    if command.lower() == "buy" :
+    global day
+    global hour
+    global money
+    global buyrec
+    global buytext
+    global sellrec
+    global selltext
+    global statusrec
+    global statustext
+    global timerec
+    global timetext
+    global clockrec
+    global clocktext
+    global clocktexttext
+    global moneyrec
+    global moneytext
+    global moneytexttext
+    
+    buyrec.undraw()
+    buytext.undraw()
+    buyrec.draw(win1)
+    buytext.draw(win1)
+
+    sellrec.undraw()
+    selltext.undraw()
+    sellrec.draw(win1)
+    selltext.draw(win1)
+
+    statusrec.undraw()
+    statustext.undraw()
+    statusrec.draw(win1)
+    statustext.draw(win1)
+
+    timerec.undraw()
+    timetext.undraw()
+    timerec.draw(win1)
+    timetext.draw(win1)
+    
+    clockrec.undraw()
+    clocktext.undraw()
+    clockrec.draw(win1)
+    clocktext.draw(win1)
+    
+    moneyrec.undraw()
+    moneytext.undraw()
+    moneyrec.draw(win1)
+    moneytext.draw(win1)
+
+    mouse = 0
+    mouse = win1.getMouse()
+    mousex = mouse.getX()
+    mousey = mouse.getY()
+
+    if mousex >=50 and mousex <= 250 and mousey >= 50 and mousey <= 150 :
+        buyrec.undraw()
+        buytext.undraw()
+        sellrec.undraw()
+        selltext.undraw()
+        statusrec.undraw()
+        statustext.undraw()
+        timerec.undraw()
+        timetext.undraw()
+        stockamountentry.setText("")
         buy()
-    elif command.lower() == "sell" :
+        moneyrec.undraw()
+        moneytext.undraw()
+        clockrec.undraw()
+        clocktext.undraw()
+    elif mousex >= 50 and mousex <= 250 and mousey >= 200 and mousey <= 300 :
+        buyrec.undraw()
+        buytext.undraw()
+        sellrec.undraw()
+        selltext.undraw()
+        statusrec.undraw()
+        statustext.undraw()
+        timerec.undraw()
+        timetext.undraw()
+        stockamountentry.setText("")
         sell()
-    elif command.lower() == "price" :
-        showprice()
-    elif command.lower() == "owned" :
-        showowned()
-    elif command.lower() == "money" :
-        showwallet()
-    elif command.lower() == "end" :
+        moneyrec.undraw()
+        moneytext.undraw()
+        clockrec.undraw()
+        clocktext.undraw()
+    elif mousex >=50 and mousex <= 250 and mousey >= 350 and mousey <= 450 :
+        buyrec.undraw()
+        buytext.undraw()
+        sellrec.undraw()
+        selltext.undraw()
+        statusrec.undraw()
+        statustext.undraw()
+        timerec.undraw()
+        timetext.undraw()
+        showinfo()
+        moneyrec.undraw()
+        moneytext.undraw()
+        clockrec.undraw()
+        clocktext.undraw()
+    elif mousex >=50 and mousex <= 250 and mousey >= 500 and mousey <= 600 :
         easyincrementtime()
-    elif command.lower() == "time" :
-        whattime()
-    else : #help command
-        stockhelp()
+        buyrec.undraw()
+        buytext.undraw()
+        sellrec.undraw()
+        selltext.undraw()
+        statusrec.undraw()
+        statustext.undraw()
+        timerec.undraw()
+        timetext.undraw()
+        clocktext.undraw()
+        moneyrec.undraw()
+        moneytext.undraw()
+        clockrec.undraw()
+        clocktexttext = ["Day", str(day[0]), "Hour", str(hour[0]) ]
+        clocktext = Text(clockpt3, clocktexttext)
+        clocktext.setTextColor(color_rgb(255,255,255))
+        clocktext.setSize(12)
+    else :
+        pass
 
 def hardwhatcommand() :
-    command = 1
-    command = input("what do you want to do?(buy,sell,price,owned,money,end,time,help)")
-    print(command)
-    while command.lower() != "buy" and command.lower() != "sell" and command.lower() != "price" and command.lower() != "owned" and command.lower() != "end" and command.lower() != "help" and command.lower() != "money" and command.lower() != "time" : #add more?
-        if command.lower() != "buy" and command.lower() != "sell" and command.lower() != "price" and command.lower() != "owned" and command.lower() != "end" and command.lower() != "help" and command.lower() != "money" and command.lower() != "time" : #if add in above line add here
-            print("invalid command")
-            command = input("what do you want to do?(buy,sell,price,owned,money,end,time,help)")
-        else :
-            break
-    if command.lower() == "buy" :
-        buy()
-    elif command.lower() == "sell" :
-        sell()
-    elif command.lower() == "price" :
-        showprice()
-    elif command.lower() == "owned" :
-        showowned()
-    elif command.lower() == "money" :
-        showwallet()
-    elif command.lower() == "end" :
-        hardincrementtime()
-    elif command.lower() == "time" :
-        whattime()
-    else : #help command
-        stockhelp()
+    global day
+    global hour
+    global money
+    global buyrec
+    global buytext
+    global sellrec
+    global selltext
+    global statusrec
+    global statustext
+    global timerec
+    global timetext
+    global clockrec
+    global clocktext
+    global clocktexttext
+    global moneyrec
+    global moneytext
+    global moneytexttext
+    
+    buyrec.undraw()
+    buytext.undraw()
+    buyrec.draw(win1)
+    buytext.draw(win1)
 
+    sellrec.undraw()
+    selltext.undraw()
+    sellrec.draw(win1)
+    selltext.draw(win1)
+
+    statusrec.undraw()
+    statustext.undraw()
+    statusrec.draw(win1)
+    statustext.draw(win1)
+
+    timerec.undraw()
+    timetext.undraw()
+    timerec.draw(win1)
+    timetext.draw(win1)
+    
+    clockrec.undraw()
+    clocktext.undraw()
+    clockrec.draw(win1)
+    clocktext.draw(win1)
+    
+    moneyrec.undraw()
+    moneytext.undraw()
+    moneyrec.draw(win1)
+    moneytext.draw(win1)
+
+    mouse = 0
+    mouse = win1.getMouse()
+    mousex = mouse.getX()
+    mousey = mouse.getY()
+
+    if mousex >=50 and mousex <= 250 and mousey >= 50 and mousey <= 150 :
+        buyrec.undraw()
+        buytext.undraw()
+        sellrec.undraw()
+        selltext.undraw()
+        statusrec.undraw()
+        statustext.undraw()
+        timerec.undraw()
+        timetext.undraw()
+        stockamountentry.setText("")
+        buy()
+        moneyrec.undraw()
+        moneytext.undraw()
+        clockrec.undraw()
+        clocktext.undraw()
+    elif mousex >= 50 and mousex <= 250 and mousey >= 200 and mousey <= 300 :
+        buyrec.undraw()
+        buytext.undraw()
+        sellrec.undraw()
+        selltext.undraw()
+        statusrec.undraw()
+        statustext.undraw()
+        timerec.undraw()
+        timetext.undraw()
+        stockamountentry.setText("")
+        sell()
+        moneyrec.undraw()
+        moneytext.undraw()
+        clockrec.undraw()
+        clocktext.undraw()
+    elif mousex >=50 and mousex <= 250 and mousey >= 350 and mousey <= 450 :
+        buyrec.undraw()
+        buytext.undraw()
+        sellrec.undraw()
+        selltext.undraw()
+        statusrec.undraw()
+        statustext.undraw()
+        timerec.undraw()
+        timetext.undraw()
+        showinfo()
+        moneyrec.undraw()
+        moneytext.undraw()
+        clockrec.undraw()
+        clocktext.undraw()
+    elif mousex >=50 and mousex <= 250 and mousey >= 500 and mousey <= 600 :
+        hardincrementtime()
+        buyrec.undraw()
+        buytext.undraw()
+        sellrec.undraw()
+        selltext.undraw()
+        statusrec.undraw()
+        statustext.undraw()
+        timerec.undraw()
+        timetext.undraw()
+        clocktext.undraw()
+        moneyrec.undraw()
+        moneytext.undraw()
+        clockrec.undraw()
+        clocktexttext = ["Day", str(day[0]), "Hour", str(hour[0]) ]
+        clocktext = Text(clockpt3, clocktexttext)
+        clocktext.setTextColor(color_rgb(255,255,255))
+        clocktext.setSize(12)
+    else :
+        pass
 
 def easymodegame() :
     game = 1
